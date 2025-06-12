@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useForm, ValidationError } from '@formspree/react';
+import { Trans, useTranslation } from "react-i18next";
 
 function Contact() {
+
     const [_location, setLocation] = useLocation();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [company, setCompany] = useState('');
     const [message, setMessage] = useState('');
     const [formState, onSubmit] = useForm(import.meta.env.VITE_FORMSPREE_URL);
+    const {t} = useTranslation();
 
     useEffect(() => {
         if (!formState.succeeded) {
@@ -24,49 +27,55 @@ function Contact() {
 
     return (
         <div className="w-screen h-screen px-[8%] pt-[4%]">
-
-            <div>
-                <p className="text-7xl font-medium text-center">Contact Me!</p>
-                <p className="text-3xl font-medium text-gray-500 text-center mt-3">Find my links below 🔗</p>
+            
+            <div className="w-[84%] md:w-full">
+                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center">{t('contact-me')}!</p>
+                <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-gray-500 text-center mt-3">{t('contact-me-title-description')} 🔗</p>
             </div>
             
-            <div className="mt-[5%] w-full flex flex-row gap-x-[10%]">
-                <div className="flex flex-col gap-y-6 max-w-[45%]">
-                    <p className="text-3xl font-bold">What I’m Looking For 💡</p>
-                    <p className="text-xl">
-                        Hi! I'm a high school student with a strong interest in software development. I'm currently looking for internship opportunities or small projects where I can learn, grow, and make meaningful contributions.
+            <div className="mt-[8%] md:mt-[5%] w-[80%] md:w-full flex flex-col md:flex-row gap-x-[10%]">
+                <div className="flex flex-col gap-y-6 md:max-w-[45%]">
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold">{t('contact-me-title-looking-for')} 💡</p>
+                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">{t('contact-me-description')}</p>
+                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">{t('contact-me-description2')}</p>
+                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">📬 {t('contact-me-description3')}</p>
+                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">
+                        🔍 
+                        <Trans
+                            i18nKey="contact-me-description4"
+                            components={{
+                                projects: <span onClick={() => {setLocation('/projects')}} className="font-bold text-blue-500 hover:opacity-60">Projects</span>
+                            }}
+                        />
                     </p>
-                    <p className="text-xl">If you're hiring interns, collaborating on tech projects, or just open to connecting, I'd love to hear from you!</p>
-                    <p className="text-xl">📬 You can use the form below to get in touch—or reach out via the social buttons if you prefer.</p>
-                    <p className="text-xl">🔍 Curious about my work? Feel free to check out my GitHub or explore the <span onClick={() => {setLocation('/projects')}} className="font-bold text-blue-500 hover:opacity-60">Projects</span> section of this website.                    </p>
                 
-                    <div className="flex flex-row gap-x-3 w-full mt-8">
-                        <button className="w-[30%] h-12 basic-button"
+                    <div className="flex flex-row gap-x-3 w-full mt-[6px] md:mt-8 mb-[12%] md:mb-0">
+                        <button className="min-w-[20%] w-[30%] md:w-auto px-2 h-auto py-[6px] basic-button"
                             onClick={() => window.open('mailto:enevbuis@gmail.com')}
                         >
-                            <p className="text-center text-lg font-medium">Email</p>
+                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">Email</p>
                         </button>
-                        <button className="w-[30%] h-12 basic-button"
+                        <button className="min-w-[20%] w-[33%] md:w-auto px-2 h-auto py-[6px] basic-button"
                             onClick={() => window.open('https://www.instagram.com/adrianenev/')}
                         >
-                            <p className="text-center text-lg font-medium">Instagram</p>
+                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">Instagram</p>
                         </button>
-                        <button className="w-[30%] h-12 basic-button"
+                        <button className="min-w-[20%] w-[30%] md:w-auto px-2 h-auto py-[6px] basic-button"
                             onClick={() => window.open('https://github.com/AdrianEnev')}
                         >
-                            <p className="text-center text-lg font-medium">Github</p>
+                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">Github</p>
                         </button>
                     </div>
                 </div>
 
-                <div className="w-full h-auto">
-                    <p className="sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">Send Me a Message 💬</p>
+                <div className="w-full h-auto mb-10 md:mb-0">
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold">{t('contact-me-title-send-message')} 💬</p>
                     
                     <form className="w-full min-h-[92%] mt-3 bg-white shadow-md border border-gray-300 rounded-xl px-[10%] py-[10%]"
                         onSubmit={onSubmit}
                     >
                         <div className="flex flex-row gap-x-3">
-                            <input id="name" name="name" type="text" placeholder="Your Name" maxLength={20} required onChange={(e) => setName(e.target.value)} value={name}
+                            <input id="name" name="name" type="text" placeholder={t('contact-me-form-name')} maxLength={20} required onChange={(e) => setName(e.target.value)} value={name}
                                 className="w-[50%] h-14 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                             />
                             <ValidationError 
@@ -74,7 +83,7 @@ function Contact() {
                                 field="name"
                                 errors={formState.errors}
                             />
-                            <input id="company" name="company" type="text" placeholder="Company (optional)" maxLength={20} onChange={(e) => setCompany(e.target.value)} value={company}
+                            <input id="company" name="company" type="text" placeholder={t('contact-me-form-company')} maxLength={20} onChange={(e) => setCompany(e.target.value)} value={company}
                                 className="w-[50%] h-14 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                             />
                             <ValidationError 
@@ -85,7 +94,7 @@ function Contact() {
                         </div>
 
                         <div className="flex flex-col gap-y-6 mt-6">
-                            <input id="email" name="email" type="email" placeholder="Email" maxLength={50} required onChange={(e) => setEmail(e.target.value)} value={email}
+                            <input id="email" name="email" type="email" placeholder={t('contact-me-form-email')} maxLength={50} required onChange={(e) => setEmail(e.target.value)} value={email}
                                 className="w-full h-14 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                             />
                             <ValidationError 
@@ -93,7 +102,7 @@ function Contact() {
                                 field="email"
                                 errors={formState.errors}
                             />
-                            <textarea id="message" name="message" placeholder="Message" maxLength={1000} required onChange={(e) => setMessage(e.target.value)} value={message}
+                            <textarea id="message" name="message" placeholder={t('contact-me-form-message')} maxLength={1000} required onChange={(e) => setMessage(e.target.value)} value={message}
                                 className="w-full h-24 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                             />
                             <ValidationError 
@@ -103,7 +112,7 @@ function Contact() {
                             />
 
                             <button className="w-full h-14 !bg-blue-500 !text-white basic-button" type="submit">
-                                <p className="text-center text-lg font-medium">Send Message</p>
+                                <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">{t('contact-me-button')}</p>
                             </button>
                         </div>
                     </form>
