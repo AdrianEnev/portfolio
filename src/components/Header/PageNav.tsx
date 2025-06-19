@@ -1,9 +1,9 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const PageNav = ({location, setLocation, t}: any) => {
+const PageNav = ({location, setLocation, t, sidebarShown, setSidebarShown}: any) => {
     return (
-        <div>
+        <button onClick={() => setSidebarShown(!sidebarShown)}>
             <div className="hidden md:flex">
                 {location == '/contact' ? (
                     <p className="text-2xl font-semibold text-[#1E1B4B] hover:underline hover:opacity-80"
@@ -28,7 +28,7 @@ const PageNav = ({location, setLocation, t}: any) => {
             <div className="flex md:hidden">
                 <FontAwesomeIcon icon={faBars} className="mt-[5px] fa-xl"/>
             </div>
-        </div>
+        </button>
     )
 }
 

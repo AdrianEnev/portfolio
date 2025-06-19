@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useForm, ValidationError } from '@formspree/react';
 import { Trans, useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 function Contact() {
 
@@ -12,6 +13,7 @@ function Contact() {
     const [message, setMessage] = useState('');
     const [formState, onSubmit] = useForm(import.meta.env.VITE_FORMSPREE_URL);
     const {t} = useTranslation();
+    const currentLanguage = i18next.language;
 
     useEffect(() => {
         if (!formState.succeeded) {
@@ -29,7 +31,7 @@ function Contact() {
         <div className="w-screen h-screen px-[8%] pt-[4%]">
             
             <div className="w-[84%] md:w-full">
-                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center">{t('contact-me')}!</p>
+                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center">{currentLanguage == 'bg' ? <span>{t('contact-me-extended')}</span> : <span>{t('contact-me')}</span>}</p>
                 <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-gray-500 text-center mt-3">{t('contact-me-title-description')} 🔗</p>
             </div>
             
