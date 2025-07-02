@@ -36,7 +36,7 @@ body {
     }
 
     .basic-button {
-        @apply bg-white shadow-md rounded-xl border border-gray-200 hover:opacity-60 active:opacity-40
+        @apply bg-white shadow-2xl border border-blue-300 transition-colors duration-300 rounded-2xl hover:bg-blue-100 hover:text-gray-500 active:opacity-40 
     }
 
     /* Swiper button hover effect, only used regular css due to the transition */

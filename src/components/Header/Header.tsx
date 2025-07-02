@@ -1,22 +1,22 @@
 import { useLocation } from "wouter";
 import PageNav from "./PageNav";
-import { useState } from "react";
 
-const Header = () => {
+//dark:text-[#1E1B4B]
+
+const Header = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolean, setSidebarVisible: any }) => {
 
     const [location, setLocation] = useLocation();
-    const [sidebarShown, setSidebarShown] = useState(false);
     
     return (
         <>      
             <div className="w-full h-20 pt-4 flex flex-row justify-between items-center 3xs:px-[3%] md:px-[10%]">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-[#1E1B4B] hover:opacity-80 active:opacity-60"
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white hover:opacity-80 active:opacity-60"
                     onClick={() => setLocation("/")}
                 >
                     Full-Stack Dev
                 </p>
 
-                <PageNav location={location} setLocation={setLocation} sidebarShown={sidebarShown} setSidebarShown={setSidebarShown}/>
+                <PageNav location={location} setLocation={setLocation} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
             </div>
         </>
     )
