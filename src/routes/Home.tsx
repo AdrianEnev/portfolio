@@ -3,10 +3,11 @@ import Headshot from "../components/Home/Headshot";
 import { motion } from "framer-motion";
 
 function Home() {
+    
     const [_location, setLocation] = useLocation();
 
     return (
-        <motion.div className='w-screen h-screen px-[15%] ml-[-8%] md:ml-0 md:px-[8%]'
+        <motion.div className='w-screen h-screen pt-[25%] md:pt-[6%] px-[15%] ml-[-8%] md:ml-0 md:px-[8%] overflow-y-hidden'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

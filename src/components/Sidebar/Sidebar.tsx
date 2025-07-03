@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Asterisk, Binary, Braces, Brackets, BugPlay, Code, CodeXml, FileJson, FileScan, Home, Info, MessageCircle, User } from "lucide-react";
+import { Asterisk, Binary, Braces, BugPlay, CodeXml, FileJson } from "lucide-react";
 import { useLocation } from "wouter";
 
 const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolean, setSidebarVisible: any }) => {
@@ -13,7 +13,7 @@ const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolea
 
     return (
         <motion.div
-            className="absolute top-0 left-0 w-1/2 h-full bg-white shadow-md z-20 py-4 flex flex-col md:hidden border-r border-blue-500 opacity-90" 
+            className="absolute top-0 left-0 w-1/2 h-screen bg-white shadow-md z-20 py-4 flex flex-col md:hidden border-r border-blue-500 opacity-[97.5%]" 
             initial="closed"
             animate={sidebarVisible ? "open" : "closed"}
             variants={variants}

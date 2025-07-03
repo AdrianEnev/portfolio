@@ -39,6 +39,12 @@ body {
         @apply bg-white shadow-2xl border border-blue-300 transition-colors duration-300 rounded-2xl hover:bg-blue-100 hover:text-gray-500 active:opacity-40 
     }
 
+    .project-button {
+        @apply w-full h-auto min-h-[40vh] lg:min-h-[50vh] md:max-w-[40vw] 
+        bg-white border-gray-300 shadow-md rounded-xl 
+        flex flex-col gap-y-1 items-center justify-center hover:opacity-60
+    }
+
     /* Swiper button hover effect, only used regular css due to the transition */
     .swiper-pagination-bullet {
         width: 0.75rem; /* Tailwind class w-3 */
@@ -57,6 +63,10 @@ body {
     .swiper-button-prev {
         @apply p-3 text-white rounded-full;  /* Default color */
         color: white;  /* Text color */
+    }
+
+    .no-scroll {
+        @apply overflow-hidden h-full fixed w-full
     }
 }
 

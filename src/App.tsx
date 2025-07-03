@@ -9,28 +9,35 @@ import Achievements from './routes/Achievements';
 import Sidebar from './components/Sidebar/Sidebar';
 import { useEffect, useState } from 'react';
 
-//bg-[url('/assets/background_peach_waves.svg')] bg-no-repeat bg-center bg-cover
-
 function App() {
 
-    const [location, _setLocation] = useLocation();
-    const [sidebarVisible, setSidebarVisible] = useState(false)
+    const [location, setLocation] = useLocation();
+    const [sidebarVisible, setSidebarVisible] = useState(false);
+
+    // Disable scrolling on sidebarVisible using useEffect
+    useEffect(() => {
+        const body = document.body;
+
+        if (sidebarVisible) {
+            body.classList.add('no-scroll');
+        } else {
+            body.classList.remove('no-scroll');
+        }
+
+        // Cleanup on unmount
+        return () => {
+            body.classList.remove('no-scroll');
+        };
+    }, [sidebarVisible]);
 
     return (
-        <div className={`w-screen min-h-screen bg-[url("/assets/background_blue_peaks.svg")] bg-repeat bg-center bg-cover
+        <div className={`w-screen h-full bg-[url("/assets/background_blue_peaks.svg")] bg-repeat bg-center bg-cover
             ${location !== '/achievements' ? 'md:overflow-hidden' : ''}
-            ${
-                location === '/about' ? 'pb-[75%] md:pb-0' : 
-                location === '/projects' ? 'pb-[335%] md:pb-0' : 
-                location === '/contact' ? 'pb-[40%] md:pb-0' : 
-                location === '/achievements' ? 'pb-[5%] md:pb-0' : 
-                ''
-            }
         `}>
             
-            <main className='w-full h-full pt-4 px-6 3xs:px-8 '>
+            <main className='w-full h-full px-6 3xs:px-8'>
                 {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>}
-                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
 
                 <Route path="/" component={Home} />
                 <Route path="/about" component={About} />
@@ -42,4 +49,4 @@ function App() {
     )
 }
 
-export default App
+export default App;

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any) => {
     return (
-        <button onClick={() => setSidebarVisible(!sidebarVisible)}>
+        <div>
             <div className="hidden md:flex">
                 {location == '/contact' ? (
                     <p className="text-2xl font-semibold text-white hover:underline hover:opacity-80"
@@ -31,10 +31,10 @@ const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any
                     </p>
                 )}
             </div>
-            <div className="flex md:hidden">
+            <button className="flex md:hidden" onClick={() => setSidebarVisible(!sidebarVisible)}>
                 <FontAwesomeIcon icon={faBars} color="#f3f4f6" className="mt-[5px] fa-xl"/>
-            </div>
-        </button>
+            </button>
+        </div>
     )
 }
 

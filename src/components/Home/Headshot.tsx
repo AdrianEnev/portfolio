@@ -1,6 +1,6 @@
 const Headshot = ({setLocation}: any) => {
     return (
-        <div className='flex flex-col w-[85%] h-[85%] max-w-64 min-w-48 md:max-w-full md:w-[65%] md:h-[65%] md:mt-[-5%]'>
+        <div className='flex flex-col w-[85%] h-[85%] max-w-64 min-w-48 md:max-w-full md:w-[65%] md:h-[65%] mt-[10%] md:mt-[-5%]'>
             <div className='w-auto h-auto bg-white shadow-lg border border-gray-200 rounded-xl'>
                 <img 
                     src="/assets/headshot_smile.JPG"

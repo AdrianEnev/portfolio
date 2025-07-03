@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 import { motion } from "framer-motion";
+import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
+import ContactForm from "../components/Contact/ContactForm";
+import Hero from "../components/Contact/Hero";
 
 function Contact() {
 
@@ -11,6 +14,15 @@ function Contact() {
     const [company, setCompany] = useState('');
     const [message, setMessage] = useState('');
     const [formState, onSubmit] = useForm(import.meta.env.VITE_FORMSPREE_URL);
+
+    const refSecondProject = useRef<HTMLDivElement | null>(null);
+    const [secondProjectVisible, setSecondProjectVisible] = useState(false);
+
+    useIntersectionObserver(
+        refSecondProject,
+        () => setSecondProjectVisible(true),
+        { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0 }
+    );
 
     useEffect(() => {
         if (!formState.succeeded) {
@@ -24,8 +36,14 @@ function Contact() {
         alert('Form submitted successfully! I will get back to you as soon as possible.');
     }, [formState])
 
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        // Prevents scroll distance from previous page being applied
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
-        <motion.div className="w-screen h-screen px-[8%] pt-[4%] text-gray-100"
+        <motion.div className="w-screen min-h-screen px-[8%] pt-[5%] text-gray-100"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -37,83 +55,29 @@ function Contact() {
             </div>
             
             <div className="mt-[8%] md:mt-[5%] w-[80%] md:w-full flex flex-col md:flex-row gap-x-[10%]">
-                <div className="flex flex-col gap-y-6 md:max-w-[45%]">
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold">What I'm Looking For 💡</p>
-                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">Hi! I'm a high school student with a strong interest in software development. I'm currently looking for internship opportunities or small projects where I can learn, grow, and make meaningful contributions.</p>
-                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">If you're hiring interns, collaborating on tech projects, or just open to connecting, I'd love to hear from you!</p>
-                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">📬 You can use the form below to get in touch—or reach out via the social buttons if you prefer.</p>
-                    <p className="sm:text-sm md:text-base lg:text-lg xl:text-xl">
-                        🔍 Curious about my work? Feel free to check out my GitHub or explore the <span onClick={() => {setLocation('/projects')}} className="text-orange-300 shadow-md px-1 font-bold hover:opacity-60">Projects</span> section of this website.
-                    </p>
-                
-                    <div className="flex flex-row gap-x-3 w-full mt-[6px] md:mt-8 mb-[12%] md:mb-0">
-                        <button className="min-w-[20%] w-[30%] md:w-auto px-2 h-auto py-[6px] basic-button"
-                            onClick={() => window.open('mailto:enevbuis@gmail.com')}
-                        >
-                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium text-black">Email</p>
-                        </button>
-                        <button className="min-w-[20%] w-[33%] md:w-auto px-2 h-auto py-[6px] basic-button"
-                            onClick={() => window.open('https://www.instagram.com/adrianenev/')}
-                        >
-                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium text-black">Instagram</p>
-                        </button>
-                        <button className="min-w-[20%] w-[30%] md:w-auto px-2 h-auto py-[6px] basic-button"
-                            onClick={() => window.open('https://github.com/AdrianEnev')}
-                        >
-                            <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium text-black">Github</p>
-                        </button> 
-                    </div>
-                </div>
+                <Hero setLocation={setLocation} />
 
-                <div className="w-full h-auto mb-10 md:mb-0">
+                <motion.div className="w-full h-auto mb-10 md:mb-0"
+                    ref={refSecondProject}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={secondProjectVisible ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                     <p className="text-xl md:text-2xl lg:text-3xl font-bold">Send Me a Message 💬</p>
                     
-                    <form className="w-full min-h-[92%] mt-3 bg-white shadow-md border border-gray-300 rounded-xl px-[10%] py-[10%]"
+                    <ContactForm
                         onSubmit={onSubmit}
-                    >
-                        <div className="flex flex-row gap-x-3">
-                            <input id="name" name="name" type="text" placeholder={'Your Name'} maxLength={20} required onChange={(e) => setName(e.target.value)} value={name}
-                                className="w-[50%] h-14 px-3 text-black border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                            />
-                            <ValidationError 
-                                prefix="Name" 
-                                field="name"
-                                errors={formState.errors}
-                            />
-                            <input id="company" name="company" type="text" placeholder={'Company (optional)'} maxLength={20} onChange={(e) => setCompany(e.target.value)} value={company}
-                                className="w-[50%] h-14 px-3 text-black border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                            />
-                            <ValidationError 
-                                prefix="Company" 
-                                field="company"
-                                errors={formState.errors}
-                            />
-                        </div>
-
-                        <div className="flex flex-col gap-y-6 mt-6">
-                            <input id="email" name="email" type="email" placeholder={'Email'} maxLength={50} required onChange={(e) => setEmail(e.target.value)} value={email}
-                                className="w-full h-14 px-3 text-black border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                            />
-                            <ValidationError 
-                                prefix="Email" 
-                                field="email"
-                                errors={formState.errors}
-                            />
-                            <textarea id="message" name="message" placeholder={'Message'} maxLength={1000} required onChange={(e) => setMessage(e.target.value)} value={message}
-                                className="w-full h-24 px-3 text-black py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                            />
-                            <ValidationError 
-                                prefix="Message" 
-                                field="message"
-                                errors={formState.errors}
-                            />
-
-                            <button className="w-full h-14 !bg-blue-500 !text-white basic-button" type="submit">
-                                <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">Send Message</p>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                        formState={formState}
+                        setName={setName}
+                        setCompany={setCompany}
+                        setEmail={setEmail}
+                        setMessage={setMessage}
+                        name={name}
+                        company={company}
+                        email={email}
+                        message={message}
+                    />
+                </motion.div>
             </div>
         </motion.div>
     )
