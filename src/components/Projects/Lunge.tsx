@@ -11,7 +11,7 @@ const Lunge = () => (
         </div>
 
         <button className="
-            project-button mt-3 md:mt-0
+            project-button mt-3 md:mt-0 
         "
             style={{ alignSelf: 'stretch' }}
             onClick={() => window.open('https://apps.apple.com/bg/app/lunge/id6739221997?platform=iphone')}

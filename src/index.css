@@ -40,7 +40,7 @@ body {
     }
 
     .project-button {
-        @apply w-full h-auto min-h-[40vh] lg:min-h-[50vh] md:max-w-[40vw] 
+        @apply w-full h-auto min-h-[40vh] lg:min-h-[50vh] md:max-w-[40vw] md:max-h-124
         bg-white border-gray-300 shadow-md rounded-xl 
         flex flex-col gap-y-1 items-center justify-center hover:opacity-60
     }
