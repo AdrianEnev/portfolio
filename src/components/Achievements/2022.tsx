@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 const TwentyTwentyTwo = ({refSecondProject, secondProjectVisible}: any) => (
-    <motion.div className='w-full semilg:w-[48%] h-auto semilg:h-[62%] lg:h-[57.5%] xl:h-[55%] 2xl:h-[40%] flex flex-col  semilg:pb-0 gap-y-3 ml-3'
+    <motion.div className='w-full semilg:w-[48%] h-auto semilg:h-[62%] lg:h-[57.5%] xl:h-[55%] 2xl:h-[40%] flex flex-col  semilg:pb-0 gap-y-3'
         ref={refSecondProject}
         initial={{ opacity: 0, y: 30 }}
         animate={secondProjectVisible ? { opacity: 1, y: 0 } : {}}

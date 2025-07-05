@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 const TwentyTwentyThree = ({refThirdProject, thirdProjectVisible}: any) => (
-    <motion.div className='w-full semilg:w-[48%] h-auto semilg:h-[65%] 3xl:h-[60%] flex flex-col  semilg:pb-0 gap-y-3 ml-3'
+    <motion.div className='w-full semilg:w-[48%] h-auto semilg:h-[65%] 3xl:h-[60%] flex flex-col semilg:pb-0 gap-y-3'
         ref={refThirdProject}
         initial={{ opacity: 0, y: 30 }}
         animate={thirdProjectVisible ? { opacity: 1, y: 0 } : {}}

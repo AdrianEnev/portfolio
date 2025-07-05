@@ -25,7 +25,7 @@
 
 html,
 body {
-    @apply bg-[#e6edfa4d] text-[#1E1B4B] select-none font-sora overflow-x-hidden;
+    @apply bg-[#e6edfa] text-[#1E1B4B] select-none font-sora overflow-x-hidden overscroll-none;
 
     .svg-background {
         @apply bg-[url('/assets/background_peach_waves.svg')] bg-no-repeat bg-center bg-cover;

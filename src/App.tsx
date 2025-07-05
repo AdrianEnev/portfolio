@@ -2,12 +2,13 @@ import './App.css'
 import { Route, useLocation } from "wouter";
 import Home from './routes/Home';
 import About from './routes/About';
-import Header from './components/Header/Header';
+import Header from './components/Bars/Header/Header';
 import Projects from './routes/Projects';
 import Contact from './routes/Contact';
 import Achievements from './routes/Achievements';
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/Bars/Sidebar';
 import { useEffect, useState } from 'react';
+import CyrilicName from './routes/CyrilicName';
 
 function App() {
 
@@ -31,19 +32,21 @@ function App() {
     }, [sidebarVisible]);
 
     return (
-        <div className={`w-screen h-full bg-[url("/assets/background_blue_peaks.svg")] bg-repeat bg-center bg-cover
+        <div className={`w-screen bg-[url("/assets/background_blue_peaks.svg")] bg-repeat bg-center bg-cover
             ${location !== '/achievements' ? 'md:overflow-hidden' : ''}
+            ${location === '/about' || location === '/contact' ? 'md:h-screen' : 'h-full'}
         `}>
             
             <main className='w-full h-full px-6 3xs:px-8'>
-                {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>}
-                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
+            {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>}
+            <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
 
-                <Route path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/achievements" component={Achievements} />
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/achievements" component={Achievements} />
+            <Route path="/адриан-енев" component={CyrilicName} />
             </main>
         </div>
     )

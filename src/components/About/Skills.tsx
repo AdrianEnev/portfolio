@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 
+const skills = [
+    "Typescript", "HTML", "CSS", "Tailwind CSS", "Node.js", "Express",
+    "Fly.io", "Next.js", "React", "React Native", "Expo",
+    "Firebase DB", "Firebase Auth", "MongoDB", "Git", "Github"
+];
+
 const Skills = ({refSecondProject, secondProjectVisible}: any) => (
     <motion.div className="w-full h-full flex flex-col gap-y-12 mt-[8%] md:mt-0 mb-[15%] md:mb-0"
         ref={refSecondProject}
@@ -11,35 +17,10 @@ const Skills = ({refSecondProject, secondProjectVisible}: any) => (
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white">My Skills 👨‍💻</p>
 
             <div className="flex flex-col gap-y-3 text-black">
-                <div className="flex flex-row gap-x-3 w-full">
-                    <SkillBox title="Typescript" />
-                    <SkillBox title="HTML" />
-                    <SkillBox title="CSS" />
-                    <SkillBox title="Tailwind CSS" />
-                </div>
-
-                <div className="flex flex-row gap-x-3 w-full">
-                    <SkillBox title="Node.js" />
-                    <SkillBox title="Express" />
-                    <SkillBox title="Fly.io" />
-                    <SkillBox title="Next.js" />
-                </div>
-                
-                <div className="flex flex-row gap-x-3 w-full">
-                    <SkillBox title="React" />
-                    <SkillBox title="React Native" />
-                    <SkillBox title="Expo" />
-                </div>
-                
-                <div className="flex flex-row gap-x-3 w-full">
-                    <SkillBox title="Firebase DB" />
-                    <SkillBox title="Firebase Auth" />
-                    <SkillBox title="MongoDB" />
-                </div>
-                
-                <div className="flex flex-row gap-x-3 w-full">
-                    <SkillBox title="Git" />
-                    <SkillBox title="Github" />
+                <div className="flex flex-row flex-wrap gap-x-3 gap-y-3 w-full">
+                    {skills.map((skill, index) => (
+                        <SkillBox key={index} title={skill} />
+                    ))}
                 </div>
             </div>
         </div>
@@ -48,13 +29,13 @@ const Skills = ({refSecondProject, secondProjectVisible}: any) => (
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white">Looking to Learn 📖</p>
 
             <div className="flex flex-col gap-y-3 mt-4 text-black">
-                <div className="flex flex-row gap-x-3 w-full">
+                <div className="flex flex-row flex-wrap gap-x-3 gap-y-3 w-full">
                     <SkillBox title="Docker" />
                     <SkillBox title="Jest" />
                     <SkillBox title="AWS" />
                 </div>
                 
-                <div className="flex flex-row gap-x-3 w-full">
+                <div className="flex flex-row flex-wrap gap-x-3 gap-y-3 w-full">
                     <SkillBox title="Figma" />
                     <SkillBox title=".NET" />
                 </div>

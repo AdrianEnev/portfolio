@@ -10,7 +10,7 @@ const AdrianCuts = ({refThirdProject, thirdProjectVisible}: any) => (
         <div className="flex flex-col gap-y-3 md:max-w-1/2">
             <p className="text-3xl font-semibold">Adrian Cuts</p>
 
-            <div className="flex flex-col gap-y-3 text-lg font-medium">
+            <div className="flex flex-col gap-y-3 text-lg">
                 <p>“Adrian Cuts” is a simple barbershop website I built to sharpen my frontend and design skills. The original idea was to create a clean, well-designed site that would help me improve visually — skills I could then apply to my own portfolio. Along the way, I thought about turning it into my first freelance project by selling it to a close friend. That didn’t quite work out, so I gave it its current (admittedly funny) name and decided to keep it as part of my personal learning journey.</p>
                 <p>I built the project in just a week or two, but it ended up teaching me a lot about how to structure a website properly — from layout and responsiveness to how design decisions affect user experience. It was a quick build, but it really helped solidify the basics of creating clean, maintainable frontend code and gave me more confidence in turning ideas into real, presentable websites.</p>
             </div>

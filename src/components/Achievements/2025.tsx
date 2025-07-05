@@ -5,7 +5,7 @@ const TwentyTwentyFive = () => (
         <div className='max-w-[85%] semilg:max-w-[90%] flex flex-col gap-y-3'>
             <p>• 1st Place, Regional Round of the National Olympiad in Information Technologies (IT) – Category: Distributed Applications.</p>
             <p>• Top 10, National Autumn IT (Information Technology) Tournament “John Atanasoff”, Sofia – Category: Distributed Applications.</p>
-            <p>• Certificate of Excellent Performance and Medal, 25th Student Section of the High School Student Institute of Mathematics and Informatics (HSSI). (Equivelent to 1st place, although shared with other participants)</p>
+            <p>• Certificate of Excellent Performance and Medal, 25th Student Section of the High School Student Institute of Mathematics and Informatics (HSSI). (Equivalent to first place, though awarded to multiple top participants)</p>
             <p>• 1st Place, Regional Round of the National English Language Olympiad </p>
             <p>• Cambridge English: C1 Advanced Exam - 203 points, C2 (Grade A) <a href="/assets/AdrianEnev_Cambridge_English_C1_Advanced_Exam_Statement.pdf" download className="text-white shadow-md px-1 font-bold underline underline-offset-2 hover:opacity-70">(Download Statement)</a></p>
 

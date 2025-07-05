@@ -17,9 +17,6 @@ function About() {
         { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0 }
     );
 
-    
-    
-
     return (
         <motion.div className="w-screen min-h-screen px-[4%] md:px-[8%] pt-[5%] text-gray-100"
             initial={{ opacity: 0, y: -20 }}
