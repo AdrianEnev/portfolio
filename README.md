@@ -11,7 +11,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Dark/Light Mode** (if implemented)
 - **Interactive Components** including animated text and scroll-triggered elements
 - **Project Showcase** with detailed case studies
-- **Contact Form** powered by Formspree
+- **Contact Form** powered by Netlify Functions + Amazon SES (SMTP via Nodemailer)
 - **Multilingual Support** (if implemented)
 
 ## 🛠️ Tech Stack
@@ -22,7 +22,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Animation**: Framer Motion, Rough Notation
 - **Routing**: Wouter
 - **Icons**: Lucide Icons, Font Awesome
-- **Form Handling**: Formspree
+- **Form Handling**: Netlify Functions + Amazon SES
 - **Deployment**: Netlify
 
 ## 🚀 Getting Started
@@ -79,22 +79,48 @@ src/
 ├── routes/           # Page components
 ├── types/            # TypeScript type definitions
 └── use/              # Custom React hooks
+
+netlify/
+└── functions/        # Serverless functions (send-email)
 ```
-
-## 🎨 Design System
-
-- **Colors**: Primary colors and accent colors used throughout the site
-- **Typography**: Font families and type scale
-- **Spacing**: Consistent spacing scale
-- **Breakpoints**: Responsive design breakpoints
 
 ## 🔧 Configuration
 
-Environment variables can be configured in a `.env` file:
+Environment variables are configured in your Netlify Site settings (do not expose these in the public Vite env):
 
 ```env
-VITE_FORMSPREE_ID=your_formspree_id
+# Email provider
+EMAIL_PROVIDER=ses
+
+# SES SMTP
+SES_SMTP_HOST=email-smtp.us-east-1.amazonaws.com
+SES_SMTP_PORT=587
+SES_SMTP_USER=your_ses_smtp_username
+SES_SMTP_PASS=your_ses_smtp_password
+
+# Routing
+EMAIL_FROM=portfolio@adrianenev.com
+EMAIL_FROM_NAME=adrianenev.com
+EMAIL_TO=you@yourdomain.com
+
+# CORS / Origin
+APP_BASE_URL=https://adrianenev.com
 ```
+
+Notes:
+- Make sure your SES domain and From address are verified, and your account is out of sandbox or the To address is verified.
+- Do NOT prefix these with `VITE_`—they must remain server-only.
+
+## 🧪 Local development for functions
+
+To test the Netlify Function locally with the frontend, use Netlify CLI (optional):
+
+```bash
+npm i -g netlify-cli
+netlify dev
+```
+
+This runs the Vite dev server and proxies `/.netlify/functions/*` to local functions.
 
 ## 📝 License
 
@@ -105,7 +131,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Framer Motion](https://www.framer.com/motion/) for animations
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [React Icons](https://react-icons.github.io/react-icons/) for icons
-- [Formspree](https://formspree.io/) for form handling
 - [Netlify](https://www.netlify.com/) for deployment
 
 ## 📬 Contact

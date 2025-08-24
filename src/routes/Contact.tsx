@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
-import { useForm } from '@formspree/react';
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
 import ContactForm from "../components/Contact/ContactForm";
 import Hero from "../components/Contact/Hero";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 function Contact() {
 
@@ -13,7 +13,12 @@ function Contact() {
     const [name, setName] = useState('');
     const [company, setCompany] = useState('');
     const [message, setMessage] = useState('');
-    const [formState, onSubmit] = useForm(import.meta.env.VITE_FORMSPREE_URL);
+    const [website, setWebsite] = useState(''); // honeypot
+    const [loading, setLoading] = useState(false);
+    const [_error, setError] = useState<string | null>(null);
+    const [visitorId, setVisitorId] = useState<string | null>(null);
+    const [bannerMsg, setBannerMsg] = useState<string>('');
+    const [bannerType, setBannerType] = useState<'success' | 'error' | 'info'>('info');
 
     const refSecondProject = useRef<HTMLDivElement | null>(null);
     const [secondProjectVisible, setSecondProjectVisible] = useState(false);
@@ -24,17 +29,86 @@ function Contact() {
         { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0 }
     );
 
+    // Load FingerprintJS and get a visitorId
     useEffect(() => {
-        if (!formState.succeeded) {
-            return
+        (async () => {
+            try {
+                const fp = await FingerprintJS.load();
+                const result = await fp.get();
+                setVisitorId(result.visitorId);
+            } catch (e) {
+                console.warn('FingerprintJS failed; proceeding without strict rate limit');
+            }
+        })();
+    }, []);
+
+    // Helper: get today's key for rate limit bucket
+    const getBucketKey = (vid: string) => {
+        const d = new Date();
+        const day = `${d.getUTCFullYear()}-${(d.getUTCMonth()+1).toString().padStart(2,'0')}-${d.getUTCDate().toString().padStart(2,'0')}`;
+        return `contact_rl:${vid}:${day}`;
+    };
+
+    // Helper: check + increment rate limit (3/day). Returns {allowed:boolean, remaining:number}
+    const checkAndIncrementRateLimit = (vid: string) => {
+        try {
+            const key = getBucketKey(vid);
+            const count = Number(localStorage.getItem(key) || '0');
+            if (count >= 3) {
+                return { allowed: false, remaining: 0 };
+            }
+            localStorage.setItem(key, String(count + 1));
+            return { allowed: true, remaining: 3 - (count + 1) };
+        } catch {
+            // If storage fails, do not block
+            return { allowed: true, remaining: -1 };
+        }
+    };
+
+    const onSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (loading) return;
+        setLoading(true);
+        setError(null);
+        setBannerMsg('');
+
+        // Rate limit gate (client-side best-effort)
+        if (visitorId) {
+            const { allowed } = checkAndIncrementRateLimit(visitorId);
+            if (!allowed) {
+                setBannerType('error');
+                setBannerMsg('You have reached today\'s limit of 3 messages. Please try again tomorrow.');
+                setLoading(false);
+                return;
+            }
         }
 
-        setName('');
-        setCompany('');
-        setEmail('');
-        setMessage('');
-        alert('Form submitted successfully! I will get back to you as soon as possible.');
-    }, [formState])
+        try {
+            const res = await fetch('/.netlify/functions/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, company, email, message, website, visitorId }),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok || data?.error) {
+                throw new Error(data?.error || 'Failed to send');
+            }
+            setName('');
+            setCompany('');
+            setEmail('');
+            setMessage('');
+            setWebsite('');
+            setBannerType('success');
+            setBannerMsg('Message sent successfully! I\'ll get back to you as soon as possible.');
+        } catch (err: any) {
+            console.error(err);
+            setError(err?.message || 'Something went wrong');
+            setBannerType('error');
+            setBannerMsg('Sorry, there was a problem sending your message. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
@@ -67,15 +141,19 @@ function Contact() {
                     
                     <ContactForm
                         onSubmit={onSubmit}
-                        formState={formState}
                         setName={setName}
                         setCompany={setCompany}
                         setEmail={setEmail}
                         setMessage={setMessage}
+                        setWebsite={setWebsite}
                         name={name}
                         company={company}
                         email={email}
                         message={message}
+                        website={website}
+                        loading={loading}
+                        bannerType={bannerType}
+                        bannerMsg={bannerMsg}
                     />
                 </motion.div>
             </div>
