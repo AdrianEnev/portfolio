@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
 import ContactForm from "../components/Contact/ContactForm";
 import Hero from "../components/Contact/Hero";
-import StatusBanner from "../components/Contact/StatusBanner";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 function Contact() {
@@ -153,9 +152,9 @@ function Contact() {
                         message={message}
                         website={website}
                         loading={loading}
+                        bannerType={bannerType}
+                        bannerMsg={bannerMsg}
                     />
-
-                    <StatusBanner type={bannerType} message={bannerMsg} />
                 </motion.div>
             </div>
         </motion.div>

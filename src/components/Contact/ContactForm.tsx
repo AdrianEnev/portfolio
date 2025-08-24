@@ -1,4 +1,6 @@
-const ContactForm = ({ onSubmit, setName, setCompany, setEmail, setMessage, setWebsite, name, company, email, message, website, loading }: any) => (
+import StatusBanner from "./StatusBanner";
+
+const ContactForm = ({ onSubmit, setName, setCompany, setEmail, setMessage, setWebsite, name, company, email, message, website, loading, bannerType, bannerMsg }: any) => (
     <form className="w-full min-h-[92%] mt-3 bg-white shadow-md border border-gray-300 rounded-xl px-[10%] py-[10%]"
         onSubmit={onSubmit}
     >
@@ -34,6 +36,9 @@ const ContactForm = ({ onSubmit, setName, setCompany, setEmail, setMessage, setW
             <button className="w-full h-14 !bg-blue-500 !text-white basic-button disabled:opacity-60 disabled:cursor-not-allowed" type="submit" disabled={loading}>
                 <p className="text-center sm:text-sm lg:text-base xl:text-lg font-medium">{loading ? 'Sending...' : 'Send Message'}</p>
             </button>
+
+            {/* Inline status message */}
+            <StatusBanner type={bannerType} message={bannerMsg} />
         </div>
     </form>
 )
