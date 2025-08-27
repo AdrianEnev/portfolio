@@ -18,14 +18,14 @@ function About() {
     );
 
     return (
-        <motion.div className="w-screen min-h-screen px-[4%] md:px-[8%] pt-[5%] text-gray-100"
+        <motion.div className="w-screen min-h-screen md:px-[8%] pt-[30%] md:pt-[10%] text-[#1E1B4B]"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
         >
             <div className="w-[84%] md:w-full">
-                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center text-white">Hey, I'm Adrian Enev!</p>
-                <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-gray-100 text-center mt-3">A student based in Dobrich, Bulgaria 🇧🇬</p>
+                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center text-[#1E1B4B]">Hey, I'm Adrian Enev!</p>
+                <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-[#1E1B4B] text-center mt-3">A student based in Dobrich, Bulgaria 🇧🇬</p>
             </div>
 
             <div className="mt-[8%] md:mt-[5%] w-[80%] md:w-full flex flex-col md:flex-row md:gap-x-[10%]">

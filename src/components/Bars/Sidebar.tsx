@@ -13,7 +13,7 @@ const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolea
 
     return (
         <motion.div
-            className="absolute top-0 left-0 w-1/2 h-screen bg-white shadow-md z-20 py-4 flex flex-col md:hidden border-r border-blue-400 opacity-[97.5%]" 
+            className="absolute top-0 left-0 w-1/2 h-screen bg-white shadow-md z-40 py-4 flex flex-col md:hidden border-r border-blue-400 opacity-[97.5%]" 
             initial="closed"
             animate={sidebarVisible ? "open" : "closed"}
             variants={variants}
