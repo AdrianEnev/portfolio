@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
+import { useTabs } from "../../context/TabsProvider";
 
 interface Tab {
   id: string;
@@ -9,10 +10,11 @@ const macCircleBase =
   "h-[0.79rem] w-[0.79rem] rounded-full shadow-inner transition-transform hover:scale-105 active:scale-95";
 
 const TabBar: React.FC = () => {
-  const [tabs, setTabs] = useState<Tab[]>([{ id: "1", title: "tab 1" }]);
-  const [activeId, setActiveId] = useState<string>("1");
+  const { state, actions } = useTabs();
+  const { tabs, activeId } = state;
+  const { addTab, closeTab, setActive, clear } = actions;
+
   const [paletteOpen, setPaletteOpen] = useState(false);
-  const [counter, setCounter] = useState(2);
   const paletteRef = useRef<HTMLDivElement | null>(null);
 
   const activeIndex = useMemo(
@@ -31,24 +33,19 @@ const TabBar: React.FC = () => {
     { key: 'settings', label: 'Settings', icon: '⚙️' },
   ];
 
-  const addTab = () => {
-    if (atLimit) return;
-    const id = String(counter);
-    setCounter((c) => c + 1);
-    const newTab = { id, title: `tab ${id}` };
-    setTabs((t) => [...t, newTab]);
-    setActiveId(id);
-    setPaletteOpen(false);
-  };
-
-  const closeTab = (id: string) => {
-    if (tabs.length === 1) return; // keep at least one tab
-    const idx = tabs.findIndex((t) => t.id === id);
-    const nextTabs = tabs.filter((t) => t.id !== id);
-    setTabs(nextTabs);
-    if (activeId === id) {
-      const fallback = nextTabs[Math.max(0, idx - 1)]?.id;
-      if (fallback) setActiveId(fallback);
+  // Derive a directory-like label from the tab's current page
+  const displayDir = (page?: string) => {
+    const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+    switch (page) {
+      case 'about': return `~/${cap('about')}`;
+      case 'projects': return `~/${cap('projects')}`;
+      case 'achievements': return `~/${cap('achievements')}`;
+      case 'contact': return `~/${cap('contact')}`;
+      case 'resume': return `~/${cap('resume')}`;
+      case 'settings': return `~/${cap('settings')}`;
+      case 'intro':
+      default:
+        return '~';
     }
   };
 
@@ -103,20 +100,24 @@ const TabBar: React.FC = () => {
                       ? "bg-white/10 text-white border-white/20"
                       : "bg-white/5 text-white/70 hover:bg-white/5 border-white/10"
                   }`}
-                  onClick={() => setActiveId(tab.id)}
+                  onClick={() => setActive(tab.id)}
                   role="tab"
                   aria-selected={active}
                 >
                   {/* left spacer to keep title perfectly centered */}
                   <span aria-hidden className="opacity-0 select-none grid place-items-center h-5 w-5 px-1">×</span>
 
-                  <span className="truncate text-xs text-center mx-2">~</span>
+                  <span className="truncate text-xs text-center mx-2">{displayDir(tab.page as any)}</span>
 
                   <button
-                    aria-label={`Close ${tab.title}`}
+                    aria-label={`Close ${displayDir(tab.page as any)}`}
                     onClick={(e) => {
                       e.stopPropagation();
-                      closeTab(tab.id);
+                      if (tab.id === '1') {
+                        clear(tab.id);
+                      } else {
+                        closeTab(tab.id);
+                      }
                     }}
                     className="ml-2 grid place-items-center h-5 w-5 rounded text-white/60 hover:text-white hover:bg-white/20 transition-colors"
                   >
@@ -175,7 +176,7 @@ const TabBar: React.FC = () => {
                     key={item.key}
                     className="w-full flex items-center gap-2 px-2 py-2 rounded-md hover:bg-white/10 text-sm text-white/90 text-left"
                     onClick={() => {
-                      // placeholder action
+                      // will be wired to navigate active tab later
                       setPaletteOpen(false);
                     }}
                   >

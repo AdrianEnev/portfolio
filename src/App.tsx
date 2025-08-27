@@ -1,6 +1,7 @@
 import './App.css'
 import { Route } from "wouter";
 import Home from './routes/Home';
+import { TabsProvider } from './context/TabsProvider';
 //import { useEffect, useState } from 'react';
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
     return (
         <div className={`w-screen`}>
             <main className='w-full h-full'>
-                <Route path="/" component={Home} />
+                <TabsProvider>
+                    <Route path="/" component={Home} />
+                </TabsProvider>
             </main>
         </div>
     )

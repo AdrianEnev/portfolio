@@ -2,13 +2,13 @@ import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import TabBar from "../components/home/TabBar";
-import CommandLine from "../components/home/CommandLine";
+import Window from "../components/window/Window";
 
 function Home() {
     
     const [_location, setLocation] = useLocation();
 
-    // Local 3D tilt wrapper for hero buttons
+    // Local 3D tilt wrapper for hero buttons (kept for future use)
     const Button3DTilt: React.FC<{
         className?: string;
         onClick?: () => void;
@@ -51,12 +51,10 @@ function Home() {
     };
 
     return (
-        <div className="w-full min-h-screen flex flex-col">
+        <div className="w-full h-screen min-h-0 flex flex-col overflow-hidden">
             <TabBar />
-            <div className="flex-1" />
-            <div className="p-2 mt-auto">
-                <CommandLine currentPath="~/About" />
-            </div>
+            <div className="h-1" />
+            <Window />
         </div>
     )
 }
