@@ -3,139 +3,30 @@
 
 @theme {
     --font-sora: "Sora", sans-serif; 
-  }
+}
 
 @theme {
-    --breakpoint-3xs: 25rem;
-    --breakpoint-2xs: 27.5rem;
-    --breakpoint-xs: 30rem;
-    --breakpoint-semilg: 61.875rem;
-    --breakpoint-3xl: 112rem;
-    --breakpoint-4xl: 126rem;
-    --breakpoint-5xl: 140rem;
+    --breakpoint-minimal: 20rem; /* 320px - smallest iPhone */ 
+    --breakpoint-xs: 32rem;
 }
 
 html,
 body {
-    @apply bg-[#e6edfa] text-[#1E1B4B] select-none font-sora overflow-x-hidden overscroll-none;
+    @apply min-h-screen bg-gradient-to-b from-[#282a36] to-[#44475a] text-white select-none font-sora overflow-x-hidden overscroll-none;
 
-    .svg-background {
-        @apply bg-[url('/assets/background_peach_waves.svg')] bg-no-repeat bg-center bg-cover;
+    .color-background {
+        @apply bg-[#282a36]
     }
+    .color-foreground {
+        @apply text-[#f8f8f2]
+    }
+    .color-current-line {
+        @apply bg-[#44475a]
+    }
+}
 
-    .basic-box {
-        @apply bg-white shadow-md rounded-md border border-gray-200;
-    }
-
-    .basic-button {
-        @apply bg-white shadow-2xl border border-blue-300 transition-colors duration-300 rounded-2xl hover:bg-blue-100 hover:text-gray-500 active:opacity-40 
-    }
-
-    .project-button {
-        @apply w-full h-auto min-h-[40vh] lg:min-h-[50vh] md:max-w-[40vw] md:max-h-124
-        bg-white border-gray-300 shadow-md rounded-xl 
-        flex flex-col gap-y-1 items-center justify-center hover:opacity-60
-    }
-
-    /* Swiper button hover effect, only used regular css due to the transition */
-    .swiper-pagination-bullet {
-        width: 0.75rem; /* Tailwind class w-3 */
-        height: 0.75rem; /* Tailwind class h-3 */
-        background-color: #9ca3af; /* Tailwind class bg-gray-400 */
-        border-radius: 9999px; /* Tailwind class rounded-full */
-        transition: background-color 0.3s ease; /* Smooth transition for color change */
-    }
-    
-    /* Style for active pagination bullet */
-    .swiper-pagination-bullet-active {
-        @apply bg-white 
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        @apply p-3 text-white rounded-full;  /* Default color */
-        color: white;  /* Text color */
-    }
-
-    .no-scroll {
-        @apply overflow-hidden h-full fixed w-full
-    }
-
-    /* New: subtle glass panel for header and surfaces */
-    .glass {
-        @apply bg-white/70 backdrop-blur-md border border-white/60 shadow-lg;
-    }
-
-    /* New: animated nav link underline */
-    .nav-link {
-        @apply relative text-[#1E1B4B] font-medium text-base md:text-lg hover:opacity-80 transition-colors;
-    }
-    .nav-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        height: 2px;
-        width: 0;
-        background: linear-gradient(90deg, #6a9be6, #f97316);
-        transition: width 250ms ease;
-        border-radius: 9999px;
-    }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link.active::after { width: 100%; }
-
-    /* New: modern button styles for CTAs */
-    .btn {
-        @apply inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-200 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6a9be6] disabled:opacity-60 disabled:cursor-not-allowed;
-    }
-    .btn-lg { @apply px-5 py-3 text-sm md:text-base; }
-    .btn-primary {
-        @apply bg-[#1E1B4B] text-white shadow-md hover:shadow-lg hover:bg-[#282461];
-    }
-    .btn-secondary {
-        @apply bg-white text-[#1E1B4B] border border-blue-300 hover:bg-blue-100;
-    }
-    /* Pop hover utility for buttons */
-    .btn-pop { @apply transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-lg active:translate-y-0 active:scale-100; }
-    /* Shadow-only hover for Motion-driven buttons (no transform to avoid conflicts) */
-    .btn-pop-shadow { @apply transition-shadow duration-200 hover:shadow-lg; }
-    /* About-specific accent: stronger color change on hover */
-    .btn-about { @apply relative overflow-hidden; }
-    .btn-about::after {
-        content: "";
-        position: absolute; inset: 0; z-index: 0;
-        background: linear-gradient(135deg, rgba(106,155,230,0), rgba(106,155,230,0.18));
-        opacity: 0; transition: opacity 200ms ease;
-    }
-    .btn-about:hover::after { opacity: 1; }
-    .btn-about:hover { @apply ring-2 ring-[#6a9be6]/60; }
-    .btn > span, .btn { position: relative; z-index: 1; }
-
-    /* New: helpers for responsive cards */
-    .card-tight { @apply min-w-0 break-words whitespace-normal; }
-
-    /* Highlight chip base (used on About page for inline emphasized words) */
-    .highlight {
-        @apply inline-block px-1.5 py-0.5 rounded-md bg-white/80 border border-blue-200/60 shadow-sm transition-transform transition-shadow duration-200;
-    }
-    .highlight:hover { 
-        @apply -translate-y-0.5 scale-105 shadow-md; 
-    }
-
-    /* Text-only highlight with hover pop (transparent background) */
-    .highlight-text {
-        @apply inline-block px-0.5 rounded-sm transition-transform duration-200;
-    }
-    .highlight-text:hover { @apply -translate-y-0.5 scale-105; }
-
-    /* Color variants for text-only highlights */
-    .highlight-text-blue    { @apply text-blue-500; }
-    .highlight-text-pink    { @apply text-pink-500; }
-    .highlight-text-indigo  { @apply text-indigo-500; }
-    .highlight-text-emerald { @apply text-emerald-500; }
-    .highlight-text-amber   { @apply text-amber-500; }
-    .highlight-text-violet  { @apply text-violet-500; }
-    .highlight-text-rose    { @apply text-rose-500; }
-    .highlight-text-teal    { @apply text-teal-500; }
-    .highlight-text-gray    { @apply text-gray-500; }
+@layer utilities {
+  /* Hide scrollbars (used in TabBar tab strip) */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }

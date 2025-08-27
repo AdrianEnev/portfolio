@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
-import Lunge from "../components/Projects/Lunge";
-import Portfolio from "../components/Projects/Portfolio";
-import AdrianCuts from "../components/Projects/AdrianCuts";
-import Livepair from "../components/Projects/Livepair";
-import InfraLock from "../components/Projects/InfraLock";
+import Lunge from "../../temp/components/Projects/Lunge";
+import Portfolio from "../../temp/components/Projects/Portfolio";
+import AdrianCuts from "../../temp/components/Projects/AdrianCuts";
+import Livepair from "../../temp/components/Projects/Livepair";
+import InfraLock from "../../temp/components/Projects/InfraLock";
 
 function Projects() {
 

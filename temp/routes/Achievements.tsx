@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
 import { useEffect, useRef, useState } from "react";
-import TwentyTwentyFour from "../components/Achievements/2024";
-import TwentyTwentyThree from "../components/Achievements/2023";
-import TwentyTwentyTwo from "../components/Achievements/2022";
-import TwentyTwentyFive from "../components/Achievements/2025";
+import TwentyTwentyFour from "../../temp/components/Achievements/2024";
+import TwentyTwentyThree from "../../temp/components/Achievements/2023";
+import TwentyTwentyTwo from "../../temp/components/Achievements/2022";
+import TwentyTwentyFive from "../../temp/components/Achievements/2025";
 
 function Achievements() {
 

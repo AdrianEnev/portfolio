@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { motion, type Variants } from "framer-motion";
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver";
-import ContactForm from "../components/Contact/ContactForm";
-import Hero from "../components/Contact/Hero";
+import ContactForm from "../../temp/components/Contact/ContactForm";
+import Hero from "../../temp/components/Contact/Hero";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 function Contact() {

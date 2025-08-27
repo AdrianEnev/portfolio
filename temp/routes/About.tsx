@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { useIntersectionObserver } from "../use/io/useIntersectionObserver"
-import Skills from "../components/About/Skills";
-import Hero from "../components/About/Hero";
+import Skills from "../../temp/components/About/Skills";
+import Hero from "../../temp/components/About/Hero";
 
 function About() {
     const [_location, setLocation] = useLocation();
