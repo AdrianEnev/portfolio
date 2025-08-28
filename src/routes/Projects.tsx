@@ -7,6 +7,7 @@ import Portfolio from "../components/Projects/Portfolio";
 import AdrianCuts from "../components/Projects/AdrianCuts";
 import Livepair from "../components/Projects/Livepair";
 import InfraLock from "../components/Projects/InfraLock";
+import KentAcademy from "../components/Projects/KentAcademy";
 
 function Projects() {
 
@@ -16,11 +17,13 @@ function Projects() {
     const refThirdProject = useRef<HTMLDivElement | null>(null);
     const refFourthProject = useRef<HTMLDivElement | null>(null);
     const refFifthProject = useRef<HTMLDivElement | null>(null);
+    const refSixthProject = useRef<HTMLDivElement | null>(null);
 
     const [secondProjectVisible, setSecondProjectVisible] = useState(false);
     const [thirdProjectVisible, setThirdProjectVisible] = useState(false);
     const [fourthProjectVisible, setFourthProjectVisible] = useState(false);
     const [fifthProjectVisible, setFifthProjectVisible] = useState(false);
+    const [sixthProjectVisible, setSixthProjectVisible] = useState(false);
 
     useIntersectionObserver(
         refSecondProject,
@@ -43,6 +46,12 @@ function Projects() {
     useIntersectionObserver(
         refFifthProject,
         () => setFifthProjectVisible(true),
+        { root: null, rootMargin: "0px 0px -150px 0px", threshold: 0 }
+    );
+
+    useIntersectionObserver(
+        refSixthProject,
+        () => setSixthProjectVisible(true),
         { root: null, rootMargin: "0px 0px -150px 0px", threshold: 0 }
     );
 
@@ -87,6 +96,9 @@ function Projects() {
 
                         {/* InfraLock */}
                         <InfraLock fifthProjectVisible={fifthProjectVisible} refFifthProject={refFifthProject} />
+
+                        {/* Kent Academy */}
+                        <KentAcademy sixthProjectVisible={sixthProjectVisible} refSixthProject={refSixthProject} />
                     </div>
                 </div>
             </div>
