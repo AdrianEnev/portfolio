@@ -39,7 +39,7 @@ function InfraLock({refFifthProject, fifthProjectVisible}: any) {
                     
                     {!showFullDescription ? (
                         <button 
-                            className="text-white px-2 py-1 rounded-md hover:opacity-80 transition duration-200" 
+                            className="text-[#1E1B4B] px-2 py-1 rounded-md hover:opacity-80 transition duration-200" 
                             onClick={() => setShowFullDescription(true)}
                         >
                             <p>See more...</p>
@@ -55,7 +55,7 @@ function InfraLock({refFifthProject, fifthProjectVisible}: any) {
                                 <p>Looking ahead, we plan to enhance the system's threat detection capabilities by integrating advanced user behavior monitoring and browser fingerprinting techniques. These additions will provide deeper insights into potential security risks by analyzing patterns of interaction and device characteristics, enabling even more accurate threat assessment. The system is designed with scalability in mind, featuring background data updates, intelligent caching, and real-time threat analysis. Its service-oriented architecture allows it to be easily integrated into other web applications or services, making it a versatile solution for security applications, user analytics, and any platform requiring IP intelligence capabilities.</p>
                             </motion.div>
                             <button 
-                                className="text-white px-2 py-1 rounded-md hover:opacity-80 transition duration-200" 
+                                className="text-[#1E1B4B] px-2 py-1 rounded-md hover:opacity-80 transition duration-200" 
                                 onClick={() => {
                                     setShowFullDescription(false);
                                     descriptionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });

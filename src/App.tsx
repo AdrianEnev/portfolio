@@ -32,21 +32,21 @@ function App() {
     }, [sidebarVisible]);
 
     return (
-        <div className={`w-screen bg-[url("/assets/background_blue_peaks.svg")] bg-repeat bg-center bg-cover
+        <div className={`w-screen bg-gradient-to-b from-[#cfe3f2] to-[#e1eff8]
             ${location !== '/achievements' ? 'md:overflow-hidden' : ''}
-            ${location === '/about' || location === '/contact' ? 'md:h-screen' : 'h-full'}
+            ${location === '/about' || location === '/contact' ? 'md:min-h-screen' : 'h-full'}
         `}>
             
             <main className='w-full h-full px-6 3xs:px-8'>
-            {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>}
-            <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
+                {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>} 
+                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
 
-            <Route path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/achievements" component={Achievements} />
-            <Route path="/адриан-енев" component={CyrilicName} />
+                <Route path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/projects" component={Projects} />
+                <Route path="/achievements" component={Achievements} />
+                <Route path="/адриан-енев" component={CyrilicName} />
             </main>
         </div>
     )

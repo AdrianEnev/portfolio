@@ -2,37 +2,31 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any) => {
+    const links = [
+        { label: 'About', path: '/about' },
+        { label: 'Projects', path: '/projects' },
+        { label: 'Achievements', path: '/achievements' },
+        { label: 'Contact', path: '/contact' },
+    ];
+
     return (
         <div>
-            <div className="hidden md:flex">
-                {location == '/contact' ? (
-                    <p className="text-2xl font-semibold text-white hover:underline hover:opacity-80"
-                        onClick={() => setLocation("/about")}
-                    >
-                        About
-                    </p>
-                ) : location == '/projects' ? (
-                    <p className="text-2xl font-semibold text-white hover:underline hover:opacity-80"
-                        onClick={() => setLocation("/about")}
-                    >
-                        About
-                    </p>
-                ) : location == '/achievements' ? (
-                    <p className="text-2xl font-semibold text-white hover:underline hover:opacity-80"
-                        onClick={() => setLocation("/about")}
-                    >
-                        About
-                    </p>
-                ) : (
-                    <p className="text-2xl font-semibold text-white hover:underline hover:opacity-80"
-                        onClick={() => setLocation("/contact")}
-                    >
-                        Contact Me
-                    </p>
-                )}
+            <div className="hidden md:flex items-center gap-x-6">
+                {links.map(({ label, path }) => {
+                    const active = location === path;
+                    return (
+                        <button
+                            key={path}
+                            onClick={() => setLocation(path)}
+                            className={`nav-link ${active ? 'active' : ''}`}
+                        >
+                            {label}
+                        </button>
+                    );
+                })}
             </div>
             <button className="flex md:hidden" onClick={() => setSidebarVisible(!sidebarVisible)}>
-                <FontAwesomeIcon icon={faBars} color="#f3f4f6" className="mt-[5px] fa-xl"/>
+                <FontAwesomeIcon icon={faBars} color="#1E1B4B" className="mt-[2px] fa-xl"/>
             </button>
         </div>
     )
