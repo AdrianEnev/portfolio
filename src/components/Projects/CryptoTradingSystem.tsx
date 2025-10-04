@@ -76,7 +76,7 @@ function CryptoTradingSystem({refSeventhProject, seventhProjectVisible}: any) {
             <button 
                 className="project-button mt-3 md:mt-0"
                 style={{ alignSelf: 'stretch' }}
-                onClick={() => window.open('https://github.com/AdrianEnev/CryptoTradingSystem')}
+                onClick={() => window.open('https://github.com/AdrianEnev/Crypto-Tracker')}
             >
                 <p className="text-5xl font-semibold text-orange-500">Crypto</p>
                 <p className="text-3xl font-semibold text-orange-400">Trading System</p>

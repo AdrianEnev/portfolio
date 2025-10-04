@@ -163,7 +163,7 @@ function Projects() {
                                     </div>
                                     <button 
                                         className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
-                                        onClick={() => window.open('https://github.com/AdrianEnev/CryptoTradingSystem')}
+                                        onClick={() => window.open('https://github.com/AdrianEnev/Crypto-Tracker')}
                                     >
                                         View Project
                                     </button>
