@@ -8,6 +8,7 @@ import AdrianCuts from "../components/Projects/AdrianCuts";
 import Livepair from "../components/Projects/Livepair";
 import InfraLock from "../components/Projects/InfraLock";
 import KentAcademy from "../components/Projects/KentAcademy";
+import CryptoTradingSystem from "../components/Projects/CryptoTradingSystem";
 
 function Projects() {
 
@@ -18,12 +19,14 @@ function Projects() {
     const refFourthProject = useRef<HTMLDivElement | null>(null);
     const refFifthProject = useRef<HTMLDivElement | null>(null);
     const refSixthProject = useRef<HTMLDivElement | null>(null);
+    const refSeventhProject = useRef<HTMLDivElement | null>(null);
 
     const [secondProjectVisible, setSecondProjectVisible] = useState(false);
     const [thirdProjectVisible, setThirdProjectVisible] = useState(false);
     const [fourthProjectVisible, setFourthProjectVisible] = useState(false);
     const [fifthProjectVisible, setFifthProjectVisible] = useState(false);
     const [sixthProjectVisible, setSixthProjectVisible] = useState(false);
+    const [seventhProjectVisible, setSeventhProjectVisible] = useState(false);
 
     useIntersectionObserver(
         refSecondProject,
@@ -52,6 +55,12 @@ function Projects() {
     useIntersectionObserver(
         refSixthProject,
         () => setSixthProjectVisible(true),
+        { root: null, rootMargin: "0px 0px -150px 0px", threshold: 0 }
+    );
+
+    useIntersectionObserver(
+        refSeventhProject,
+        () => setSeventhProjectVisible(true),
         { root: null, rootMargin: "0px 0px -150px 0px", threshold: 0 }
     );
 
@@ -99,6 +108,9 @@ function Projects() {
 
                         {/* Kent Academy */}
                         <KentAcademy sixthProjectVisible={sixthProjectVisible} refSixthProject={refSixthProject} />
+
+                        {/* Cryptocurrency Trading System */}
+                        <CryptoTradingSystem seventhProjectVisible={seventhProjectVisible} refSeventhProject={refSeventhProject} />
                     </div>
                 </div>
             </div>
