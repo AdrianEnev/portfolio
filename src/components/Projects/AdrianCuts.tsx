@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const AdrianCuts = ({refThirdProject, thirdProjectVisible}: any) => (
+const AdrianCuts = ({ refThirdProject, thirdProjectVisible }: any) => (
     <motion.div className="flex flex-col md:flex-row md:justify-between"
         ref={refThirdProject}
         initial={{ opacity: 0, y: 30 }}
@@ -20,7 +20,7 @@ const AdrianCuts = ({refThirdProject, thirdProjectVisible}: any) => (
             project-button mt-3 md:mt-0
         "
             style={{ alignSelf: 'stretch' }}
-            onClick={() => window.open('https://booking.lunge.run')}
+            onClick={() => window.open('https://github.com/AdrianEnev/booking.git')}
         >
             <p className="text-5xl font-semibold text-blue-500">Adrian Cuts</p>
             <p className="text-3xl font-semibold text-blue-400">Barbershop</p>

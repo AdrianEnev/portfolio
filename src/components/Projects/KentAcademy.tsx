@@ -25,7 +25,7 @@ function KentAcademy({ refSixthProject, sixthProjectVisible }: any) {
             <button
                 className="project-button mt-3 md:mt-0"
                 style={{ alignSelf: "stretch" }}
-                onClick={() => window.open('https://kentfa.netlify.app')}
+                onClick={() => window.open('https://fckentacademy.com')}
             >
                 <p className="text-5xl font-semibold text-emerald-500">Kent Academy</p>
                 <p className="text-3xl font-semibold text-emerald-400">Football Club</p>

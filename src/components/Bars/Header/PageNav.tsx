@@ -1,7 +1,7 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any) => {
+const PageNav = ({ location, setLocation, sidebarVisible, setSidebarVisible }: any) => {
     const links = [
         { label: 'About', path: '/about' },
         { label: 'Projects', path: '/projects' },
@@ -11,7 +11,7 @@ const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any
 
     return (
         <div>
-            <div className="hidden md:flex items-center gap-x-6">
+            <div className="hidden md:flex items-center gap-x-8">
                 {links.map(({ label, path }) => {
                     const active = location === path;
                     return (
@@ -25,8 +25,8 @@ const PageNav = ({location, setLocation, sidebarVisible, setSidebarVisible}: any
                     );
                 })}
             </div>
-            <button className="flex md:hidden" onClick={() => setSidebarVisible(!sidebarVisible)}>
-                <FontAwesomeIcon icon={faBars} color="#1E1B4B" className="mt-[2px] fa-xl"/>
+            <button className="flex md:hidden pl-4" onClick={() => setSidebarVisible(!sidebarVisible)}>
+                <FontAwesomeIcon icon={faBars} className="text-[var(--color-text-main)] hover:text-indigo-400 transition-colors fa-xl" />
             </button>
         </div>
     )

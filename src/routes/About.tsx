@@ -1,38 +1,58 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 import { useLocation } from "wouter";
-import { useIntersectionObserver } from "../use/io/useIntersectionObserver"
-import Skills from "../components/About/Skills";
-import Hero from "../components/About/Hero";
+import { useEffect } from "react";
+import BentoIntro from "../components/About/BentoIntro";
+import JourneyTimeline from "../components/About/JourneyTimeline";
+import TechStackGrid from "../components/About/TechStackGrid";
 
 function About() {
     const [_location, setLocation] = useLocation();
 
-    const refSecondProject = useRef<HTMLDivElement | null>(null);
-    const [secondProjectVisible, setSecondProjectVisible] = useState(false);
-
-    useIntersectionObserver(
-        refSecondProject,
-        () => setSecondProjectVisible(true),
-        { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0 }
-    );
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
-        <motion.div className="w-screen min-h-screen md:px-[8%] pt-[30%] md:pt-[10%] text-[#1E1B4B]"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-        >
-            <div className="w-[84%] md:w-full">
-                <p className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-medium text-center text-[#1E1B4B]">Hey, I'm Adrian Enev!</p>
-                <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-[#1E1B4B] text-center mt-3">I'm a student based in Dobrich, Bulgaria 🇧🇬</p>
-            </div>
+        <div className="relative w-full min-h-screen pt-24 pb-12 overflow-x-hidden">
+            {/* Background Atmosphere - Fixed to viewport for continuity (matches Home) */}
+            <div className="fixed top-[20%] right-[10%] w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none z-0 opacity-50" />
+            <div className="fixed bottom-[10%] left-[5%] w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-[80px] mix-blend-screen pointer-events-none z-0 opacity-40" />
 
-            <div className="mt-[8%] md:mt-[5%] w-[80%] md:w-full flex flex-col md:flex-row md:gap-x-[10%]">
-                <Hero setLocation={setLocation} />
-                <Skills refSecondProject={refSecondProject} secondProjectVisible={secondProjectVisible} />
+            <div className="max-w-7xl mx-auto px-6 3xs:px-8 relative z-10">
+
+                {/* 1. Bento Grid Intro */}
+                <BentoIntro setLocation={setLocation} />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    {/* 2. Journey Timeline - Takes up left side on desktop */}
+                    <div className="lg:col-span-5">
+                        <JourneyTimeline />
+                    </div>
+
+                    {/* 3. Tech Stack - Right side on desktop */}
+                    <div className="lg:col-span-7">
+                        <TechStackGrid />
+
+                        {/* 4. Contact CTA Mini */}
+                        <motion.div
+                            className="mt-12 glass rounded-2xl p-8 text-center bg-gradient-to-r from-[var(--color-electric)]/10 to-[var(--color-cyan-glow)]/10"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="text-2xl font-bold text-[var(--color-text-main)] mb-2">Ready to create something?</h3>
+                            <button
+                                onClick={() => setLocation('/contact')}
+                                className="mt-4 btn btn-primary px-8 py-2.5 rounded-full"
+                            >
+                                Let's Talk
+                            </button>
+                        </motion.div>
+                    </div>
+                </div>
+
             </div>
-        </motion.div>
+        </div>
     )
 }
 

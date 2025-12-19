@@ -9,6 +9,7 @@ import Achievements from './routes/Achievements';
 import Sidebar from './components/Bars/Sidebar';
 import { useEffect, useState } from 'react';
 import CyrilicName from './routes/CyrilicName';
+import DihhDictionary from './routes/DihhDictionary';
 
 function App() {
 
@@ -32,14 +33,14 @@ function App() {
     }, [sidebarVisible]);
 
     return (
-        <div className={`w-screen bg-gradient-to-b from-[#cfe3f2] to-[#e1eff8]
+        <div className={`w-screen h-scren mesh-gradient text-[var(--color-text-main)]
             ${location !== '/achievements' ? 'md:overflow-hidden' : ''}
             ${location === '/about' || location === '/contact' ? 'md:min-h-screen' : 'h-full'}
         `}>
-            
-            <main className='w-full h-full px-6 3xs:px-8'>
-                {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>} 
-                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation}/>
+
+            <main className='w-full h-full relative'>
+                {sidebarVisible && <Sidebar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} />}
+                <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} location={location} setLocation={setLocation} />
 
                 <Route path="/" component={Home} />
                 <Route path="/about" component={About} />
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/projects" component={Projects} />
                 <Route path="/achievements" component={Achievements} />
                 <Route path="/адриан-енев" component={CyrilicName} />
+                <Route path="/dihh" component={DihhDictionary} />
             </main>
         </div>
     )

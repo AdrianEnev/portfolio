@@ -1,101 +1,131 @@
 import { useLocation } from "wouter";
 import Headshot from "../components/Home/Headshot";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import TechStackMarquee from "../components/Home/TechStackMarquee";
+import FeaturedProjectsPreview from "../components/Home/FeaturedProjectsPreview";
+import AboutTeaser from "../components/Home/AboutTeaser";
+import CTASection from "../components/Home/CTASection";
 
 function Home() {
-    
     const [_location, setLocation] = useLocation();
 
-    // Local 3D tilt wrapper for hero buttons
-    const Button3DTilt: React.FC<{
-        className?: string;
-        onClick?: () => void;
-        children: React.ReactNode;
-        tiltMax?: number;
-    }> = ({ className = '', onClick, children, tiltMax = 10 }) => {
-        const ref = useRef<HTMLButtonElement | null>(null);
-        const [tilt, setTilt] = useState({ x: 0, y: 0 });
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
+            }
+        }
+    };
 
-        const onMove: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-            const el = ref.current;
-            if (!el) return;
-            const rect = el.getBoundingClientRect();
-            const px = (e.clientX - rect.left) / rect.width;  // 0..1
-            const py = (e.clientY - rect.top) / rect.height; // 0..1
-            const nx = px * 2 - 1; // -1..1
-            const ny = py * 2 - 1; // -1..1
-            // Tilt toward cursor: rotateY by x, rotateX inverse by y
-            setTilt({ x: -(ny * tiltMax), y: nx * tiltMax });
-        };
-
-        const onLeave = () => setTilt({ x: 0, y: 0 });
-
-        return (
-            <motion.button
-                ref={ref}
-                onMouseMove={onMove}
-                onMouseLeave={onLeave}
-                onClick={onClick}
-                whileHover={{ scale: 1.06, y: -4 }}
-                whileTap={{ scale: 0.98, y: 0 }}
-                animate={{ rotateX: tilt.x, rotateY: tilt.y }}
-                transition={{ type: 'spring', stiffness: 600, damping: 20, mass: 0.55 }}
-                style={{ transformPerspective: 700, willChange: 'transform' }}
-                className={className}
-            >
-                {children}
-            </motion.button>
-        );
+    const item = {
+        hidden: { y: 30, opacity: 0 },
+        show: { y: 0, opacity: 1, transition: { type: "spring" as const, stiffness: 50 } }
     };
 
     return (
-        <motion.div className='w-screen h-screen pt-[30%] md:pt-[6%] px-[5%] ml-[-8%] md:ml-0 md:px-[8%] overflow-y-hidden'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-        >
-            <div className="w-full h-[80%] md:h-[83%] flex flex-col md:flex-row md:justify-between items-center">
+        <div className="relative w-full min-h-screen overflow-x-hidden">
+            {/* Background Atmosphere - Fixed to viewport for continuity */}
+            {/* Background Atmosphere - Fixed to viewport for continuity */}
+            <div className="fixed top-[-10%] right-[-5%] w-[500px] h-[500px] bg-purple-400/30 dark:bg-purple-600/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none animate-pulse z-0 dark:block hidden" />
+            <div className="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-400/30 dark:bg-blue-600/10 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0 dark:block hidden" />
 
-                <div className="w-full h-full flex flex-col justify-center gap-y-6 text-[#1E1B4B]">
-                    <div className='md:max-w-[70%]'>
-                        <p className=
-                            'text-2xl md:text-3xl lg:text-5xl xl:text-7xl text-center md:text-start'
-                        >
-                            Hi, my name is <span className="font-bold">Adrian</span>!
-                        </p>
-                        
-                        <p className=
-                            'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl mt-4 text-center md:text-start'
-                        >
-                           I'm a student passionate about full-stack development. I love building things that solve real world problems and learning by doing.
-                        </p>
-                    </div> 
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center pt-20 pb-10 md:pt-0 z-10">
+                <div className="max-w-7xl w-full px-6 3xs:px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                    <div className="flex flex-row gap-x-3 w-full h-[10%] mt-3 pl-[15%] md:pl-0">
-                        <Button3DTilt
-                            className="btn btn-primary btn-lg btn-about btn-pop-shadow md:w-44 md:h-12 w-32 h-10"
-                            onClick={() => setLocation("/about")}
-                        >
-                            About
-                        </Button3DTilt>
-                         
-                        <Button3DTilt
-                            className="btn btn-secondary btn-lg btn-pop-shadow md:w-44 md:h-12 w-32 h-10"
-                            onClick={() => setLocation("/projects")}
-                        >
-                            Projects
-                        </Button3DTilt>
-                    </div>
+                    {/* Text Content */}
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                        className="flex flex-col gap-6 md:gap-8 text-center md:text-left order-2 md:order-1"
+                    >
+                        <motion.div variants={item}>
+                            <span className="inline-block py-1 px-3 rounded-full bg-[var(--color-surface)]/50 border border-[var(--color-text-main)]/10 text-[var(--color-cyan-glow)] text-sm font-medium tracking-wide mb-4 backdrop-blur-sm">
+                                Welcome to my portfolio
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-[var(--color-text-main)]">
+                                Hi, I'm <br className="md:hidden" />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-cyan-glow)] to-[var(--color-electric)]">Adrian</span>.
+                            </h1>
+                        </motion.div>
+
+                        <motion.div variants={item} className="max-w-2xl mx-auto md:mx-0">
+                            <p className="text-lg md:text-xl text-[var(--color-text-dim)] leading-relaxed">
+                                I'm a passionate student and <span className="text-[var(--color-text-main)] font-medium">Full Stack Developer</span> who loves building things that solve real-world problems. I learn by doing and thrive on creating sophisticated digital experiences.
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mt-2">
+                            <button
+                                onClick={() => setLocation("/projects")}
+                                className="btn btn-lg btn-primary w-full sm:w-auto min-w-[160px] group"
+                            >
+                                <span>View Projects</span>
+                                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
+                            <button
+                                onClick={() => setLocation("/about")}
+                                className="btn btn-lg btn-secondary w-full sm:w-auto min-w-[160px]"
+                            >
+                                More About Me
+                            </button>
+                        </motion.div>
+
+                        <motion.div variants={item} className="flex gap-6 justify-center md:justify-start mt-4 opacity-70">
+                            <div className="h-1 w-20 bg-gradient-to-r from-[var(--color-electric)] to-transparent rounded-full"></div>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Hero Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+                        className="flex justify-center items-center order-1 md:order-2 relative"
+                    >
+                        <Headshot />
+                    </motion.div>
                 </div>
-            
-                <Headshot setLocation={setLocation}/>
-            </div>
-        </motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
+                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                >
+                    <span className="text-[var(--color-text-dim)] text-[10px] tracking-[0.2em] uppercase font-light">Scroll</span>
+                    <div className="w-[20px] h-[32px] rounded-full border border-[var(--color-text-dim)] flex justify-center pt-2">
+                        <motion.div
+                            animate={{ y: [0, 8, 0] }}
+                            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                            className="w-1 h-1 rounded-full bg-[var(--color-cyan-glow)]"
+                        />
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* Tech Stack Marquee */}
+            <TechStackMarquee />
+
+            {/* Featured Projects */}
+            <FeaturedProjectsPreview setLocation={setLocation} />
+
+            {/* About Teaser */}
+            <AboutTeaser setLocation={setLocation} />
+
+            {/* CTA Section */}
+            <CTASection setLocation={setLocation} />
+
+        </div>
     )
 }
 
 export default Home;
-
-
-/* */

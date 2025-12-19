@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Asterisk, Binary, Braces, BugPlay, CodeXml, FileJson } from "lucide-react";
+import { Asterisk, Binary, Braces, BugPlay, CodeXml, Home } from "lucide-react";
 import { useLocation } from "wouter";
 
 const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolean, setSidebarVisible: any }) => {
-    
+
     const variants = {
         open: { x: 0 },
         closed: { x: "-100%" },
@@ -11,67 +11,82 @@ const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolea
 
     const [_location, setLocation] = useLocation();
 
+    const navItems = [
+        { path: '/', label: 'Home', icon: Home },
+        { path: '/about', label: 'About', icon: Braces },
+        { path: '/contact', label: 'Contact', icon: BugPlay },
+        { path: '/projects', label: 'Projects', icon: Binary },
+        { path: '/achievements', label: 'Achievements', icon: Asterisk },
+    ];
+
     return (
         <motion.div
-            className="absolute top-0 left-0 w-1/2 h-screen bg-white shadow-md z-40 py-4 flex flex-col md:hidden border-r border-blue-400 opacity-[97.5%]" 
+            className="fixed top-0 left-0 w-[75%] max-w-[300px] h-screen glass z-[60] py-6 flex flex-col md:hidden border-r border-[var(--color-text-main)]/20 shadow-2xl backdrop-blur-2xl"
             initial="closed"
             animate={sidebarVisible ? "open" : "closed"}
             variants={variants}
-            transition={{ type: "tween", duration: 0.2 }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
         >
-            <div className="flex flex-row pb-[10px]">
-                <CodeXml className="mt-[-3px] md:mt-0 ml-3" color="#6a9be6" width={30} height={40}/>
-                <p className="text-xl font-semibold text-[#6a9be6] mx-3 mt-[4px]">Adrian Enev</p>
+            {/* Header Section */}
+            <div className="flex flex-row items-center pb-4 px-4">
+                <CodeXml
+                    className="text-[var(--color-electric)]"
+                    width={28}
+                    height={28}
+                />
+                <p className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-electric)] to-[var(--color-cyan-glow)] ml-3">
+                    Adrian Enev
+                </p>
             </div>
 
-            <div className="w-full h-[2px] bg-[#6a9be6] mt-[-1px]"></div>
+            {/* Divider with gradient */}
+            <div className="w-full h-[2px] bg-gradient-to-r from-[var(--color-electric)] via-[var(--color-cyan-glow)] to-transparent mb-4"></div>
 
-            <ul className="flex flex-col text-base font-medium">
-                <li onClick={() => {
-                    setSidebarVisible(false)
-                    setLocation('/')
-                }}>
-                    <button className="w-full h-12 hover:opacity-60 hover:bg-blue-100 max-w-[98%] flex items-center flex-row gap-x-3 mx-1">
-                        <FileJson color="#6a9be6" className="ml-1"/>
-                        <p className="text-gray-600 text-lg">Home</p>
-                    </button>
-                </li>
-                <li onClick={() => {
-                    setSidebarVisible(false)
-                    setLocation('/about')
-                }}>
-                    <button className="w-full h-12 hover:opacity-60 hover:bg-blue-100 max-w-[98%] flex items-center flex-row gap-x-3 mx-1">
-                        <Braces color="#6a9be6" className="ml-1"/>
-                        <p className="text-gray-600 text-lg">About</p>
-                    </button>
-                </li>
-                <li onClick={() => {
-                    setSidebarVisible(false)
-                    setLocation('/contact')
-                }}>
-                    <button className="w-full h-12 hover:opacity-60 hover:bg-blue-100 max-w-[98%] flex items-center flex-row gap-x-3 mx-1">
-                        <BugPlay color="#6a9be6" className="ml-1"/>
-                        <p className="text-gray-600 text-lg">Contact</p>
-                    </button>
-                </li>
-                <li onClick={() => {
-                    setSidebarVisible(false)
-                    setLocation('/projects')
-                }}>
-                    <button className="w-full h-12 hover:opacity-60 hover:bg-blue-100 max-w-[98%] flex items-center flex-row gap-x-3 mx-1">
-                        <Binary color="#6a9be6" className="ml-1"/>
-                        <p className="text-gray-600 text-lg">Projects</p>
-                    </button>
-                </li>
-                <li onClick={() => {
-                    setSidebarVisible(false)
-                    setLocation('/achievements')
-                }}>
-                    <button className="w-full h-12 hover:opacity-60 hover:bg-blue-100 max-w-[98%] flex items-center flex-row gap-x-3 mx-1">
-                        <Asterisk color="#6a9be6" className="ml-1"/>
-                        <p className="text-gray-600 text-lg">Achievements</p>
-                    </button>
-                </li>
+            {/* Navigation Items */}
+            <ul className="flex flex-col gap-2 px-3">
+                {navItems.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = _location === item.path;
+
+                    return (
+                        <li key={item.path}>
+                            <button
+                                onClick={() => {
+                                    setSidebarVisible(false);
+                                    setLocation(item.path);
+                                }}
+                                className={`
+                                    w-full h-12 rounded-xl flex items-center gap-3 px-4
+                                    transition-all duration-300 group
+                                    ${isActive
+                                        ? 'bg-gradient-to-r from-[var(--color-electric)]/20 to-[var(--color-cyan-glow)]/20 border border-[var(--color-electric)]/30'
+                                        : 'hover:bg-[var(--color-surface-light)]/50 border border-transparent'
+                                    }
+                                `}
+                            >
+                                <Icon
+                                    className={`
+                                        transition-all duration-300
+                                        ${isActive
+                                            ? 'text-[var(--color-electric)]'
+                                            : 'text-[var(--color-text-dim)] group-hover:text-[var(--color-cyan-glow)]'
+                                        }
+                                    `}
+                                    size={20}
+                                />
+                                <p className={`
+                                    text-base font-semibold transition-all duration-300
+                                    ${isActive
+                                        ? 'text-[var(--color-text-main)]'
+                                        : 'text-[var(--color-text-dim)] group-hover:text-[var(--color-text-main)]'
+                                    }
+                                `}>
+                                    {item.label}
+                                </p>
+                            </button>
+                        </li>
+                    );
+                })}
             </ul>
         </motion.div>
     );
