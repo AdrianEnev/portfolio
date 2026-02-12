@@ -101,7 +101,7 @@ function Contact() {
     };
 
     return (
-        <div className="relative w-full min-h-screen pt-24 pb-12 overflow-x-hidden">
+        <div className="relative w-full min-h-screen pt-40 pb-12 overflow-x-hidden">
             {/* Background Atmosphere */}
             <div className="fixed top-[10%] inset-x-0 mx-auto w-[600px] h-[600px] bg-[var(--color-electric)]/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0 opacity-60 dark:opacity-40" />
 
@@ -113,10 +113,10 @@ function Contact() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl md:text-6xl font-bold text-[var(--color-text-main)] mb-4">
-                        Connect with Me
+                        Say Hello!
                     </h1>
                     <p className="text-lg md:text-xl text-[var(--color-text-dim)] max-w-2xl mx-auto">
-                        Ready to build something extraordinary? Establish a connection via the frequency below.
+                        Got a project in mind, a question, or just want to chat? Drop me a message below and let's make something cool together.
                     </p>
                 </motion.div>
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const skills = [
     "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS",
     "PostgreSQL", "MongoDB", "AWS", "Docker", "Git",
-    "Python", "Rust", "Figma", "Redux", "GraphQL"
+    "Python", "Rust", "Redux", "GraphQL", "More..."
 ];
 
 const TechStackMarquee = () => {

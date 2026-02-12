@@ -18,7 +18,7 @@ const Header = (
                     >
                         Adrian Enev
                     </p>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center md:gap-2">
                         <div className="order-1 md:order-3">
                             <ThemeToggle />
                         </div>

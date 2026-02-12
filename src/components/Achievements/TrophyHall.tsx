@@ -34,7 +34,7 @@ const trophyData: YearData[] = [
             { label: "National English olympiad", url: "", colorClass: "text-orange-400" },
             { label: "High School Student Institute of Math and IT", url: "https://www.math.bas.bg/omi/hssimi/?lang=en", colorClass: "text-yellow-400" },
             { label: "Cambridge English", url: "https://www.cambridgeenglish.org/exams-and-tests/advanced/", colorClass: "text-fuchsia-400" },
-            { label: "Website", action: () => alert('Public domain will be available soon!'), colorClass: "text-rose-400" }
+            { label: "Website", url: "https://fckentacademy.com", colorClass: "text-rose-400" }
         ]
     },
     {

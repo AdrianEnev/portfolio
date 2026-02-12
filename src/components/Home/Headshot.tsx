@@ -7,7 +7,7 @@ const Headshot = () => {
             {/* Image Container */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[var(--color-surface)] border border-[var(--color-text-main)]/10 ring-1 ring-[var(--color-text-main)]/5 transform transition duration-500 hover:scale-[1.01]">
                 <img
-                    src="/assets/headshot_smile.JPG"
+                    src="/assets/headshot.jpg"
                     alt="Portrait of Adrian Enev"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-500 scale-105 group-hover:scale-110"
                     loading="eager"

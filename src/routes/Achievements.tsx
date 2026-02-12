@@ -20,7 +20,7 @@ function Achievements() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16 md:mb-24"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-electric)]/5 border border-[var(--color-electric)]/20 mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-electric)]/5 border border-[var(--color-electric)]/20 mb-6 mt-6">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-electric)] opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-electric)]"></span>

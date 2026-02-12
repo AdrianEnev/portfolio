@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import ProjectRoadmap from "../components/Projects/ProjectRoadmap";
+import ProjectsShowcase from "../components/Projects/ProjectsShowcase";
 
 function Projects() {
     useEffect(() => {
@@ -8,7 +8,7 @@ function Projects() {
     }, []);
 
     return (
-        <div className="relative w-full min-h-screen pt-24 pb-12 overflow-x-hidden">
+        <div className="relative w-full min-h-screen pt-40 pb-12 overflow-x-hidden">
             {/* Background Atmosphere - Consistent with Home/About */}
             <div className="fixed top-[15%] left-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none z-0 opacity-40" />
             <div className="fixed bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-rose-500/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none z-0 opacity-40" />
@@ -19,23 +19,23 @@ function Projects() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold text-[var(--color-text-main)] mb-4">
-                        The Build Journey
+                    <h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[var(--color-text-main)] to-[var(--color-text-dim)] mb-6">
+                        Featured Work
                     </h1>
-                    <p className="text-lg md:text-xl text-[var(--color-text-dim)] max-w-2xl mx-auto">
-                        A chronological timeline of my development path. From my very first apps to complex, production-grade systems.
+                    <p className="text-lg md:text-xl text-[var(--color-text-dim)] max-w-2xl mx-auto leading-relaxed">
+                        A selection of projects that define my journey. From production platforms to experimental systems.
                     </p>
                 </motion.div>
 
-                <ProjectRoadmap />
+                <ProjectsShowcase />
 
                 {/* Footer Quote or Closing */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-center mt-20 mb-10 text-[var(--color-text-dim)]"
+                    className="text-center mt-32 mb-10 text-[var(--color-text-dim)]"
                 >
-                    <p className="italic">"The best way to learn is to build."</p>
+                    <p className="italic text-lg">"The best way to predict the future is to build it."</p>
                 </motion.div>
             </div>
         </div>

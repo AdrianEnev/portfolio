@@ -60,7 +60,7 @@ const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolea
                                     transition-all duration-300 group
                                     ${isActive
                                         ? 'bg-gradient-to-r from-[var(--color-electric)]/20 to-[var(--color-cyan-glow)]/20 border border-[var(--color-electric)]/30'
-                                        : 'hover:bg-[var(--color-surface-light)]/50 border border-transparent'
+                                        : 'hover:bg-slate-100 dark:hover:bg-[var(--color-surface-light)]/50 border border-transparent hover:border-slate-200 dark:hover:border-white/5'
                                     }
                                 `}
                             >
@@ -69,7 +69,7 @@ const Sidebar = ({ sidebarVisible, setSidebarVisible }: { sidebarVisible: boolea
                                         transition-all duration-300
                                         ${isActive
                                             ? 'text-[var(--color-electric)]'
-                                            : 'text-[var(--color-text-dim)] group-hover:text-[var(--color-cyan-glow)]'
+                                            : 'text-[var(--color-text-dim)] group-hover:text-[var(--color-electric)] dark:group-hover:text-[var(--color-cyan-glow)]'
                                         }
                                     `}
                                     size={20}

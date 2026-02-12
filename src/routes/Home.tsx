@@ -77,7 +77,7 @@ function Home() {
                             </button>
                         </motion.div>
 
-                        <motion.div variants={item} className="flex gap-6 justify-center md:justify-start mt-4 opacity-70">
+                        <motion.div variants={item} className="hidden md:flex gap-6 justify-center md:justify-start mt-4 opacity-70">
                             <div className="h-1 w-20 bg-gradient-to-r from-[var(--color-electric)] to-transparent rounded-full"></div>
                         </motion.div>
                     </motion.div>
