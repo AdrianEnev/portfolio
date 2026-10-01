@@ -1,0 +1,28 @@
+/* Athletic field notes: pitch linework, numbered lanes and scoreboard details. */
+.hero-visual{margin-top:60px;background:repeating-linear-gradient(90deg,#213d32 0,#213d32 20%,#294636 20%,#294636 40%);clip-path:polygon(12% 0,100% 0,100% 100%,0 100%)}
+.hero-visual:before,.hero-visual:after,.pitch-circle,.pitch-box{border-color:#cfddc273}
+.ball-graphic{width:205px;height:205px;left:51%;top:47%;border:8px solid #e6eacb;background:#c9f52f;box-shadow:12px 13px 0 #10261d66;transform:translate(-50%,-50%) rotate(-14deg)}
+.ball-graphic:before{border:0;width:100px;height:104px;background:#183125;clip-path:polygon(50% 0,100% 37%,82% 100%,18% 100%,0 37%);transform:rotate(0)}
+.ball-graphic:after{width:157px;height:157px;border:2px dashed #18312580;opacity:1}
+.ball-graphic span{font-size:45px;color:var(--lime)}
+.visual-slogan{font-size:clamp(49px,5.6vw,82px);right:7%;top:16%;color:#edf2d833;letter-spacing:-.035em}
+.visual-orbit{display:none}.visual-location{bottom:17%;font-size:9px}.visual-index{top:10%;left:18%}
+.tactical-map{position:absolute;inset:0;z-index:2;width:100%;height:100%;color:#e9f0d4;pointer-events:none}
+.tactical-map .pass-line{fill:none;stroke:#dceac5;stroke-width:1.4;stroke-dasharray:6 7;opacity:.65}
+.tactical-map .player-circle{fill:#213d32;stroke:#dceac5;stroke-width:1.2}
+.tactical-map text{font:700 12px 'DM Sans',sans-serif;fill:#e8eecf;text-anchor:middle;dominant-baseline:central}
+.visual-training{position:absolute;left:14%;right:7%;bottom:5%;z-index:4;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px solid #dceac55c;padding-top:12px;color:#dceac5}
+.visual-training span{font-size:8px;font-weight:700;letter-spacing:.12em;line-height:1.5}.visual-training b{display:block;font:700 22px/.95 'Barlow Condensed',Impact,sans-serif;color:var(--lime);margin-bottom:5px}
+.values-grid{gap:0;background:transparent;border:0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.values-grid article{position:relative;background:transparent;padding:28px 28px 25px 86px;min-height:190px;border-right:1px solid var(--line)}
+.values-grid article:last-child{border-right:0}.values-grid article>span{position:absolute;left:0;top:31px;font:800 58px/.85 'Barlow Condensed',Impact,sans-serif;color:#b2bd96}
+.values-grid h3{margin:29px 0 8px;font-size:31px;max-width:200px}
+.age-tab{position:relative;overflow:hidden}.age-tab b{align-self:end;padding-bottom:3px;font-size:26px}.age-tab.is-active{box-shadow:inset 6px 0 0 #728d12}
+.schedule-panel{background:#1c3028}.schedule-panel #group-schedule strong{font-variant-numeric:tabular-nums;letter-spacing:.05em}
+.schedule-overline{display:block;border-bottom:3px solid var(--lime);padding-bottom:15px;line-height:1.5}
+.first-session-grid{gap:0}.visit-timeline{gap:0}.visit-timeline article{border-right:1px solid #a9b1a0;background:repeating-linear-gradient(0deg,transparent 0,transparent 34px,#101b2008 34px,#101b2008 35px),#e3e6dc}
+.news-feature-art{background:radial-gradient(circle at 74% 55%,transparent 0 80px,#c9f52f 81px 83px,transparent 84px),#213d32}
+.news-category{font-variant-numeric:tabular-nums}.kit-progress strong{font-variant-numeric:tabular-nums}
+@media(max-width:1100px){.values-grid article{padding-left:68px}.values-grid article>span{font-size:47px}.values-grid h3{font-size:27px}.ball-graphic{width:175px;height:175px}.ball-graphic:after{width:132px;height:132px}.ball-graphic:before{width:74px;height:83px}}
+@media(max-width:900px){.hero-visual{margin-top:0;clip-path:none}.ball-graphic{top:45%;width:180px;height:180px}.visual-training{left:10%;bottom:6%}.visual-location{bottom:20%}.tactical-map{width:100%;height:100%;object-fit:cover}}
+@media(max-width:650px){.values-grid article{padding:26px 24px 26px 81px;min-height:152px;border-right:0;border-bottom:1px solid var(--line)}.values-grid article:last-child{border-bottom:0}.values-grid article>span{left:4px;top:30px;font-size:55px}.values-grid h3{font-size:31px;margin:5px 0 9px;max-width:none}.hero-visual{height:355px}.visual-training{left:9%;right:7%;bottom:6%;padding-top:10px}.visual-training b{font-size:20px}.visual-training span{font-size:7px}.visual-slogan{font-size:50px;top:16%}.visual-location{bottom:22%;right:8%;font-size:8px}.ball-graphic{left:47%;top:45%;width:162px;height:162px}.ball-graphic:after{width:126px;height:126px}.ball-graphic:before{width:65px;height:76px}.ball-graphic span{font-size:35px}.age-tab.is-active{box-shadow:inset 0 -4px 0 #728d12}}

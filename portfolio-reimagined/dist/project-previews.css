@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Cormorant+Garamond:wght@500&family=Space+Grotesk:wght@600&display=swap');
+
+/* Art-directed brand specimens connect the collection to each website's world. */
+.project-preview {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  background: #101d33;
+}
+.concept-card .project-preview {
+  width: 100%;
+  aspect-ratio: 560 / 290;
+  margin: 25px 0 26px;
+  border: 1px solid var(--work-border);
+}
+.concept-card::before { display: none; }
+.project-visual.project-preview {
+  display: block;
+  width: 100%;
+  min-height: 290px;
+  padding: 0;
+}
+.project-visual.project-preview::before { display: none; }
+.project-preview svg,
+.project-visual.project-preview svg {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform .6s cubic-bezier(.2,.75,.2,1);
+}
+.project-visual.project-preview svg { position: absolute; inset: 0; }
+/* Let each SVG inherit its own group's paint instead of the earlier schematics. */
+.project-visual.project-preview svg path,
+.project-visual.project-preview svg circle,
+.project-visual.project-preview svg rect {
+  fill: inherit;
+  stroke: inherit;
+  stroke-width: inherit;
+  vector-effect: none;
+}
+.project-card:hover .project-visual.project-preview svg,
+.concept-card:hover .project-preview svg { transform: scale(1.025); }
+.project-preview .pv-mono { font: 500 10px 'DM Mono', monospace; letter-spacing: .07em; }
+.project-preview .pv-tiny { font: 400 8px 'DM Mono', monospace; letter-spacing: .04em; }
+.project-preview .pv-label { font: 500 14px Georgia, serif; letter-spacing: .15em; }
+.project-preview .pv-sport { font: 700 84px 'Barlow Condensed', Impact, sans-serif; letter-spacing: -.01em; }
+.project-preview .pv-geometric { font: 600 91px 'Space Grotesk', Arial, sans-serif; letter-spacing: -.06em; }
+.project-preview .pv-botanical { font: 500 89px 'Cormorant Garamond', Georgia, serif; letter-spacing: -.035em; }
+.project-preview .pv-bistro { font: 800 49px 'Manrope', Arial, sans-serif; letter-spacing: -.045em; }
+.project-preview .pv-friendly { font: 800 43px 'Manrope', Arial, sans-serif; letter-spacing: -.045em; }
+.project-preview .pv-property { font: 800 43px 'Manrope', Arial, sans-serif; letter-spacing: -.055em; }
+.project-preview .pv-theatre { font: 600 89px 'Space Grotesk', Arial, sans-serif; letter-spacing: -.055em; }
+.project-preview .pv-hotel { font: 400 59px Georgia, serif; letter-spacing: -.035em; }
+.project-preview .pv-furniture { font: 400 48px Georgia, serif; letter-spacing: -.025em; }
+.project-preview .pv-community { font: 900 49px 'Arial Black', 'Manrope', sans-serif; letter-spacing: -.035em; }
+.preview-first-whistle { background: #101d33; }
+.preview-good-form { background: #222325; }
+.preview-root-ritual { background: #f3efe3; }
+.preview-sunday-table { background: #f5e8cd; }
+.preview-kindred-vet { background: #c8e8f0; }
+.preview-good-neighbour { background: #e8eff5; }
+.preview-small-hours { background: #1e2020; }
+.preview-slow-morning { background: #f7f3e9; }
+.preview-honest-grain { background: #f0ede4; }
+.preview-one-more-plate { background: #2856b8; }
+/* Native vector assets preserve the new compositions and their authored paints. */
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.75,.2,1);
+}
+.project-visual.project-preview img { position: absolute; inset: 0; }
+.project-card:hover .project-visual.project-preview img,
+.concept-card:hover .project-preview img { transform: scale(1.025); }
+@media (max-width: 1100px) and (min-width: 801px) {
+  .featured-work .project-card:last-child .project-visual.project-preview { min-height: 300px; }
+}
+@media (max-width: 800px) {
+  .project-visual.project-preview,
+  .featured-work .project-card:last-child .project-visual.project-preview {
+    min-height: 0;
+    aspect-ratio: 560 / 290;
+  }
+}
+@media (max-width: 540px) {
+  .concept-card .project-preview { margin: 22px 0 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-preview svg,
+  .project-visual.project-preview svg,
+  .project-preview img { transition: none; }
+  .project-card:hover .project-visual.project-preview svg,
+  .concept-card:hover .project-preview svg,
+  .project-card:hover .project-visual.project-preview img,
+  .concept-card:hover .project-preview img { transform: none; }
+}

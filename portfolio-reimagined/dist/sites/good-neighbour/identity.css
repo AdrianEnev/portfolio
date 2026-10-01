@@ -1,0 +1,85 @@
+/* Clear urban wayfinding and a useful search surface lead this identity. */
+:root { --ink: #173447; --ink-deep: #102937; --stone: #eef2f4; --paper: #fff; --line: #d4dfe5; --sage: #b2c9d5; --soft: #e5edf2; --muted: #617581; --accent: #a6c5d8; --display: 'Manrope', Arial, sans-serif; }
+.topline { background: #173447; color: #d9e7ee; }
+.site-header { border-bottom: 0; }
+.header-action,.button { border-radius: 5px; }
+.primary-nav > a:not(.header-action):hover { color: #22668c; }
+.hero { grid-template-columns: 1.2fr .8fr; gap: 5%; min-height: 0; padding: 58px 4.5% 36px; background: #edf2f5; align-items: center; }
+.hero-copy { color: var(--ink); padding: 0; min-height: 0; }
+.hero .eyebrow { color: #516f83; }
+.hero .eyebrow-line { background: #547e97; }
+.hero h1 { font: 500 clamp(55px, 6.5vw, 98px)/1.02 var(--display); letter-spacing: -.065em; margin: 33px 0 25px; }
+.hero h1 em { color: #397a9a; font-weight: inherit; font-style: normal; }
+.hero-intro { max-width: 500px; font-size: 15px; color: #526b79; line-height: 1.7; }
+.hero-actions { gap: 24px; margin-top: 27px; }
+.hero .button-light { background: #fff; color: var(--ink); border: 1px solid #c8d8e2; }
+.hero .underlined-link { color: #486777; border-color: #87a4b6; }
+.hero-foot { color: #607b8b; border-color: #c7d7e0; margin-top: 32px; padding-top: 14px; }
+.hero-art { width: 100%; min-height: 0; height: 440px; background: #aec5d0; border-radius: 10px; }
+.hero-art svg { object-fit: contain; }
+.hero-art-top,.hero-art-bottom { font-size: 8px; letter-spacing: .06em; }
+.hero-art-top { top: 19px; }
+.hero-art-bottom { bottom: 19px; }
+.property-search { background: #edf2f5; padding: 0 4.5% 38px; scroll-margin-top: 20px; }
+.search-controls { background: #fff; grid-template-columns: repeat(3, minmax(0, 1fr)) 170px; border: 1px solid #cddce5; border-radius: 8px; box-shadow: 0 12px 28px #193b5310; padding: 10px; }
+.control { padding: 17px 20px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.control span { color: #68808d; }
+.search-submit { padding: 7px 8px 4px 18px; display: flex; flex-direction: column; justify-content: center; gap: 5px; }
+.search-button { padding: 15px; background: #22698f; color: #fff; border-radius: 4px; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; font-weight: 600; }
+.search-button:hover { background: #154c6a; }
+.search-submit .clear-button { border: 0; background: transparent; color: #5b7483; justify-content: center; font-size: 10px; padding: 7px 0; gap: 8px; }
+.section-pad { padding-top: 75px; padding-bottom: 75px; }
+.section-heading { margin-top: 35px; }
+.section-heading h2,.neighbourhood-heading h2,.agency-intro h2,.valuation-copy h2,.shortlist-heading h2 { font-family: var(--display); font-size: clamp(38px, 4.6vw, 66px); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
+.section-heading h2 em,.neighbourhood-heading h2 em,.agency-intro h2 em,.valuation-copy h2 em,.shortlist-heading h2 em { font-style: normal; font-weight: inherit; color: #397a9a; }
+.section-heading > p { font-size: 13px; }
+.refine-search { display: inline-block; margin-top: 10px; color: #22698f; text-decoration: underline; text-underline-offset: 4px; }
+.search-shell { border: 0; }
+.results-toolbar { padding: 18px 0; border-top: 1px solid var(--line); }
+.results-toolbar strong { font-size: 18px; font-weight: 600; }
+.property-grid { gap: 20px; border: 0; background: transparent; }
+.property-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.property-info h3 { font-size: 23px; font-weight: 600; letter-spacing: -.04em; }
+.shortlist-section { background: #edf2f5; }
+.shortlist-shell { border-color: #cbdbe4; box-shadow: none; border-radius: 8px; overflow: hidden; }
+.picker-homes button { border-radius: 5px; background: #f4f7f8; border-color: #ccdbe2; }
+.picker-homes button[aria-pressed="true"] { background: #e1edf4; border-color: #7ba4bd; }
+.compare-link { color: #22698f; }
+.compare-table thead th { font-family: var(--display); font-size: 18px; font-weight: 600; }
+.neighbourhood-section,.valuation-section { background: #1c3b4a; }
+.neighbourhood-heading h2 em,.valuation-copy h2 em { color: #9cc5da; }
+.agency-section { background: #f8fafb; }
+.site-footer { background: #102937; }
+@media (max-width: 1000px) {
+  .hero { gap: 4%; }
+  .hero h1 { font-size: clamp(48px, 6.3vw, 70px); }
+  .hero-art { height: 395px; }
+  .hero-art-top span:last-child,.hero-art-bottom span:last-child { display: none; }
+  .hero-actions { flex-wrap: wrap; }
+  .search-controls { grid-template-columns: repeat(3,minmax(0,1fr)) 140px; }
+  .control { padding: 14px; }
+}
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding: 45px 5% 25px; gap: 28px; }
+  .hero h1 { font-size: clamp(49px, 9.5vw, 76px); margin-top: 27px; }
+  .hero-art { height: 290px; }
+  .hero-art svg { width: 100%; }
+  .hero-foot { margin-top: 25px; }
+  .property-search { padding: 0 5% 30px; }
+  .search-controls { grid-template-columns: 1fr 1fr; }
+  .search-submit { border-top: 1px solid var(--line); padding: 12px; }
+  .search-button { justify-content: center; }
+  .section-heading h2,.neighbourhood-heading h2,.agency-intro h2,.valuation-copy h2,.shortlist-heading h2 { font-size: clamp(37px, 7vw, 55px); }
+  .property-grid { gap: 14px; }
+}
+@media (max-width: 560px) {
+  .hero h1 { font-size: clamp(45px, 11vw, 61px); }
+  .hero-intro { font-size: 14px; }
+  .hero-art { height: 235px; }
+  .search-controls { grid-template-columns: 1fr; padding: 7px 12px; }
+  .control { padding: 16px 2px; }
+  .search-submit { padding: 14px 0 2px; }
+  .section-pad { padding-top: 56px; padding-bottom: 56px; }
+  .results-toolbar { padding: 17px 0; }
+  .property-info h3 { font-size: 24px; }
+}

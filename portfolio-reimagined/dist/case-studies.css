@@ -1,0 +1,37 @@
+/* Case study copy extends the existing portfolio design. */
+.collection-scope { max-width: 70ch; font-size: 14px !important; line-height: 1.65; color: var(--work-muted); }
+.section-heading .collection-scope { margin-top: 16px; }
+.projects-collection .collection-scope { margin: 0 0 28px; }
+.project-role { display: block; font-size: 14px !important; font-weight: 600; line-height: 1.6; }
+.project-detail .project-role { margin: 0 0 20px; }
+.concept-card p.project-role { margin: -12px 0 26px; color: var(--work-fg); }
+.concept-card-top { flex-wrap: wrap; font-size: 12px; }
+.concept-grid { align-items: start; }
+.concept-card-open::after { display: none; }
+.concept-card-open { font-size: 14px; }
+.case-study { position: relative; z-index: 6; margin-top: 24px; border-top: 1px solid var(--work-border); }
+.case-study > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; font-size: 16px; font-weight: 700; cursor: pointer; list-style: none; }
+.case-study > summary::-webkit-details-marker { display: none; }
+.case-study > summary span { font-size: 24px; line-height: 1; }
+.case-study[open] > summary span { transform: rotate(45deg); }
+.case-study > summary:focus-visible { outline: 2px solid var(--card-accent, var(--accent-strong)); outline-offset: 4px; }
+.case-study-body { display: grid; gap: 20px; padding: 8px 0 24px; }
+.case-study-body section { min-width: 0; }
+.case-study-body h3 { margin: 0 0 7px; font-size: 16px; line-height: 1.4; letter-spacing: 0; }
+.concept-card .case-study-body p { margin: 0; max-width: 65ch; font-size: 16px; line-height: 1.65; }
+.case-study-scope { border-top: 1px solid var(--work-border); padding-top: 16px; }
+.legacy-case { width: 100%; }
+.legacy-case .project-role { margin-bottom: 18px; }
+.lab-body .case-study-body p { margin: 0; }
+.lab-body .case-study-scope { border-color: var(--about-rule); }
+.lab-body { align-items: start; }
+.lab-type { overflow-wrap: anywhere; }
+.interface-case-study { padding-bottom: 50px; }
+.interface-case-study .case-study { border-color: var(--ink); }
+.interface-case-study .case-study-scope { border-color: var(--about-rule); }
+.contact-brief { max-width: 58ch; margin: 22px 0 32px; font-size: 18px; line-height: 1.65; }
+@media (max-width: 620px) {
+  .case-study-body { gap: 18px; }
+  .concept-card-top { display: grid; gap: 8px; }
+  .collection-scope { font-size: 14px !important; }
+}

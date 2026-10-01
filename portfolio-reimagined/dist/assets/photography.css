@@ -1,0 +1,14 @@
+/* Real photography occupies the existing artwork frames; layout stays in each site. */
+.has-photography { position: relative; overflow: hidden; isolation: isolate; }
+.has-photography > .photograph { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--photo-position, 50% 50%); }
+.has-photography::before { content: none; }
+.has-photography::after { content: ""; position: absolute; inset: auto 0 0; height: 28%; width: auto; border: 0; border-radius: 0; transform: none; background: linear-gradient(transparent, #10151375); pointer-events: none; }
+.has-photography > .photo-caption { position: absolute; z-index: 2; top: auto; right: auto; bottom: 22px; left: 24px; margin: 0; transform: none; max-width: calc(100% - 48px); padding: 8px 11px; background: #171c1bcc; color: #fff; font: 10px/1.5 var(--mono, monospace); letter-spacing: .12em; text-align: left; }
+.art-cones.has-photography { --photo-position: 50% 50%; }
+.visit-art.has-photography { --photo-position: 65% 50%; }
+.story-visual.has-photography .story-scribble { left: 8%; top: auto; bottom: 32px; max-width: 85%; text-shadow: 0 2px 5px #000, 0 1px 18px #000; }
+@media (max-width: 560px) { .has-photography > .photo-caption { bottom: 16px; left: 16px; max-width: calc(100% - 32px); font-size: 9px; } }
+.hero-art.has-photography::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, #132a4266, transparent 28%, transparent 68%, #10223685); pointer-events: none; }
+.hero-art.has-photography .hero-art-top, .hero-art.has-photography .hero-art-bottom { z-index: 2; }
+.dialog-visual.has-photography { --photo-position: 50% 55%; }
+.photography-credit-link { display: block; margin-top: .5rem; font-size: 11px; line-height: 1.5; text-decoration: underline; text-underline-offset: 3px; color: inherit; }

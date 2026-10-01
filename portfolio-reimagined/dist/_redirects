@@ -1,0 +1,21 @@
+# Previous project addresses continue to reach the renamed brands.
+/sites/sredets-11 /sites/first-whistle/ 301!
+/sites/sredets-11/* /sites/first-whistle/:splat 301!
+/sites/ostrie /sites/good-form/ 301!
+/sites/ostrie/* /sites/good-form/:splat 301!
+/sites/lipena /sites/root-ritual/ 301!
+/sites/lipena/* /sites/root-ritual/:splat 301!
+/sites/piper-27 /sites/sunday-table/ 301!
+/sites/piper-27/* /sites/sunday-table/:splat 301!
+/sites/darin-vet /sites/kindred-vet/ 301!
+/sites/darin-vet/* /sites/kindred-vet/:splat 301!
+/sites/breg-imoti /sites/good-neighbour/ 301!
+/sites/breg-imoti/* /sites/good-neighbour/:splat 301!
+/sites/scena-17 /sites/small-hours/ 301!
+/sites/scena-17/* /sites/small-hours/:splat 301!
+/sites/smil /sites/slow-morning/ 301!
+/sites/smil/* /sites/slow-morning/:splat 301!
+/sites/atelie-kostov /sites/honest-grain/ 301!
+/sites/atelie-kostov/* /sites/honest-grain/:splat 301!
+/sites/obshta-masa /sites/one-more-plate/ 301!
+/sites/obshta-masa/* /sites/one-more-plate/:splat 301!

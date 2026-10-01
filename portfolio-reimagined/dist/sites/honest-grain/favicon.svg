@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#563927"/>
+  <rect x="12" y="12" width="40" height="40" fill="none" stroke="#d5b695" stroke-width="1.5"/>
+  <text x="31" y="41" fill="#f1e9da" font-family="Georgia,serif" font-size="27" text-anchor="middle">HG</text>
+  <path d="m50 8 2 4 4 2-4 2-2 4-2-4-4-2 4-2Z" fill="#c9692c"/>
+</svg>

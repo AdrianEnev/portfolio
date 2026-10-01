@@ -1,0 +1,456 @@
+[
+  {
+    "project": "first-whistle",
+    "filename": "youth-football-training",
+    "source_url": "https://www.pexels.com/photo/group-of-people-training-on-a-soccer-field-9517922/",
+    "creator": "Anastasia Shuraeva",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/9517922/pexels-photo-9517922.jpeg?auto=compress&cs=srgb&w=3000",
+    "alt": "Young football players warming up with their coach on a grass pitch.",
+    "placement": ".news-card-art.art-cones",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "crop": [
+      0.16,
+      0.315,
+      0.7,
+      0.675
+    ],
+    "variants": [
+      {
+        "path": "dist/assets/images/youth-football-training-800.webp",
+        "width": 800,
+        "height": 515,
+        "bytes": 106730
+      },
+      {
+        "path": "dist/assets/images/youth-football-training-1600.webp",
+        "width": 1600,
+        "height": 1029,
+        "bytes": 339776
+      }
+    ]
+  },
+  {
+    "project": "good-form",
+    "filename": "leather-barber-chair",
+    "source_url": "https://unsplash.com/photos/a-barber-shop-with-a-chair-and-a-mirror-BBGyxhtPpC0",
+    "creator": "Redd Francisco",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1702865272115-5afdbae975af?auto=format&fit=max&fm=jpg&q=90&w=2000",
+    "alt": "Quilted leather barber chairs in front of mirrors in a warmly lit shop.",
+    "placement": ".visit-art",
+    "object_position": "65% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/leather-barber-chair-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 56246
+      },
+      {
+        "path": "dist/assets/images/leather-barber-chair-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 142536
+      }
+    ]
+  },
+  {
+    "project": "sunday-table",
+    "filename": "seasonal-shared-table",
+    "source_url": "https://unsplash.com/photos/overhead-view-of-a-table-set-with-gourmet-dishes-rlClfxPYxQM",
+    "creator": "Neon Wang",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1763867641433-e7d2c0f62361?auto=format&fit=max&fm=jpg&q=90&w=2000",
+    "alt": "Seasonal dishes, vegetables and herbs arranged for a shared meal.",
+    "placement": ".story-visual",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/seasonal-shared-table-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 96378
+      },
+      {
+        "path": "dist/assets/images/seasonal-shared-table-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 283008
+      }
+    ]
+  },
+  {
+    "project": "one-more-plate",
+    "filename": "hands-preparing-vegetables",
+    "source_url": "https://www.pexels.com/photo/food-hands-chef-kitchen-4057678/",
+    "creator": "cottonbro studio",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/4057678/pexels-photo-4057678.jpeg?auto=compress&cs=srgb&w=2000",
+    "alt": "Hands preparing fresh vegetables on a kitchen work surface.",
+    "placement": ".kitchen-graphic",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/hands-preparing-vegetables-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 106434
+      },
+      {
+        "path": "dist/assets/images/hands-preparing-vegetables-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 318798
+      }
+    ]
+  },
+  {
+    "project": "honest-grain",
+    "filename": "hand-planing-timber",
+    "source_url": "https://www.pexels.com/photo/crop-carpenter-working-with-window-frame-using-plane-5691541/",
+    "creator": "Ksenia Chernaya",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/5691541/pexels-photo-5691541.jpeg?auto=compress&cs=srgb&w=2000",
+    "alt": "Hands using a hand plane on a wooden frame.",
+    "placement": ".material-visual",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/hand-planing-timber-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 21500
+      },
+      {
+        "path": "dist/assets/images/hand-planing-timber-1600.webp",
+        "width": 1600,
+        "height": 1068,
+        "bytes": 59988
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "sofia-city-panorama",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_Sofia.jpg",
+    "creator": "Ivano Giambattista",
+    "website": "Wikimedia Commons",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Panorama_of_Sofia.jpg",
+    "alt": "Panoramic view across Sofia rooftops towards the green hills.",
+    "placement": ".hero-art",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/sofia-city-panorama-800.webp",
+        "width": 800,
+        "height": 506,
+        "bytes": 95546
+      },
+      {
+        "path": "dist/assets/images/sofia-city-panorama-1600.webp",
+        "width": 1600,
+        "height": 1012,
+        "bytes": 335200
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "courtyard-living-room",
+    "source_url": "https://unsplash.com/photos/living-room--kh2s5BdwxI",
+    "creator": "Andrew Barrowman",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1544207240-42895ede7c09?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "Light-filled living room with neutral sofas and large windows.",
+    "placement": "property courtyard card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/courtyard-living-room-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 38074
+      },
+      {
+        "path": "dist/assets/images/courtyard-living-room-1600.webp",
+        "width": 1600,
+        "height": 1068,
+        "bytes": 103426
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "orlova-living-dining-room",
+    "source_url": "https://unsplash.com/photos/living-room-interior-6japTIjUQoI",
+    "creator": "Francesca Tosolini",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "Connected living and dining spaces with warm neutral furnishings.",
+    "placement": "property orlova card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/orlova-living-dining-room-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 45198
+      },
+      {
+        "path": "dist/assets/images/orlova-living-dining-room-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 134614
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "garden-house-facade",
+    "source_url": "https://www.pexels.com/photo/a-shrub-in-front-of-a-modern-house-16787446/",
+    "creator": "David Brown",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/16787446/pexels-photo-16787446/free-photo-of-a-shrub-in-front-of-a-modern-house.png?auto=compress&cs=srgb&w=2000",
+    "alt": "Contemporary grey and white house facade beside a small garden tree.",
+    "placement": "property garden-house card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/garden-house-facade-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 73416
+      },
+      {
+        "path": "dist/assets/images/garden-house-facade-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 287308
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "southline-warm-living-room",
+    "source_url": "https://unsplash.com/photos/living-room-L7EwHkq1B2s",
+    "creator": "Kara Eads",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "Warm living room with a leather sofa, green wall and houseplants.",
+    "placement": "property southline card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/southline-warm-living-room-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 52054
+      },
+      {
+        "path": "dist/assets/images/southline-warm-living-room-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 131108
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "corner-loft-open-living-room",
+    "source_url": "https://www.pexels.com/photo/cozy-living-room-with-sofa-and-table-5998040/",
+    "creator": "Max Vakhtbovych",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/5998040/pexels-photo-5998040.jpeg?auto=compress&cs=srgb&w=2000",
+    "alt": "Open loft living space with exposed timber beams and tall windows.",
+    "placement": "property corner-loft card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/corner-loft-open-living-room-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 66704
+      },
+      {
+        "path": "dist/assets/images/corner-loft-open-living-room-1600.webp",
+        "width": 1600,
+        "height": 1068,
+        "bytes": 192372
+      }
+    ]
+  },
+  {
+    "project": "good-neighbour",
+    "filename": "parkside-mid-century-living-room",
+    "source_url": "https://unsplash.com/photos/photo-of-living-room-U-k6XLlml1I",
+    "creator": "Hannah Busing",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "Living room with timber furniture, a neutral sofa and broad glazing.",
+    "placement": "property parkside card and detail dialog",
+    "object_position": "50% 50%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/parkside-mid-century-living-room-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 40940
+      },
+      {
+        "path": "dist/assets/images/parkside-mid-century-living-room-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 107574
+      }
+    ]
+  },
+  {
+    "project": "slow-morning",
+    "filename": "nest-daylight-bedroom",
+    "source_url": "https://www.pexels.com/photo/spacious-comfortable-bedroom-in-modern-style-5998133/",
+    "creator": "Max Vakhtbovych",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/5998133/pexels-photo-5998133.jpeg?auto=compress&cs=srgb&w=2000",
+    "alt": "Calm bedroom with an upholstered bed, window light and a reading chair.",
+    "placement": ".hero-visual and .room-art.nest",
+    "object_position": "50% 55%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/nest-daylight-bedroom-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 40766
+      },
+      {
+        "path": "dist/assets/images/nest-daylight-bedroom-1600.webp",
+        "width": 1600,
+        "height": 1068,
+        "bytes": 135846
+      }
+    ]
+  },
+  {
+    "project": "slow-morning",
+    "filename": "garden-soft-linen-bedroom",
+    "source_url": "https://unsplash.com/photos/a-bed-in-a-hotel-room-GOzvLXx4E-E",
+    "creator": "Kin Shing Lai",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1652161854125-1f5289c13eac?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "Hotel bedroom with white bedding, soft curtains and an upholstered bench.",
+    "placement": ".room-art.garden",
+    "object_position": "50% 55%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/garden-soft-linen-bedroom-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30178
+      },
+      {
+        "path": "dist/assets/images/garden-soft-linen-bedroom-1600.webp",
+        "width": 1600,
+        "height": 1065,
+        "bytes": 107726
+      }
+    ]
+  },
+  {
+    "project": "slow-morning",
+    "filename": "loft-blue-chair-bedroom",
+    "source_url": "https://www.pexels.com/photo/interior-of-a-hotel-room-8082564/",
+    "creator": "Max Vakhtbovych",
+    "website": "Pexels",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "download_url": "https://images.pexels.com/photos/8082564/pexels-photo-8082564.jpeg?auto=compress&cs=srgb&w=2000",
+    "alt": "Hotel bedroom with layered bedding, a blue chair and tall curtains.",
+    "placement": ".room-art.loft",
+    "object_position": "50% 58%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/loft-blue-chair-bedroom-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 39740
+      },
+      {
+        "path": "dist/assets/images/loft-blue-chair-bedroom-1600.webp",
+        "width": 1600,
+        "height": 1068,
+        "bytes": 115700
+      }
+    ]
+  },
+  {
+    "project": "slow-morning",
+    "filename": "sunlit-reading-corner",
+    "source_url": "https://unsplash.com/photos/a-cozy-modern-chair-sits-near-a-sheer-curtain-pVrlGUOFuiQ",
+    "creator": "Caroline Badran",
+    "website": "Unsplash",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "download_url": "https://images.unsplash.com/photo-1751290741362-f0eea350cb61?auto=format&fit=max&fm=jpg&w=2000&q=90",
+    "alt": "A reading chair beside sheer curtains in soft daylight.",
+    "placement": ".house-art",
+    "object_position": "50% 45%",
+    "verified": "2026-09-30",
+    "variants": [
+      {
+        "path": "dist/assets/images/sunlit-reading-corner-800.webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 56670
+      },
+      {
+        "path": "dist/assets/images/sunlit-reading-corner-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 171844
+      }
+    ]
+  }
+]

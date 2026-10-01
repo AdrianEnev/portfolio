@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* A neighbourhood bistro: generous type, printed menus and a gingham table. */
+:root { --tomato: #b93a2e; --tomato-dark: #912e25; --paper: #f5e8cf; --cream: #fff7e4; --ink: #2e3328; --olive: #3b4b35; }
+body { font-family: 'DM Sans', Arial, sans-serif; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 700; }
+h2 { letter-spacing: -.055em; font-size: clamp(52px, 5.2vw, 77px); line-height: 1.03; }
+h1 i, h2 i, h3 i { font-style: normal; font-weight: inherit; }
+.brand-name, .footer-logo { font-family: 'Bricolage Grotesque', Arial, sans-serif; letter-spacing: -.06em; font-weight: 700; }
+.brand-name em, .footer-logo i { font-style: normal; }
+.brand-mark { background: var(--tomato); color: var(--cream); border-radius: 8px; transform: rotate(-7deg); font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 800; }
+.brand-mark > span { color: var(--cream); }
+.announcement { text-transform: none; letter-spacing: .04em; font-size: 12px; font-weight: 500; }
+.site-header { height: 96px; }
+.site-nav a { font-size: 13px; }
+.hero { grid-template-columns: 48% 52%; min-height: 700px; }
+.hero-copy { padding: 77px 4vw 66px 6vw; }
+.hero .eyebrow { font-size: 11px; letter-spacing: .13em; }
+.hero h1 { font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 800; font-size: clamp(74px, 7.4vw, 108px); line-height: .93; letter-spacing: -.062em; margin: 0 0 27px; }
+.hero h1 i { font-style: normal; color: #f3bf72; }
+.hero-lede { font-size: 16px; max-width: 350px; line-height: 1.65; }
+.hero-actions { gap: 23px; }
+.button { border-radius: 5px; padding: 14px 20px; min-height: 53px; font-size: 13px; }
+.text-link { font-size: 13px; }
+.hero-note { font-size: 11px; letter-spacing: .04em; }
+.hero-note .starburst { font-size: 33px; }
+.hero-art { margin: 35px 35px 35px 0; background: repeating-linear-gradient(0deg, #f0dfc92b 0 40px, transparent 40px 80px), repeating-linear-gradient(90deg, #f0dfc92b 0 40px, transparent 40px 80px), #95382c; border-radius: 50% 50% 5px 5px / 29% 29% 5px 5px; }
+.hero-art svg { width: 107%; max-width: none; transform: rotate(-12deg); }
+.hero-art-caption { font-family: 'Caveat', cursive; font-size: 32px; line-height: .94; transform: rotate(-8deg); top: 36px; left: 34px; color: #fff2db; z-index: 2; }
+.round-stamp { border-radius: 50%; background: var(--cream); color: var(--tomato-dark); border: 2px dotted #b93a2e; width: 94px; height: 94px; bottom: 18px; right: 22px; font-size: 8px; box-shadow: 4px 6px 0 #56201836; transform: rotate(8deg); }
+.round-stamp span { color: var(--tomato); }
+.ticker { background: var(--cream); color: var(--olive); border-top: 1px solid #69715a; border-bottom: 1px solid #69715a; font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 700; font-size: 15px; }
+.eyebrow { font-size: 10px; letter-spacing: .14em; }
+.table-section { padding-top: 90px; padding-bottom: 90px; }
+.section-heading { align-items: center; }
+.section-heading > p { font-size: 15px; line-height: 1.65; }
+.booking-card { border-radius: 6px; border: 1px solid #929582; box-shadow: 7px 7px 0 #b93a2e1a; padding: 30px; }
+.mode-tabs { border-bottom: 1px solid #a0a18a; }
+.mode-tabs button { font-size: 14px; font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 700; }
+.booking-form label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.booking-form input, .booking-form select { font-family: 'DM Sans', Arial, sans-serif; text-transform: none; letter-spacing: 0; }
+.table-edit { background: #e8d6b5; border: 1px dashed #92805f; outline: 1px solid #c8b38c; outline-offset: -8px; border-radius: 2px; padding: 34px 38px; }
+.table-edit h3 { font-size: clamp(31px, 3.4vw, 46px); font-weight: 700; letter-spacing: -.045em; }
+.table-edit p { font-size: 13px; line-height: 1.7; max-width: 600px; }
+.table-edit-number { font-size: 9px; letter-spacing: .13em; }
+.table-edit-meta span { border-radius: 3px; }
+.menu-section { padding-top: 30px; padding-bottom: 90px; }
+.menu-heading { border-top: 2px solid var(--ink); padding-top: 34px; }
+.menu-heading h2 { font-size: clamp(65px, 7vw, 103px); }
+.menu-controls { gap: 25px; border-bottom: 1px solid #777d67; }
+.menu-controls button { border-radius: 0; font-family: 'Bricolage Grotesque', Arial, sans-serif; font-size: 21px; font-weight: 600; }
+.menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 35px; padding: 14px 0; border-top: 1px solid #8e9580; }
+.dish-card { display: grid; grid-template-columns: 122px minmax(0,1fr); border: 0; border-bottom: 1px solid #b2b49f; border-radius: 0; background: transparent; padding: 25px 0; overflow: visible; }
+.dish-art { width: 112px; height: 112px; border-radius: 50%; margin: auto 0; }
+.dish-art::before { width: 98px; height: 98px; box-shadow: 0 3px 8px #60402a20, inset 0 0 0 7px #ffffff80; }
+.dish-art::after { display: none; }
+.dish-art span { font-size: 31px; text-shadow: none; }
+.dish-art .dish-illustration { display: block; width: 69px; height: 69px; }
+.dish-card-content { padding: 3px 0 4px 12px; }
+.dish-card h3 { font-size: 24px; line-height: 1.12; letter-spacing: -.025em; }
+.dish-card .price { font-size: 14px; }
+.dish-card p { font-size: 12px; line-height: 1.6; margin: 0 0 15px; }
+.dish-card-actions { font-size: 11px; }
+.dish-tag { font-size: 9px; padding: 4px 6px; border-radius: 3px; }
+.menu-note { font-size: 11px; }
+.story-section { background: #dfb26c; grid-template-columns: .9fr 1.1fr; }
+.story-visual { background: repeating-linear-gradient(0deg, #9a512427 0 25px, transparent 25px 50px), repeating-linear-gradient(90deg, #9a512427 0 25px, transparent 25px 50px), #e9cf9e; }
+.story-copy { padding: 75px 9%; }
+.story-copy h2 { font-size: clamp(52px, 4.8vw, 72px); }
+.story-copy p { font-size: 15px; line-height: 1.75; }
+.story-scribble { font-family: 'Caveat', cursive; font-size: 51px; }
+.tomato { border: 2px solid #933b2a; box-shadow: inset -15px -13px 0 #9e2f2436, 7px 10px 0 #80562b22; }
+.moments-section { padding-top: 90px; padding-bottom: 90px; }
+.moment-grid { gap: 0; border-top: 1px solid #8e9580; border-bottom: 1px solid #8e9580; }
+.moment-grid article { border: 0; padding: 30px; border-right: 1px solid #b2b49f; }
+.moment-grid article:last-child { border-right: 0; }
+.moment-grid h3 { font-size: 30px; font-weight: 700; }
+.moment-icon { font-size: 50px; color: var(--tomato); }
+.visit-section { background: var(--olive); }
+.visit-inner h2 { font-size: clamp(70px, 7.5vw, 104px); }
+.visit-details > div { border-top-color: #b5b79c; }
+.footer { background: var(--cream); border-top: 1px solid #8e9580; }
+.footer-main p { font-family: 'Caveat', cursive; font-size: 32px; }
+
+@media (max-width: 1000px) {
+  .hero-copy { padding: 65px 3vw 60px 5vw; }
+  .hero h1 { font-size: 7.5vw; }
+  .hero-art { margin: 25px 25px 25px 0; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 13px; }
+  .hero-art-caption { font-size: 28px; }
+  .dish-card { grid-template-columns: 85px minmax(0,1fr); }
+  .dish-art { width: 80px; height: 80px; }
+  .dish-art::before { width: 69px; height: 69px; }
+  .dish-art::after { width: 49px; height: 49px; }
+  .dish-art .dish-illustration { width: 51px; height: 51px; }
+  .dish-card h3 { font-size: 22px; }
+  .dish-card-top { flex-wrap: wrap; gap: 0 8px; }
+  .dish-card-actions { flex-direction: column; align-items: start; }
+}
+@media (max-width: 700px) {
+  .site-header { height: 86px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 55px 7% 42px; min-height: 545px; }
+  .hero h1 { font-size: clamp(72px, 15.3vw, 102px); }
+  .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 20px; }
+  .hero-art { min-height: 390px; margin: 0 6% 27px; border-radius: 48% 48% 3px 3px / 31% 31% 3px 3px; }
+  .hero-art svg { width: 100%; max-height: 445px; }
+  .hero-art-caption { font-size: 28px; top: 28px; }
+  .round-stamp { width: 80px; height: 80px; bottom: 14px; right: 16px; }
+  .table-section { padding-top: 65px; padding-bottom: 70px; }
+  .booking-card { padding: 22px; }
+  .table-edit { padding: 26px 24px; gap: 25px; }
+  .menu-heading { padding-top: 28px; }
+  .menu-controls { gap: 15px; }
+  .menu-controls button { font-size: 18px; }
+  .menu-grid { grid-template-columns: 1fr; gap: 0; }
+  .dish-card { grid-template-columns: 93px minmax(0,1fr); padding: 24px 0; }
+  .dish-art { width: 84px; height: 84px; }
+  .dish-card-top { flex-wrap: nowrap; }
+  .dish-card-actions { flex-direction: row; align-items: center; }
+  .dish-card h3 { font-size: 24px; }
+  .story-section { grid-template-columns: 1fr; }
+  .story-visual { min-height: 360px; }
+  .story-copy { padding: 58px 7%; }
+  .story-copy h2 { font-size: clamp(50px, 10.5vw, 68px); }
+  .moments-section { padding-top: 65px; padding-bottom: 70px; }
+  .moment-grid { grid-template-columns: 1fr; }
+  .moment-grid article { border-right: 0; border-bottom: 1px solid #b2b49f; padding: 28px 15px; }
+  .moment-grid article:last-child { border-bottom: 0; }
+  .footer-main p { font-size: 28px; }
+}
+@media (max-width: 380px) {
+  .dish-card { grid-template-columns: 75px minmax(0,1fr); }
+  .dish-art { width: 69px; height: 69px; }
+  .dish-art::before { width: 62px; height: 62px; }
+  .dish-art::after { width: 43px; height: 43px; }
+  .dish-art span { font-size: 25px; }
+  .dish-art .dish-illustration { width: 45px; height: 45px; }
+  .dish-card h3 { font-size: 21px; }
+  .dish-card-actions { flex-direction: column; align-items: start; }
+  .hero-copy { min-height: 525px; }
+  .hero-art { min-height: 345px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

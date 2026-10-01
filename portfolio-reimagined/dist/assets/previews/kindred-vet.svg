@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" role="img" aria-labelledby="kv-title kv-desc">
+  <title id="kv-title">Kindred Vet — visit preparation portal illustration</title>
+  <desc id="kv-desc">A code-drawn brand and interface illustration showing a compact care index, pet species choices, a visit-reason panel and preparation guidance. A small dog motif sits in the sidebar. This is not a product screenshot.</desc>
+  <rect width="560" height="290" fill="#f3f4ee"/>
+  <rect width="96" height="290" fill="#fffdf8"/>
+  <path d="M96 0v290" stroke="#c0d6da"/>
+  <g fill="#294b4c" font-family="Arial,sans-serif">
+    <text x="14" y="27" font-size="16" font-weight="700" letter-spacing="-.6">Kindred<tspan fill="#cf765f">Vet</tspan></text>
+    <text x="15" y="41" font-size="5.5" letter-spacing="1.1">CARE WITH HEART</text>
+    <text x="16" y="79" font-size="6" letter-spacing="1.1" fill="#71909a">YOUR VISIT</text>
+    <rect x="9" y="91" width="78" height="29" rx="8" fill="#f4dac4"/>
+    <text x="16" y="109" font-size="8" font-weight="700">01   Prepare</text>
+    <text x="16" y="140" font-size="8">02   Visit note</text>
+    <text x="16" y="170" font-size="8">03   Our care</text>
+    <text x="16" y="200" font-size="8">04   Questions</text>
+  </g>
+  <g transform="translate(24 226)">
+    <ellipse cx="24" cy="44" rx="28" ry="4" fill="#dce6df"/>
+    <path d="M8 20C-1 17-2-1 7 1l10 12m20 0 9-12c9-2 10 16 1 20" fill="#9b7055"/>
+    <path d="M10 16C10 0 38 0 38 16v18c-2 13-25 13-28 0Z" fill="#d8a877"/>
+    <path d="M16 20q3-4 5 0m9 0q3-4 5 0" fill="none" stroke="#294b4c" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="25" cy="28" rx="9" ry="7" fill="#f9e6c9"/>
+    <path d="m22 26 6 0-3 4zm3 4v3m-3 0q3 3 6 0" fill="#294b4c" stroke="#294b4c" stroke-width=".8"/>
+  </g>
+  <g font-family="Arial,sans-serif" fill="#294b4c">
+    <text x="113" y="26" font-size="7" letter-spacing="1.2">VISIT PREPARATION / KINDRED VET</text>
+    <circle cx="531" cy="22" r="5" fill="#cf765f"/>
+    <path d="M529 22h4m-2-2v4" stroke="#fffdf8" stroke-width="1"/>
+    <text x="112" y="59" font-size="24" font-weight="700" letter-spacing="-.9">A calmer visit starts here.</text>
+    <text x="113" y="76" font-size="8.5" fill="#5a7a84">Choose your pet. Gather the questions that matter.</text>
+  </g>
+  <rect x="112" y="92" width="270" height="172" rx="15" fill="#fffdf8" stroke="#bed3d5"/>
+  <g font-family="Arial,sans-serif" fill="#294b4c">
+    <text x="128" y="113" font-size="7" font-weight="700" letter-spacing=".8">01 / WHO’S COMING?</text>
+    <rect x="127" y="124" width="53" height="45" rx="9" fill="#f4dac4" stroke="#bd7960"/>
+    <rect x="189" y="124" width="53" height="45" rx="9" fill="#f5f5ec" stroke="#d2dddd"/>
+    <rect x="251" y="124" width="53" height="45" rx="9" fill="#f5f5ec" stroke="#d2dddd"/>
+    <rect x="313" y="124" width="53" height="45" rx="9" fill="#f5f5ec" stroke="#d2dddd"/>
+    <text x="153.5" y="162" font-size="7" text-anchor="middle">Dog</text><text x="215.5" y="162" font-size="7" text-anchor="middle">Cat</text>
+    <text x="277.5" y="162" font-size="7" text-anchor="middle">Rabbit</text><text x="339.5" y="162" font-size="6.2" text-anchor="middle">Another friend</text>
+    <text x="128" y="190" font-size="7" font-weight="700" letter-spacing=".8">02 / WHAT WOULD YOU LIKE HELP WITH?</text>
+    <rect x="127" y="199" width="113" height="23" rx="7" fill="#f3f4ee" stroke="#87aeb9"/>
+    <rect x="247" y="199" width="119" height="23" rx="7" fill="#f5f5ec" stroke="#d2dddd"/>
+    <text x="138" y="214" font-size="7.3">Routine checkup</text><text x="258" y="214" font-size="7.3">A new concern</text>
+    <text x="128" y="246" font-size="8" font-weight="700">See visit guidance →</text>
+  </g>
+  <g fill="none" stroke="#49707a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m148 135-3-4-2 5v8l4 1m13-10 3-4 2 5v8l-4 1m-13-7q6-7 12 0v8q-6 6-12 0Zm4 6h4l-2 2Z"/>
+    <path d="m209 137-2-6 7 5h4l7-5-2 6q5 13-7 13-12 0-7-13Zm4 5h5l-2 3Z"/>
+    <path d="M275 138c-6-12 0-15 2-2m4 2c6-12 0-15-2-2m-7 8q5-9 11 0c2 7-13 7-11 0Z"/>
+    <path d="M335 142q5-8 10 0c6 10-16 10-10 0Z"/><ellipse cx="333" cy="137" rx="1.4" ry="2"/><ellipse cx="337" cy="132" rx="1.4" ry="2"/><ellipse cx="342" cy="132" rx="1.4" ry="2"/><ellipse cx="346" cy="137" rx="1.4" ry="2"/>
+  </g>
+  <rect x="393" y="92" width="145" height="172" rx="15" fill="#dfe9dc"/>
+  <g font-family="Arial,sans-serif" fill="#294b4c">
+    <text x="408" y="115" font-size="6.5" letter-spacing="1.1" fill="#627b69">HERE TO HELP</text>
+    <text x="408" y="141" font-size="15" font-weight="700">Good questions.</text><text x="408" y="160" font-size="15" font-weight="700">A clearer visit.</text>
+    <path d="M408 178h114" stroke="#b1c4ae"/>
+    <text x="408" y="194" font-size="7.4">Bring your observations.</text><text x="408" y="208" font-size="7.4">Note medicines and routines.</text><text x="408" y="222" font-size="7.4">Keep questions together.</text>
+    <text x="408" y="247" font-size="7.5" font-weight="700">Prepare a visit note ↗</text>
+  </g>
+  <text x="113" y="279" fill="#63858e" font-family="Arial,sans-serif" font-size="6.6" letter-spacing=".5">GUIDANCE  /  VISIT NOTE  /  CARE INFORMATION</text>
+</svg>

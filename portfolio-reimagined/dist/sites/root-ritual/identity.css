@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap');
+
+/* Central boutique campaign, open product gallery and botanical notebook. */
+:root { --cream:#f6f5ef; --paper:#fdfcf8; --olive:#394633; --moss:#66715a; --copper:#876849; --ink:#30392e; --line:#d9ddcf; }
+body { font-family:'Jost',Arial,sans-serif; }
+h1,h2,h3,.logo,.footer-logo { font-family:'Cormorant Garamond',Georgia,serif; }
+a:focus-visible,button:focus-visible { outline:2px solid #657c49; outline-offset:5px; }
+section[id] { scroll-margin-top:25px; }
+.announcement { height:24px; background:#e5e9d9; color:var(--olive); font-size:8px; font-weight:500; }
+.announcement-mark { font-size:11px; color:var(--olive); }
+.site-header { display:grid; grid-template-columns:1fr auto 1fr; height:94px; padding:0 6%; border:0; }
+.logo { grid-column:2; grid-row:1; font-size:49px; font-weight:500; letter-spacing:-.055em; }
+.logo span { font-size:21px; color:var(--olive); }
+.main-nav { grid-column:1; grid-row:1; display:grid; grid-template-columns:repeat(2,max-content); gap:7px 25px; }
+.main-nav a,.header-link { font-size:11px; letter-spacing:.03em; text-transform:none; font-weight:400; }
+.header-link { grid-column:3; justify-self:end; border:0; }
+.header-link span { margin-left:15px; }
+.hero { display:block; min-height:0; padding:30px 6% 25px; }
+.hero-heading { text-align:center; margin:0 auto; position:relative; z-index:2; }
+.campaign-eyebrow { margin:0 0 20px; font-size:10px; letter-spacing:.2em; color:var(--moss); }
+.hero h1 { font:400 clamp(66px,7.2vw,108px)/.88 'Cormorant Garamond',Georgia,serif; letter-spacing:-.045em; white-space:normal; margin:0; }
+.hero h1 em { font-weight:400; color:var(--olive); }
+.campaign-stage { display:grid; grid-template-columns:1fr 1.35fr 1fr; align-items:center; max-width:1250px; margin:0 auto; gap:4%; }
+.campaign-note { max-width:260px; margin-top:32px; }
+.campaign-label { font-size:11px; letter-spacing:.05em; color:var(--moss); }
+.campaign-note>p { font-size:15px; line-height:1.75; margin:20px 0 25px; }
+.subtle-link,.text-arrow { font-weight:400; font-size:11px; letter-spacing:.03em; text-transform:none; }
+.hero-visual { height:405px; background:none; overflow:visible; }
+.hero-visual::before,.hero-visual>.botanical,.visual-halo,.visual-star,.specimen-label { display:none; }
+.specimen-botanical { position:absolute; inset:0; width:100%; height:100%; color:#6e815e; opacity:.8; }
+.large-bottle { left:50%; top:47%; transform:translate(-50%,-50%) rotate(0deg) scale(.9); filter:drop-shadow(12px 13px 10px #3946331f); }
+.bottle-glass { background:linear-gradient(90deg,#6a502f,#ad9b65 18%,#8b7950 40%,#665a37 85%); border:2px solid #baa774; box-shadow:inset 9px 0 13px #e9d79b5c,inset -10px 0 14px #303b1733; }
+.dropper-tip { background:#394633; }
+.bottle-label { inset:53px 9px 31px; background:#f6f1e7; border:1px solid #d9d1ba; box-shadow:none; }
+.bottle-label span { font:500 37px/.8 'Cormorant Garamond',Georgia,serif; letter-spacing:-.04em; }
+.bottle-label small { font-weight:500; margin-top:13px; }
+.bottle-label b { font-weight:500; }
+.visual-caption { left:50%; bottom:5px; transform:translateX(-50%); justify-content:center; text-align:center; width:100%; font-size:8px; font-weight:400; letter-spacing:.12em; color:var(--moss); }
+.visual-caption>span:first-child { display:none; }
+.campaign-product { text-align:right; margin-top:32px; }
+.campaign-product h2 { font:400 39px/.95 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; margin:18px 0; }
+.campaign-product>p { font-size:14px; line-height:1.6; color:var(--moss); margin-bottom:22px; }
+.button { border-radius:40px; font-family:'Jost',Arial,sans-serif; font-size:11px; font-weight:500; letter-spacing:.02em; text-transform:none; padding:15px 24px; gap:25px; }
+.campaign-size { display:block; font-size:10px; color:var(--moss); margin-top:14px; }
+.benefit-strip { height:auto; padding:22px 6%; border:0; font-size:9px; font-weight:400; letter-spacing:.1em; }
+.benefit-strip i { font-size:12px; color:var(--moss); }
+.section-pad { padding:75px 7%; }
+.section-heading { display:none; }
+.collection { background:var(--paper); padding-top:65px; }
+.collection-intro { display:block; text-align:center; margin:0 0 30px; }
+.collection-intro h2 { font:400 64px/.96 'Cormorant Garamond',Georgia,serif; letter-spacing:-.04em; margin:0; }
+.collection-intro p { font-size:14px; line-height:1.7; max-width:490px; margin:20px auto 0; color:var(--moss); }
+.collection h2 em { color:var(--olive); font-weight:400; }
+.collection-grid { gap:35px; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.product-card,.product-card.is-selected { border:0; padding:0; }
+.product-visual { height:310px; background:transparent; border-radius:160px 160px 12px 12px; transition:background .2s; }
+.product-card:last-child { grid-column:auto; }
+.product-card:last-child .product-visual { height:310px; }
+.product-card.is-selected .product-visual { background:#eef1e6; }
+.product-visual::before { display:none; }
+.product-visual>span { top:24px; left:0; width:100%; text-align:center; font-weight:400; letter-spacing:.1em; color:var(--moss); font-size:9px; }
+.mini-bottle { top:56%; filter:drop-shadow(10px 10px 10px #3946331f); }
+.mini-body b { font:500 21px/.85 'Cormorant Garamond',Georgia,serif; letter-spacing:-.03em; }
+.product-info { text-align:center; justify-content:center; min-height:94px; padding:17px 0 14px; }
+.product-info>span { display:none; }
+.product-info h3 { font:500 30px/1.1 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; }
+.product-info p { font-size:12px; line-height:1.6; color:var(--moss); max-width:260px; margin:8px auto; }
+.product-select { justify-content:center; border:0; border-bottom:1px solid var(--line); background:transparent; border-radius:30px; min-height:45px; padding:12px; font-weight:400; font-size:11px; letter-spacing:.015em; text-transform:none; }
+.product-select:hover,.product-select[aria-pressed=true] { background:var(--olive); color:var(--paper); }
+.product-detail { background:transparent; border-top:1px solid var(--line); padding:32px 0 0; margin-top:40px; grid-template-columns:1fr 1.25fr; gap:10%; }
+.product-detail-label { font-size:9px; font-weight:400; letter-spacing:.08em; }
+.product-detail h3 { font:500 36px/1 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; margin:18px 0; }
+.product-detail p { font-size:14px; line-height:1.75; max-width:420px; }
+.product-detail dl div { padding:12px 0; border-top:1px solid var(--line); grid-template-columns:30% 1fr; }
+.product-detail dt { font-size:9px; font-weight:500; letter-spacing:.08em; }
+.product-detail dd { font-size:13px; line-height:1.6; }
+.collection-foot { border:0; margin-top:28px; padding:0; }
+.collection-foot>span,.collection-note { font-size:10px; font-weight:400; letter-spacing:.01em; }
+.collection-note { max-width:670px; color:var(--moss); }
+.ritual { margin:30px 4% 60px; padding:55px 6%; border-radius:35px; background:#e9eddc; }
+.ritual-intro { display:block; text-align:center; margin:0 auto 35px; }
+.ritual h2 { font:400 57px/.95 'Cormorant Garamond',Georgia,serif; letter-spacing:-.025em; margin:0 0 20px; }
+.ritual h2 em { font-weight:400; color:var(--olive); }
+.ritual-intro p { margin:0 auto; max-width:460px; font-size:14px; }
+.ritual-count { display:none; }
+.ritual-builder { grid-template-columns:1.1fr .9fr; gap:8%; align-items:start; }
+.ritual-choices fieldset { border:0; margin-bottom:28px; }
+.ritual-choices legend { font:500 27px 'Cormorant Garamond',Georgia,serif; padding:10px 0 16px; }
+.ritual-choices legend span { display:none; }
+.choice-row { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+.choice { border:1px solid #bec8aa; border-radius:26px; background:#f9fbf3; min-height:52px; padding:12px 15px; justify-content:center; align-items:center; text-align:center; font-size:12px; font-weight:400; }
+.choice span { display:none; }
+.choice:hover { background:#e1e8d3; }
+.choice.is-selected { background:var(--olive); color:var(--paper); border-color:var(--olive); }
+.ritual-result { background:var(--paper); color:var(--ink); padding:25px 30px; min-height:0; border-radius:18px; }
+.result-top { font-size:9px; font-weight:400; letter-spacing:.09em; }
+.result-top span:last-child { color:var(--olive); }
+.ritual-result h3 { font:500 42px/.98 'Cormorant Garamond',Georgia,serif; letter-spacing:-.035em; margin:28px 0 18px; }
+.ritual-result>p { color:var(--moss); font-size:13px; max-width:none; }
+.result-steps { margin-top:14px; }
+.result-steps>div { border-top:1px solid var(--line); gap:12px; }
+.result-steps span { color:var(--olive); }
+.result-steps p { font-size:12px; line-height:1.5; }
+.ritual-result small { color:var(--moss); margin-top:18px; font-size:10px; line-height:1.6; }
+.routine-match { border-top:1px solid var(--line); }
+.routine-match>span { color:var(--moss); }
+.routine-match a { color:var(--olive); font:500 22px 'Cormorant Garamond',Georgia,serif; }
+.formula { display:grid; grid-template-columns:.8fr 1.2fr; gap:9%; background:var(--paper); }
+.formula-intro { display:block; margin:30px 0 0; }
+.formula h2 { font:400 66px/.94 'Cormorant Garamond',Georgia,serif; letter-spacing:-.035em; }
+.formula h2 em { color:var(--moss); font-weight:400; }
+.formula-intro p { font-size:14px; line-height:1.75; max-width:285px; margin-top:25px; }
+.ingredient-grid { display:block; }
+.ingredient-grid article { display:grid; grid-template-columns:125px 1fr; gap:4px 28px; border:0; padding:12px 0 20px; }
+.ingredient-art { grid-column:1; grid-row:1/4; height:160px; margin:0; background:none; border:0; }
+.ingredient-art::before,.ingredient-art::after,.ingredient-art b,.ingredient-orbit { display:none; }
+.ingredient-study { width:100%; height:150px; color:#60764e; }
+.art-argan .ingredient-study { color:#917346; }
+.ingredient-grid article>span { font-size:9px; align-self:end; color:var(--moss); font-weight:400; }
+.ingredient-grid h3 { font:500 36px/1 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; margin:8px 0; }
+.ingredient-grid p { font-size:13px; margin:0; max-width:330px; line-height:1.7; }
+.formula-note { grid-column:1/-1; font-size:10px; color:var(--moss); margin:0; }
+.story { padding-top:55px; padding-bottom:55px; }
+.story-grid { grid-template-columns:.8fr 1.2fr; align-items:center; max-width:1000px; margin:0 auto; gap:12%; }
+.story-art { min-height:310px; width:310px; max-width:100%; border-radius:50%; background:#e5e9d6; }
+.story-art::before,.story-art>span { display:none; }
+.story-sun { width:200px; height:200px; background:#f2efdf; left:18%; top:13%; box-shadow:none; }
+.story-leaf { width:155px; height:53px; background:#84946c; }
+.story-art>small { width:100%; left:0; bottom:40px; text-align:center; color:var(--olive); font-size:7px; }
+.story-copy { padding:0; }
+.tiny-star { font-size:20px; color:var(--moss); }
+.story h2 { font:400 54px/.98 'Cormorant Garamond',Georgia,serif; letter-spacing:-.025em; margin:18px 0; }
+.story h2 em { font-weight:400; color:var(--moss); }
+.story-copy p { font-size:14px; line-height:1.85; max-width:415px; margin-bottom:20px; }
+.quote-section { background:var(--cream); color:var(--olive); min-height:0; padding:25px 7% 55px; display:block; text-align:center; }
+.quote-section>span,.quote-leaf { display:none; }
+.quote-section blockquote { font:400 italic 45px/1.1 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; margin:0; }
+.quote-section blockquote em { color:var(--moss); }
+.how-to { background:var(--paper); }
+.how-grid { display:block; margin:0; }
+.how-grid>div { text-align:center; }
+.how-to h2 { font:400 49px/1 'Cormorant Garamond',Georgia,serif; letter-spacing:-.02em; margin:0 0 20px; }
+.how-to h2 em { font-weight:400; color:var(--moss); }
+.how-grid>div>p { max-width:475px; margin:0 auto 40px; font-size:14px; }
+.how-grid ol { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.how-grid li { border:0; display:block; padding:0; text-align:center; }
+.how-grid li>b { display:block; color:var(--moss); font-size:12px; margin-bottom:18px; }
+.how-grid h3 { font:500 30px 'Cormorant Garamond',Georgia,serif; margin:0 0 12px; }
+.how-grid li p { font-size:13px; line-height:1.7; max-width:260px; margin:0 auto; }
+.closing { min-height:0; display:grid; grid-template-columns:1fr auto; align-items:center; gap:20px; background:#e5e9d9; color:var(--olive); padding:45px 7%; }
+.closing-kicker,.closing-bottom,.closing-botanical { display:none; }
+.closing h2 { font:400 55px/.96 'Cormorant Garamond',Georgia,serif; letter-spacing:-.03em; margin:0; }
+.closing h2 em { color:var(--olive); font-weight:400; }
+.closing .button { background:var(--olive); color:var(--paper); }
+footer { background:var(--cream); color:var(--olive); padding:50px 7% 25px; }
+.footer-logo { font-size:57px; letter-spacing:-.04em; }
+.footer-top p { color:var(--moss); font-size:13px; }
+.footer-top nav a { font-size:11px; letter-spacing:.03em; text-transform:none; font-weight:400; }
+.footer-base { border-color:var(--line); color:var(--moss); font-size:9px; letter-spacing:.03em; margin-top:35px; }
+@media(max-width:1000px) {
+ .site-header { padding:0 4%; } .main-nav { gap:7px 15px; }
+ .campaign-stage { gap:2%; grid-template-columns:1fr 1.3fr 1fr; } .campaign-note { max-width:230px; }
+ .campaign-product h2 { font-size:34px; } .campaign-product .button { gap:12px; padding:14px 17px; }
+ .collection-grid { gap:20px; } .product-info h3 { font-size:27px; } .formula { gap:5%; } .story-grid { gap:7%; }
+}
+@media(max-width:900px) {
+ .site-header { height:76px; grid-template-columns:1fr auto; padding:0 6%; }
+ .logo { grid-column:1; justify-self:start; font-size:42px; } .main-nav,.header-link { display:none; }
+ .menu-button { display:flex; grid-column:2; justify-self:end; }
+ .mobile-nav:not([hidden]) { top:100px; padding:12px 6% 20px; background:var(--cream); }
+ .hero h1 { font-size:clamp(64px,8.5vw,84px); } .campaign-note>p { font-size:14px; }
+ .hero-visual { height:365px; } .large-bottle { transform:translate(-50%,-50%) scale(.78); }
+}
+@media(max-width:680px) {
+ .announcement { gap:10px; font-size:6px; letter-spacing:.1em; } .logo { font-size:37px; }
+ .hero { padding:25px 6% 28px; } .campaign-eyebrow { font-size:8px; margin-bottom:18px; }
+ .hero h1 { font-size:clamp(47px,13.8vw,76px); line-height:.94; }
+ .campaign-stage { grid-template-columns:1fr; gap:0; }
+ .hero-visual { grid-row:1; height:310px; width:100%; margin-top:12px; overflow:hidden; }
+ .large-bottle { top:46%; transform:translate(-50%,-50%) scale(.69); }
+ .specimen-botanical { opacity:.7; } .visual-caption { bottom:0; font-size:7px; }
+ .campaign-note { margin:24px auto 0; text-align:center; max-width:300px; } .campaign-note .campaign-label { display:none; }
+ .campaign-note>p { margin:0 0 16px; font-size:13px; line-height:1.7; }
+ .campaign-product { text-align:center; margin:22px 0 0; }
+ .campaign-product>.campaign-label,.campaign-product>h2,.campaign-product>p,.campaign-size { display:none; }
+ .benefit-strip { flex-wrap:wrap; padding:18px 8%; gap:12px; font-size:7px; } .benefit-strip i { display:none; }
+ .section-pad { padding:50px 6%; } .collection-intro h2 { font-size:48px; }
+ .collection-intro p { font-size:13px; max-width:325px; }
+ .collection-grid { grid-template-columns:1fr; gap:30px; }
+ .product-visual,.product-card:last-child .product-visual { height:285px; border-radius:150px 150px 10px 10px; max-width:300px; margin:auto; }
+ .product-card:last-child { grid-column:auto; } .product-info { min-height:0; }
+ .product-select { max-width:300px; margin:auto; }
+ .product-detail { grid-template-columns:1fr; gap:20px; padding-top:25px; } .product-detail h3 { font-size:33px; }
+ .product-detail dl div { grid-template-columns:1fr; gap:6px; } .collection-foot { flex-wrap:wrap; }
+ .ritual { margin:12px 3% 30px; padding:35px 6%; border-radius:24px; } .ritual h2 { font-size:45px; }
+ .ritual-builder { grid-template-columns:1fr; gap:8px; } .ritual-choices legend { font-size:25px; }
+ .choice-row { grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; } .choice { font-size:11px; padding:10px 8px; min-height:55px; }
+ .ritual-result { padding:24px; min-height:0; } .ritual-result h3 { font-size:36px; margin:25px 0 15px; }
+ .formula { display:block; } .formula-intro { margin:0 0 25px; text-align:center; } .formula h2 { font-size:49px; }
+ .formula-intro p { max-width:310px; margin:20px auto 0; font-size:13px; }
+ .ingredient-grid article { grid-template-columns:95px 1fr; gap:3px 18px; } .ingredient-art { height:145px; }
+ .ingredient-study { height:130px; } .ingredient-grid h3 { font-size:30px; } .ingredient-grid p { font-size:12px; }
+ .formula-note { margin-top:20px; } .story-grid { grid-template-columns:1fr; gap:30px; }
+ .story-art { width:260px; min-height:260px; margin:auto; } .story-copy { text-align:center; }
+ .story h2 { font-size:47px; } .story-copy p { max-width:325px; margin:0 auto 22px; font-size:13px; }
+ .quote-section { padding:20px 6% 45px; } .quote-section blockquote { font-size:32px; }
+ .how-to h2 { font-size:42px; } .how-grid ol { grid-template-columns:1fr; gap:30px; padding:0; }
+ .how-grid h3 { font-size:30px; } .closing { grid-template-columns:1fr; padding:35px 6%; text-align:center; justify-items:center; }
+ .closing h2 { font-size:47px; } footer { padding:35px 6% 22px; } .footer-logo { font-size:45px; }
+ .footer-top nav { margin-top:25px; } .footer-base { font-size:8px; gap:15px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button,.product-visual { transition:none; } }

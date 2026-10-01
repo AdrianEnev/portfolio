@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--ink:#18181b;--paper:#f0ecdf;--red:#df4937;--line:#b7b1a4;--font:'DM Sans',Arial,sans-serif;--mono:'DM Mono',monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font)}
+button,a{font:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #28709d;outline-offset:5px;box-shadow:0 0 0 2px var(--paper)}
+button:disabled{cursor:not-allowed}
+img{max-width:100%}
+.skip-link{position:absolute;left:12px;top:-100px;background:white;color:black;padding:12px;z-index:100}
+.skip-link:focus{top:12px}
+.eyebrow,.detail-label{font:10px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.red-dot{display:inline-block;background:var(--red);width:7px;height:7px;margin-right:7px}
+.site-header{min-height:80px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:16px 4.5%;gap:20px;position:relative;z-index:30}
+.wordmark{display:flex;align-items:center;gap:11px}
+.wordmark-mark{width:43px;height:43px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--red);font:800 28px/1 var(--display);letter-spacing:-.06em}
+.wordmark-name{font-weight:700;font-size:9px;letter-spacing:.12em;line-height:1.45}
+.site-header nav{display:flex;gap:30px;font-size:12px}
+.site-header nav a:hover,footer a:hover{color:#eeb144}
+.header-action{border:1px solid #736b64;padding:11px 16px;font-size:12px;white-space:nowrap}
+.header-action span{margin-left:24px}
+.mobile-menu-toggle,.mobile-action{display:none}
+.outline-button{display:flex;justify-content:space-between;align-items:center;gap:28px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:17px 0;font-size:13px;font-weight:700}
+.outline-button:hover{color:#942e24}
+/* The original curtain, spotlight and chair remain a code-native stage illustration. */
+.hero-art{min-width:0;min-height:510px;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 82%,#766455 0,#4e3934 27%,#251e1b 58%,#18181b 82%)}
+.curtain{position:absolute;top:0;height:100%;width:41%;background:repeating-linear-gradient(90deg,#69241f 0 14%,#862b24 17%,#531d1a 25%,#a0392c 34%,#581d1a 50%);box-shadow:0 0 50px #090808}
+.curtain.left{left:-12%;clip-path:polygon(0 0,100% 0,80% 35%,59% 65%,24% 100%,0 100%)}
+.curtain.right{right:-12%;transform:scaleX(-1);clip-path:polygon(0 0,100% 0,80% 35%,59% 65%,24% 100%,0 100%)}
+.spotlight{position:absolute;left:26%;top:0;width:48%;height:94%;background:linear-gradient(#e5c7a145,#f6d0a90a 60%);clip-path:polygon(48% 0,52% 0,100% 100%,0 100%)}
+.chair{position:absolute;width:100px;height:95px;bottom:21%;left:calc(50% - 50px);border:8px solid #140f0e;border-bottom:12px solid #140f0e;transform:perspective(200px) rotateY(-9deg);box-shadow:0 10px 3px -3px #100c0a}
+.chair:before,.chair:after{content:'';position:absolute;bottom:-55px;width:8px;height:48px;background:#140f0e}
+.chair:before{left:4px}.chair:after{right:4px}
+.chair i{position:absolute;background:#140f0e;height:9px;width:130px;left:-25px;top:61px}
+.art-label,.art-number{position:absolute;font:9px var(--mono);letter-spacing:.12em}
+.art-label{bottom:30px;left:30px;color:#e5d5be}
+.art-number{right:25px;top:28px;font:800 64px/.8 var(--display);letter-spacing:-.08em;color:#a77262}
+.stage-annotation{position:absolute;right:22px;top:42%;font:8px var(--mono);letter-spacing:.12em;writing-mode:vertical-rl;color:#cab2a0}
+.poster{background:#852e28;color:var(--paper);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.poster-ring{position:absolute;border:1px solid #f2d7ba6b;border-radius:50%;width:420px;height:420px;left:-240px;bottom:-85px;transform:rotate(-25deg)}
+.ring-two{left:auto;right:-250px;top:-200px;width:470px;height:470px;border-radius:0;transform:rotate(45deg)}
+.poster strong,.poster-top,.poster-bottom{position:relative;z-index:1}
+.seat{border:1px solid #918c81;background:var(--paper);color:var(--ink);border-radius:8px 8px 3px 3px;width:44px;height:44px;font:11px var(--mono)}
+.seat:hover:not(:disabled){background:#eed1bb;border-color:var(--ink)}
+.seat[aria-pressed=true]{background:var(--red);color:white;border-color:var(--red)}
+.seat:disabled{background:#77766f;color:#efebe0;border-color:#77766f;opacity:.65}
+.seat-key{display:flex;justify-content:center;flex-wrap:wrap;gap:17px;margin-top:25px;font:10px var(--mono)}
+.seat-key span{display:flex;align-items:center;gap:6px}
+.key-seat{width:12px;height:12px;border:1px solid #918c81;border-radius:3px;background:var(--paper)}
+.key-seat.selected{background:var(--red);border-color:var(--red)}
+.key-seat.unavailable{background:#77766f;border-color:#77766f}
+@media(max-width:650px){
+ .site-header{min-height:70px;padding:13px 5%}
+ .site-header .header-action,.site-header nav{display:none}
+ .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 13px;border:1px solid #8a7970;background:transparent;color:var(--paper);font:600 11px var(--mono);letter-spacing:.12em}
+ .mobile-menu-toggle span[aria-hidden]{color:#eeb144;font-size:18px;line-height:1}
+ .site-header nav.is-open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:12px 6% 20px;background:var(--ink);border-bottom:2px solid var(--red);box-shadow:0 16px 24px #18181b55}
+ .site-header nav.is-open a{display:block;padding:14px 0;border-bottom:1px solid #8a797055}
+ .site-header nav.is-open .mobile-action{display:block;color:#eeb144;font-weight:700}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+.site-header a:focus-visible,.site-header button:focus-visible,.manifesto a:focus-visible,footer a:focus-visible{outline-color:#eeb144;box-shadow:none}

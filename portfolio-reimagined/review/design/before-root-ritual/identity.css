@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap');
+
+/* A beauty campaign composed as a botanical specimen study. */
+:root { --cream: #f5f3ed; --paper: #fdfcf8; --olive: #394238; --moss: #747b69; --copper: #95673f; --line: #d7d8cc; }
+body { font-family: 'Jost', Arial, sans-serif; }
+.announcement { background: #e6e8de; color: var(--olive); height: 31px; }
+.announcement-mark { color: var(--copper); }
+.site-header { height: 91px; border-bottom: 0; }
+.logo, .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: -.055em; }
+.logo { font-size: 45px; }
+.main-nav a, .header-link { font-size: 11px; letter-spacing: .12em; font-weight: 500; }
+.hero { min-height: 680px; grid-template-columns: 46% 54%; position: relative; }
+.hero-copy { padding: 40px 9% 75px; z-index: 3; }
+.hero-index { font-weight: 500; letter-spacing: .14em; margin-bottom: 67px; }
+.hero-index span:last-child { font-size: 10px; }
+.hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(72px, 7.2vw, 105px); line-height: .93; letter-spacing: -.055em; font-weight: 400; }
+.hero h1 em { color: var(--olive); font-weight: 400; }
+.hero-copy > p { font-size: 16px; line-height: 1.7; max-width: 325px; margin-top: 30px; }
+.hero-actions { gap: 23px; }
+.button { font-family: 'Jost', Arial, sans-serif; font-weight: 500; letter-spacing: .12em; font-size: 11px; }
+.button-olive { background: #394238; padding: 17px 22px; }
+.subtle-link { font-weight: 500; font-size: 10px; letter-spacing: .11em; }
+.hero-notation { left: 9%; bottom: 36px; font-weight: 500; font-size: 8px; }
+.hero-visual { background: radial-gradient(ellipse at 52% 51%, #e4e6d8 0, #eeeee3 40%, #f5f3ed 73%); }
+.hero-visual::before { inset: 35px 35px 50px 0; border: 0; border-left: 1px solid #c4c8b8; }
+.visual-halo, .hero-visual > .botanical { display: none; }
+.specimen-botanical { position: absolute; inset: 25px 0 20px; width: 100%; height: calc(100% - 45px); color: #697857; z-index: 1; }
+.specimen-label { position: absolute; right: 9%; top: 57px; font-size: 9px; letter-spacing: .15em; color: #69715d; writing-mode: vertical-rl; z-index: 3; }
+.large-bottle { left: 50%; top: 48%; transform: translate(-50%, -50%) rotate(5deg) scale(1.07); filter: drop-shadow(22px 27px 20px #3c432027); }
+.bottle-glass { background: linear-gradient(90deg, #5b4329 0, #b3a16c 15%, #80734a 40%, #6b5c38 75%, #4b482e 100%); border: 2px solid #bcb390; box-shadow: inset 9px 0 13px #f8e7b05c, inset -13px 0 14px #1c2d1433; }
+.dropper-tip { background: #3e4337; }
+.bottle-label { background: #f6f1e7; box-shadow: none; inset: 53px 9px 31px; border: 1px solid #d9d1ba; }
+.bottle-label span { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 37px; line-height: .79; letter-spacing: -.04em; }
+.bottle-label small { font-weight: 500; margin-top: 13px; }
+.bottle-label b { font-weight: 500; font-size: 7px; }
+.visual-caption { bottom: 38px; left: 6%; font-size: 8px; font-weight: 500; line-height: 1.7; letter-spacing: .18em; }
+.visual-star { font-size: 19px; right: 39px; top: auto; bottom: 39px; }
+.benefit-strip { height: 66px; border-top: 1px solid var(--line); font-weight: 500; font-size: 9px; }
+.benefit-strip i { color: var(--moss); font-size: 12px; }
+.section-pad { padding: 100px 6% 105px; }
+.section-heading { border-color: var(--line); font-weight: 500; }
+.story-grid { grid-template-columns: .43fr .57fr; gap: 8%; margin-top: 65px; }
+.story-art { min-height: 525px; background: #dedbc9; }
+.story-art::before { border-color: #f7f6ef; }
+.story-sun { background: #f0eddd; width: 270px; height: 270px; left: 17%; top: 13%; }
+.story-art > span { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(48px, 4.4vw, 65px); line-height: .93; letter-spacing: -.035em; color: #354332; }
+.story-art > small { color: #52614a; font-weight: 500; }
+.story-leaf { background: #899779; height: 63px; border: 1px solid #6d7b5e; }
+.story-leaf::after { content: ''; position: absolute; width: 91%; height: 1px; top: 50%; left: 3%; background: #d8e0c8; transform: rotate(-10deg); }
+.story h2, .formula h2, .ritual h2, .collection h2, .how-to h2, .closing h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(66px, 6.3vw, 92px); line-height: .96; letter-spacing: -.045em; }
+.story h2 em, .formula h2 em, .ritual h2 em, .collection h2 em, .how-to h2 em { color: #737c61; font-weight: 400; }
+.story-copy p { font-size: 16px; max-width: 385px; }
+.tiny-star { font-size: 22px; color: var(--moss); }
+.formula-intro, .collection-intro { margin-top: 59px; }
+.ingredient-grid { gap: 35px; }
+.ingredient-grid article { border-top-color: var(--line); }
+.ingredient-art { height: 315px; background: #f4f2e8; border-bottom: 1px solid var(--line); }
+.ingredient-art::before, .ingredient-art::after, .ingredient-art b, .ingredient-orbit { display: none; }
+.ingredient-study { height: 245px; width: 83%; color: #637553; }
+.art-argan .ingredient-study { color: #8b7150; }
+.art-rosemary .ingredient-study { color: #577259; }
+.ingredient-grid h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 39px; }
+.ingredient-grid article > span { font-size: 8px; font-weight: 500; }
+.ingredient-grid p { font-size: 13px; max-width: 275px; }
+.quote-section { background: #867d66; min-height: 360px; padding: 35px 6%; }
+.quote-section blockquote { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(55px, 6.3vw, 92px); line-height: 1; letter-spacing: -.04em; }
+.quote-section > span { font-weight: 500; font-size: 8px; }
+.ritual { background: #e8eade; }
+.ritual-choices legend, .ritual-result h3, .product-info h3, .product-detail h3, .how-grid h3 { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -.025em; }
+.ritual-choices legend { font-size: 30px; }
+.choice { background: #f6f5ed; font-weight: 500; }
+.ritual-result { background: #4b5946; }
+.ritual-result h3 { font-size: 58px; }
+.product-visual { height: 375px; background: #eeeee4; }
+.product-scalp { background: #e9e3d7; }
+.product-ends { background: #f0e8df; }
+.product-visual::before { border: 0; width: 225px; height: 280px; border-radius: 47% 47% 0 0; background: #e0e3d4; top: 54%; }
+.product-scalp::before { background: #d7cbbb; }
+.product-ends::before { background: #ded0bd; }
+.product-card { border-top-color: var(--line); }
+.product-card.is-selected { border-top-width: 1px; }
+.product-info h3 { font-size: clamp(27px, 2.8vw, 36px); }
+.product-info p { font-size: 12px; line-height: 1.6; }
+.product-select { font-family: 'Jost', Arial, sans-serif; font-weight: 500; border-color: #87907b; padding: 14px 12px; letter-spacing: .08em; }
+.mini-body b { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; letter-spacing: -.03em; line-height: .75; }
+.product-detail { background: #efefe5; padding: 35px; }
+.product-detail h3 { font-size: clamp(40px, 4.2vw, 60px); }
+.how-to { background: #f0f0e6; }
+.how-grid { gap: 9%; }
+.closing { background: #48533f; min-height: 470px; }
+.closing h2 { font-size: clamp(75px, 8.3vw, 120px); }
+.closing h2 em { color: #d8d2b7; font-weight: 400; }
+footer { background: #35402f; }
+.footer-top p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 27px; }
+.footer-logo { font-size: 71px; }
+
+@media (max-width: 950px) {
+  .main-nav { gap: 18px; }
+  .main-nav a { font-size: 9px; }
+  .header-link { font-size: 9px; }
+  .hero h1 { font-size: 7.4vw; }
+  .hero-actions { flex-wrap: wrap; gap: 17px; }
+  .hero-index { margin-bottom: 76px; }
+  .large-bottle { transform: translate(-50%, -50%) rotate(5deg) scale(.95); }
+  .story-grid { gap: 7%; }
+  .ingredient-grid { gap: 20px; }
+}
+@media (max-width: 680px) {
+  .site-header { height: 77px; }
+  .mobile-nav:not([hidden]) { top: 108px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 32px 6% 62px; }
+  .hero-index { margin-bottom: 42px; }
+  .hero h1 { font-size: clamp(73px, 15vw, 104px); }
+  .hero-actions { gap: 24px; }
+  .hero-copy > p { font-size: 15px; margin-top: 24px; }
+  .hero-notation { bottom: 23px; left: 6%; }
+  .hero-visual { height: 445px; }
+  .hero-visual::before { inset: 15px 6% 37px; border-left: 0; border-top: 1px solid var(--line); }
+  .specimen-botanical { inset: 6px 0 20px; height: calc(100% - 26px); }
+  .specimen-label { top: 35px; right: 7%; font-size: 8px; }
+  .large-bottle { top: 47%; transform: translate(-50%, -50%) rotate(5deg) scale(.88); }
+  .visual-caption { bottom: 20px; }
+  .visual-star { bottom: 24px; right: 25px; }
+  .section-pad { padding: 65px 6% 75px; }
+  .story-grid { grid-template-columns: 1fr; gap: 33px; }
+  .story-art { min-height: 405px; }
+  .story-art > span { font-size: 59px; }
+  .story h2, .formula h2, .ritual h2, .collection h2, .how-to h2 { font-size: clamp(66px, 14vw, 87px); }
+  .ingredient-grid { gap: 30px; }
+  .ingredient-art { height: 285px; }
+  .ingredient-grid p { max-width: none; }
+  .quote-section { min-height: 310px; }
+  .quote-section blockquote { font-size: clamp(45px, 10vw, 66px); }
+  .product-detail { padding: 26px; }
+  .footer-logo { font-size: clamp(47px, 11vw, 67px); }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

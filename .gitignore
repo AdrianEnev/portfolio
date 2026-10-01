@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# The reimagined portfolio's dist directory contains its authored static source.
+!/portfolio-reimagined/dist/
+!/portfolio-reimagined/dist/**
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

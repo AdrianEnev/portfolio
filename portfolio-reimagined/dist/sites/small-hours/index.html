@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18181b">
+  <meta name="description" content="A theatre website connecting production notes, performance-date selection and an interactive seat-and-price preview. Independent website build by Adrian Enev." />
+  <title>Small Hours Theatre | Independent theatre</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=brands-20260929">
+  <link rel="stylesheet" href="styles.css?v=design-20260930">
+  <link rel="stylesheet" href="identity.css?v=design-20260930">
+  <link rel="stylesheet" href="../../site-case-link.css?v=design-20260930">
+  <script defer src="app.js?v=design-20260930"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Small Hours Theatre home"><span class="wordmark-mark" aria-hidden="true">sh</span><span class="wordmark-name">SMALL HOURS<br>THEATRE</span></a>
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-header-nav"><span>MENU</span><span aria-hidden="true">☰</span></button>
+    <nav id="mobile-header-nav" aria-label="Main navigation"><a href="#programme">Programme</a><a href="#about">The space</a><a href="#visit">Visit</a><a class="mobile-action" href="#programme">See what’s on ↗</a></nav>
+    <a class="header-action" href="#seats">Explore seats <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="playbill" id="top" aria-labelledby="hero-title">
+      <div class="edition-line"><span>INDEPENDENT THEATRE / SOFIA</span><span>STAGE CONCEPT / OCTOBER 2026</span></div>
+      <div class="playbill-masthead">
+        <h1 id="hero-title">Small Hours</h1>
+        <div class="masthead-aside"><span class="masthead-type">Theatre</span><span class="edition-stamp">OCT<br>2026</span></div>
+      </div>
+      <section class="programme" id="programme" aria-labelledby="programme-title">
+        <div class="programme-heading"><h2 id="programme-title">On the bill</h2><p>Choose a production. Take a closer look.</p><span class="programme-month">OCTOBER / THREE EVENINGS</span></div>
+        <div class="show-list" role="group" aria-label="Select a performance">
+          <button class="show-option is-active" type="button" data-show="0" aria-pressed="true"><span class="show-date">04 <small>OCT · 19:30</small></span><span class="show-name">The Quiet City<small>CONTEMPORARY DRAMA · 90 MIN</small></span><span class="show-arrow" aria-hidden="true">↗</span></button>
+          <button class="show-option" type="button" data-show="1" aria-pressed="false"><span class="show-date">11 <small>OCT · 19:30</small></span><span class="show-name">After the Rain<small>NEW WRITING · 75 MIN</small></span><span class="show-arrow" aria-hidden="true">↗</span></button>
+          <button class="show-option" type="button" data-show="2" aria-pressed="false"><span class="show-date">18 <small>OCT · 20:00</small></span><span class="show-name">Night Letters<small>POETRY & MUSIC · 80 MIN</small></span><span class="show-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <article class="show-feature" aria-live="polite">
+          <div class="poster" id="poster"><div class="poster-ring ring-one"></div><div class="poster-ring ring-two"></div><span class="poster-top">SMALL HOURS THEATRE PRESENTS</span><strong id="poster-title">THE<br>QUIET<br>CITY</strong><span class="poster-bottom" id="poster-date">04 OCTOBER · 19:30</span></div>
+          <div class="show-details">
+            <div class="show-detail-top"><p class="eyebrow"><span class="red-dot"></span> SELECTED PERFORMANCE</p><span class="programme-mark" aria-hidden="true">sh</span></div>
+            <div class="show-detail-copy"><h3 id="show-title">The Quiet City</h3><p id="show-description">In a city that never stops talking, two strangers discover the courage to listen. A tender, electric portrait of the things we leave unsaid.</p><div class="show-meta"><span id="show-genre">Drama</span><span id="show-duration">90 minutes</span><span>Intimate stage</span></div></div>
+            <div class="show-detail-bottom"><p class="show-price"><strong id="show-price">€22</strong><span>PER TICKET</span></p><a href="#seats" class="outline-button">Explore seats <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+        <div class="programme-notes" aria-live="polite">
+          <div class="production-copy"><span class="detail-label">BEHIND THE PRODUCTION</span><h3 id="notes-heading">The Quiet City</h3><p id="notes-synopsis">An original chamber drama in three scenes. Two commuters miss the final tram and begin an unlikely conversation that lasts until morning.</p></div>
+          <dl><div><dt>On stage</dt><dd id="notes-cast">Two performers · one live sound artist</dd></div><div><dt>Language</dt><dd id="notes-language">Bulgarian · English surtitles</dd></div><div><dt>Recommended for</dt><dd id="notes-age">Ages 14+</dd></div><div><dt>Format</dt><dd id="notes-format">90 minutes · no interval</dd></div></dl>
+        </div>
+        <p class="programme-intro" data-portfolio-hero>An intimate theatre programme, with stories worth making time for. Explore productions, choose a date and review a seating plan.</p>
+      </section>
+    </section>
+
+    <section class="manifesto" id="about" aria-labelledby="manifesto-title">
+      <div class="space-copy"><p class="eyebrow">THE SPACE</p><h2 id="manifesto-title">Close enough to feel every word.</h2><p class="space-figure"><strong>32</strong><span>SEATS<br>ONE SHARED MOMENT</span></p><p>At Small Hours Theatre, there is no distant balcony. The space is small on purpose: 32 seats, one shared moment, and room for stories to land differently with everyone.</p><a href="#seats" class="space-link">See the seating plan <span aria-hidden="true">↘</span></a></div>
+      <div class="hero-art" role="img" aria-label="Graphic theatre curtain framing a spotlight and a lone chair"><div class="curtain left"></div><div class="curtain right"></div><div class="spotlight"></div><div class="chair"><i></i></div><span class="art-label">A ROOM FOR EVERYTHING HUMAN.</span><span class="art-number" aria-hidden="true">sh</span><span class="stage-annotation" aria-hidden="true">PERFORMANCE / PRESENCE / POSSIBILITY</span></div>
+    </section>
+
+    <section class="seats" id="seats" aria-labelledby="seats-title">
+      <div class="seating-heading"><div><p class="eyebrow">SEATING PREVIEW</p><h2 id="seats-title">Take your place.</h2></div><p>Explore our intimate seating plan. Select a few seats to see how a visit could look.</p></div>
+      <div class="seat-layout">
+        <div class="seat-map"><div class="stage-line">STAGE</div><p class="seat-scroll-hint">Scroll the plan to see all eight seats in each row →</p><div class="seat-plan" tabindex="0" role="region" aria-label="Seating plan. Four rows with eight seats per row."><div class="seat-plan-inner"><div class="row-labels" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span></div><div id="seat-grid" class="seat-grid" role="group" aria-label="Choose seats for the selected performance"></div></div></div><div class="seat-key"><span><i class="key-seat available"></i> Available</span><span><i class="key-seat selected"></i> Selected</span><span><i class="key-seat unavailable"></i> Unavailable</span></div></div>
+        <aside class="seat-summary" aria-labelledby="seat-show-title"><p class="eyebrow">YOUR EVENING</p><h3 id="seat-show-title">The Quiet City</h3><p id="seat-show-date">04 October · 19:30</p><p class="seat-price"><span id="seat-unit-price">€22</span> per ticket</p><div class="seat-selection-summary" role="status" aria-live="polite" aria-atomic="true"><div class="summary-line"><span>Selected seats</span><strong id="selected-seat-label">None yet</strong></div><div class="summary-line"><span>Tickets</span><strong id="ticket-count">0</strong></div><div class="summary-total"><span>Estimated total</span><strong id="total-price">€0</strong></div></div><p class="seat-note">This is an interactive preview. Seating shown here does not reserve or purchase tickets.</p></aside>
+      </div>
+    </section>
+
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="visit-heading"><p class="eyebrow">PLAN YOUR VISIT</p><h2 id="visit-title">Before the curtain.</h2><p class="visit-intro">A practical guide to the evening, from arrival to the final bow.</p></div>
+      <div class="visit-details"><div><h3>Doors & curtain</h3><p>Doors open 30 minutes before the listed start time. Please allow a few extra minutes to find your seat; late seating may wait for a suitable pause.</p></div><div><h3>Language & access</h3><p>Each listing notes its language and surtitles. A step-free seat can be planned in advance; the sample seat map is for exploring the layout only.</p></div><div><h3>During the show</h3><p>Phones away and photography off, please. There is water in the foyer and room to settle before the performance begins.</p></div><div class="preview-note"><h3>About this preview</h3><p>Programme, performers, seating and visit details demonstrate a theatre website. No performance or seat can be booked here.</p></div></div>
+    </section>
+  </main>
+  <footer><a class="footer-wordmark" href="#top">SMALL <span>HOURS</span></a><p>Stay curious. Stay close.</p><div><a href="#programme">Programme ↑</a><a href="/projects.html">All case studies</a></div><small>Independent website build by Adrian Enev<a class="portfolio-case-link" href="/projects.html#small-hours">Read the Small Hours Theatre case study</a></small></footer>
+</body>
+</html>

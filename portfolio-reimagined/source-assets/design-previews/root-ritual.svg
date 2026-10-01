@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" role="img" aria-labelledby="rr-title rr-desc">
+  <title id="rr-title">Root Ritual — botanical collection and campaign illustration</title>
+  <desc id="rr-desc">A code-drawn brand and interface illustration, with a centred cream and olive campaign, an oil bottle surrounded by botanical linework, and three collection entries. This is not a product screenshot.</desc>
+  <defs>
+    <linearGradient id="rr-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#5b4930"/><stop offset=".22" stop-color="#ab9a68"/><stop offset=".58" stop-color="#82744c"/><stop offset="1" stop-color="#51472d"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="290" fill="#f5f3ed"/>
+  <g fill="#394238" font-family="Arial,sans-serif">
+    <text x="28" y="24" font-size="7.4" letter-spacing="1.1">THE COLLECTION</text>
+    <text x="532" y="24" font-size="7.4" letter-spacing="1.1" text-anchor="end">YOUR RITUAL ↗</text>
+  </g>
+  <text x="280" y="28" fill="#394238" font-family="Georgia,serif" font-size="26" text-anchor="middle" letter-spacing="-1">root ritual</text>
+  <path d="M28 40H532" stroke="#d7d8cc"/>
+  <text x="280" y="61" fill="#747b69" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.7" text-anchor="middle">BOTANICAL HAIR CARE / THE DAILY COLLECTION</text>
+  <text x="280" y="96" fill="#394238" font-family="Georgia,serif" font-size="29" text-anchor="middle" letter-spacing="-1.2">Good hair begins with a little care.</text>
+  <g fill="#747b69" font-family="Arial,sans-serif" font-size="8.4">
+    <text x="40" y="147" font-size="7" letter-spacing="1.1" fill="#95673f">FIND YOUR RITUAL</text>
+    <text x="40" y="164">Choose a care moment.</text><text x="40" y="176">Meet its matching oil.</text>
+    <path d="M40 191H168" stroke="#bdc3b0"/>
+    <text x="40" y="208" font-size="7.4" letter-spacing=".8" fill="#394238">BUILD YOUR RITUAL ↗</text>
+    <text x="404" y="147" font-size="7" letter-spacing="1.1" fill="#95673f">EVERYDAY HAIR OIL</text>
+    <text x="404" y="164">A finishing touch for</text><text x="404" y="176">your everyday routine.</text>
+    <path d="M404 191H524" stroke="#bdc3b0"/>
+    <text x="404" y="208" font-size="7.4" letter-spacing=".8" fill="#394238">EXPLORE THE OILS ↗</text>
+  </g>
+  <g fill="none" stroke="#7c896b" stroke-width="1" stroke-linecap="round">
+    <path d="M216 225C222 189 227 147 214 116M221 203c-17-1-25-11-24-20 15 0 24 8 24 20M225 180c14-8 21-21 17-30-13 7-19 17-17 30M225 157c-17-3-25-14-23-22 16 4 23 12 23 22M222 134c11-9 15-21 10-28-10 8-13 17-10 28"/>
+    <path d="M340 224c-2-41 1-72 15-109M341 204c18-5 29-16 27-25-16 2-24 12-27 25M343 179c-14-7-20-17-17-26 13 5 19 15 17 26M348 157c15-6 24-17 21-26-14 4-21 15-21 26M353 135c-9-9-12-18-7-25 8 7 11 16 7 25"/>
+  </g>
+  <ellipse cx="280" cy="226" rx="43" ry="4" fill="#dddbcf"/>
+  <path d="M270 126v-12q10-9 20 0v12" fill="#394238"/>
+  <rect x="265" y="124" width="30" height="29" rx="3" fill="#404535"/>
+  <path d="M269 127v20m4-20v20m4-20v20m6-20v20m4-20v20m4-20v20" stroke="#697158" stroke-width=".8"/>
+  <rect x="253" y="151" width="54" height="72" rx="11" fill="url(#rr-glass)" stroke="#7d7353"/>
+  <path d="M260 160v52" stroke="#d4c58d" stroke-width="2" opacity=".46"/>
+  <rect x="253" y="177" width="54" height="34" fill="#eee9dd"/>
+  <text x="280" y="191" fill="#394238" font-family="Georgia,serif" font-size="10" text-anchor="middle">root ritual</text>
+  <text x="280" y="202" fill="#747b69" font-family="Arial,sans-serif" font-size="4.5" text-anchor="middle" letter-spacing=".7">EVERYDAY HAIR OIL</text>
+  <path d="M28 239H532" stroke="#d7d8cc"/>
+  <g fill="#394238" font-family="Arial,sans-serif">
+    <text x="28" y="254" font-size="6.5" letter-spacing="1">01 / THE COLLECTION</text>
+    <text x="28" y="275" font-size="9">Everyday Hair Oil</text>
+    <text x="213" y="275" font-size="9">Pre-Wash Scalp Oil</text>
+    <text x="414" y="275" font-size="9">Ends &amp; Shine Oil</text>
+    <path d="M189 260v20M389 260v20" stroke="#d7d8cc"/>
+  </g>
+</svg>

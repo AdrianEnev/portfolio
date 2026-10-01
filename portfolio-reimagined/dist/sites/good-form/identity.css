@@ -1,0 +1,61 @@
+/* A precise, typographic shop identity with a quieter editorial voice in the quotes. */
+:root { --display: 'Space Grotesk', Arial, sans-serif; --mono: 'DM Mono', monospace; }
+.hero { grid-template-columns: 58% 42%; min-height: 690px; background: #23201f; color: var(--cream); }
+.hero-copy { padding: 58px 9% 75px; }
+.hero .overline { color: #c9aaa2; font: 10px/1.5 var(--mono); letter-spacing: .08em; gap: 25px; }
+.hero h1 { font: 500 clamp(54px, 6.5vw, 100px)/1.02 var(--display); letter-spacing: -.065em; white-space: normal; margin: 55px 0 27px; }
+.hero h1 em { color: #e0b4a8; font-weight: inherit; font-style: normal; }
+.hero-intro { color: #c3b9b0; max-width: 370px; }
+.hero-actions { gap: 26px; }
+.hero .button-dark { color: #211e1c; background: #f1ede4; }
+.hero .underlined-link { color: #eadacf; border-color: #b79a8e; }
+.hero-service-index { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; max-width: 440px; }
+.hero-service-index a { border-top: 1px solid #62524c; padding-top: 12px; text-decoration: none; }
+.hero-service-index span { display: block; font: 9px/1.4 var(--mono); letter-spacing: .02em; color: #bca79f; }
+.hero-service-index strong { display: block; margin-top: 7px; font: 400 18px var(--display); }
+.hero-service-index a:hover strong { color: #e0b4a8; }
+.hero-art { background: transparent; padding: 30px 8% 62px 0; }
+.hero-art-frame { min-height: 590px; border-color: #5b4944; background: linear-gradient(155deg, #49403a, #2e2525 70%); }
+.hero-art-frame::before,.hero-art-frame::after { display: none; }
+.art-grain { background: repeating-linear-gradient(0deg, transparent 0 69px, #cfb6a035 70px 71px); opacity: .6; }
+.chair { width: 91%; left: 4.5%; height: 85%; }
+.art-top,.art-bottom { font-family: var(--mono); font-weight: 400; letter-spacing: .08em; }
+.hero-footer { background: #23201f; border-top: 1px solid #584942; color: #c7b6ac; font: 9px var(--mono); letter-spacing: .04em; }
+.manifesto h2,.services h2,.barbers h2,.appointment h2,.visit h2,.aftercare-head h2 { font: 500 clamp(48px, 6vw, 92px)/1.02 var(--display); letter-spacing: -.055em; }
+.manifesto h2 em,.services h2 em,.barbers h2 em,.appointment h2 em,.visit h2 em,.aftercare-head h2 em { font-style: normal; font-weight: inherit; }
+.manifesto-grid { margin: 68px 0; grid-template-columns: 27% 73%; }
+.manifesto-numbers strong { font: 400 35px var(--mono); }
+.service-list article { padding: 27px 0; transition: background .2s; }
+.service-list article:hover { background: #e8e0d54d; }
+.service-list h3 { font: 500 clamp(25px, 3vw, 39px)/1.08 var(--display); letter-spacing: -.04em; }
+.service-no,.service-time { font-family: var(--mono); font-weight: 400; letter-spacing: .02em; }
+.service-list a { border-radius: 0; }
+.barber-info h3 { font: 500 30px/1.05 var(--display); letter-spacing: -.04em; }
+.booking-controls legend { font: 500 25px var(--display); letter-spacing: -.035em; }
+.booking-summary h3 { font: 500 51px/1.05 var(--display); letter-spacing: -.05em; }
+.care-choice { font: 500 clamp(24px, 2.5vw, 34px)/1.1 var(--display); letter-spacing: -.04em; }
+.care-result h3 { font: 500 clamp(34px, 3.5vw, 51px)/1.04 var(--display); letter-spacing: -.045em; }
+.section-label { font-family: var(--mono); font-weight: 400; letter-spacing: .05em; }
+@media (max-width: 1000px) {
+  .hero { grid-template-columns: 56% 44%; }
+  .hero-copy { padding: 45px 7% 70px; }
+  .hero h1 { font-size: clamp(48px, 6.8vw, 68px); margin-top: 48px; }
+  .hero-art { padding-right: 7%; }
+  .hero-art-frame { min-height: 575px; }
+  .hero-service-index { gap: 10px; }
+  .hero-service-index span { font-size: 8px; }
+}
+@media (max-width: 650px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 42px 6% 35px; }
+  .hero h1 { font-size: clamp(48px, 11.8vw, 75px); margin: 38px 0 23px; }
+  .hero-actions { gap: 20px; }
+  .hero-service-index { margin-top: 32px; max-width: none; }
+  .hero-art { height: 380px; padding: 0 6% 24px; }
+  .hero-art-frame { min-height: 0; }
+  .hero-footer { font-size: 7px; }
+  .manifesto-grid { display: block; margin: 45px 0; }
+  .manifesto h2,.services h2,.barbers h2,.appointment h2,.visit h2,.aftercare-head h2 { font-size: clamp(42px, 10.2vw, 65px); }
+  .services-head,.barbers-head,.appointment-header,.aftercare-head { margin-top: 45px; }
+  .service-list h3 { font-size: 27px; }
+}

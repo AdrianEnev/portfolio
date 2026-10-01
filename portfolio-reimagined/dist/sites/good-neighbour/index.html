@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173447">
+  <meta name="description" content="A property website combining home profiles, budget and area filters, saved shortlists and side-by-side comparison. Independent website build by Adrian Enev." />
+  <title>Good Neighbour Homes | Residential estate agency</title><link rel="icon" type="image/svg+xml" href="favicon.svg?v=brands-20260929">
+  <link rel="stylesheet" href="./styles.css?v=identities-20260929">
+  <link rel="stylesheet" href="identity.css?v=20260929">
+  <script src="app.js?v=photos-20260930" defer></script>
+<link rel="stylesheet" href="../../site-case-link.css">  <link rel="stylesheet" href="/assets/photography.css?v=photos-20260930">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="topline"><span>SOFIA · BULGARIA</span><span>HOMES WITH A SENSE OF PLACE</span><a href="#listings">EXPLORE THE COLLECTION <span aria-hidden="true">↗</span></a></div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Good Neighbour Homes home"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-name">GOOD NEIGHBOUR <small>HOMES</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="#listings">Properties</a><a href="#shortlist">Shortlist</a><a href="#neighbourhoods">Neighbourhoods</a><a href="#valuation">Valuation</a>
+      <a class="header-action" href="#listings">Find a home <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A MORE CONSIDERED WAY HOME</p>
+        <h1 id="hero-title">Room to find<br><em>your place.</em></h1>
+        <p class="hero-intro">Find a home by area, type and budget. Review the details, save a shortlist and compare the spaces that fit your next move.</p>
+        <div class="hero-actions"><a class="button button-light" href="#listings">Explore properties <span aria-hidden="true">↗</span></a><a class="underlined-link" href="#agency">Our perspective <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-foot"><span>01 / 04</span><span>PROPERTY, IN PERSPECTIVE</span></div>
+      </div>
+      <div class="hero-art has-photography" style="--photo-position: 50% 50%"><img class="photograph" src="/assets/images/sofia-city-panorama-1600.webp" srcset="/assets/images/sofia-city-panorama-800.webp 800w, /assets/images/sofia-city-panorama-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 40vw" width="1600" height="1012" alt="Panoramic view across Sofia rooftops towards the green hills." loading="eager" decoding="async" fetchpriority="high"><div class="hero-art-top"><span>GOOD NEIGHBOUR / 001</span><span>THE CITY, REFRAMED</span></div><div class="hero-art-bottom"><span>SOFIA / A SENSE OF PLACE</span><span>42.6977° N / 23.3219° E</span></div></div>
+    </section>
+    <div class="property-search" id="property-search">
+      <div class="search-controls" role="group" aria-label="Filter illustrative properties">
+          <label class="control"><span>NEIGHBOURHOOD</span><select id="area-filter"><option value="all">All areas</option><option value="Lozenets">Lozenets</option><option value="Oborishte">Oborishte</option><option value="Boyana">Boyana</option><option value="Centre">Centre</option><option value="Mladost">Mladost</option></select></label>
+          <label class="control"><span>PROPERTY TYPE</span><select id="type-filter"><option value="all">Any type</option><option value="Apartment">Apartment</option><option value="House">House</option><option value="Loft">Loft</option></select></label>
+          <label class="control"><span>MAXIMUM PRICE</span><select id="price-filter"><option value="all">Any budget</option><option value="300000">€300,000</option><option value="400000">€400,000</option><option value="500000">€500,000</option><option value="800000">€800,000</option></select></label>
+          <div class="search-submit"><a class="search-button" href="#listings">Show homes <span aria-hidden="true">↗</span></a><button class="clear-button" id="clear-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button></div>
+        </div>
+    </div>
+
+    <section class="search-section section-pad" id="listings" aria-labelledby="listings-title">
+      <div class="section-topline"><span>01 / DISCOVER</span><span>SPACE FOR WHAT COMES NEXT</span></div>
+      <div class="section-heading"><div><p class="eyebrow dark-eyebrow">CURATED PROPERTIES / SOFIA</p><h2 id="listings-title">Find your <em>next address.</em></h2></div><p>Search by what matters to you. Each home is presented with the essential details and the context around it. Photographs illustrate the sample collection.<br><a class="refine-search" href="#property-search">Adjust your search ↑</a></p></div>
+      <div class="search-shell">
+
+        <div class="results-toolbar"><div><strong id="result-count">6 homes</strong><span>ILLUSTRATIVE PROPERTY COLLECTION</span></div><div class="toolbar-actions"><button class="saved-toggle" id="saved-toggle" type="button" aria-pressed="false"><span aria-hidden="true">♡</span> Saved <b id="saved-count">0</b></button><a class="compare-link" href="#shortlist">Compare saved ↗</a><span class="toolbar-divider" aria-hidden="true"></span><div class="view-switch" role="group" aria-label="Property view"><button id="list-view" class="is-active" type="button" aria-pressed="true">List</button><button id="map-view" type="button" aria-pressed="false">Map</button></div></div></div>
+        <p class="sr-only" id="results-status" role="status" aria-live="polite"></p>
+        <div id="property-grid" class="property-grid" aria-label="Property results"></div>
+        <div id="map-panel" class="map-panel" hidden><div class="map-canvas" role="group" aria-label="Illustrative map of Sofia listings"><div class="map-grid" aria-hidden="true"></div><span class="map-river" aria-hidden="true"></span><span class="map-label map-label-centre">CITY CENTRE</span><span class="map-label map-label-lozenets">LOZENETS</span><span class="map-label map-label-boyana">BOYANA</span><span class="map-label map-label-mladost">MLADOST</span><div id="map-markers"></div><span class="map-caption">ILLUSTRATIVE MAP · NOT PRECISE PROPERTY LOCATIONS</span></div><aside class="map-detail" id="map-detail" aria-live="polite"><span class="detail-overline">SELECT A MAP MARKER</span><h3>A different way to look around.</h3><p>Choose a price marker to see a home from the collection.</p></aside></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌂</span><h3>No homes match just yet.</h3><p>Try a broader area or budget to see more of the collection.</p><button type="button" id="empty-reset">Reset filters <span aria-hidden="true">↗</span></button></div>
+      </div>
+    </section>
+
+    <section class="shortlist-section section-pad" id="shortlist" aria-labelledby="shortlist-title"><div class="section-topline"><span>02 / COMPARE</span><span>THE DETAILS BEHIND THE DECISION</span></div><div class="shortlist-heading"><div><p class="eyebrow dark-eyebrow">YOUR LOCAL SHORTLIST</p><h2 id="shortlist-title">A clearer view,<br><em>side by side.</em></h2></div><p>Save homes as you browse, then choose up to three to compare. This shortlist stays in your browser and uses illustrative property details.</p></div><div class="shortlist-shell"><div id="shortlist-picker" class="shortlist-picker" aria-live="polite"></div><div id="compare-content" class="compare-content" aria-live="polite"></div></div></section>
+
+    <section class="neighbourhood-section section-pad" id="neighbourhoods" aria-labelledby="neighbourhood-title">
+      <div class="section-topline"><span>03 / THE CITY</span><span>MORE THAN A PIN ON A MAP</span></div>
+      <div class="neighbourhood-heading"><p class="eyebrow">SOFIA, STREET BY STREET</p><h2 id="neighbourhood-title">The right home begins<br>with the <em>right neighbourhood.</em></h2><p>Every area has its own rhythm. Start with the places that feel closest to yours.</p></div>
+      <div class="area-grid">
+        <article class="area-card area-lozenets"><span class="area-number">01 / 03</span><div class="area-art" aria-hidden="true"><span class="area-shape"></span><span class="area-line"></span></div><div class="area-copy"><span>LEAFY / CONNECTED</span><h3>Lozenets</h3><p>A quieter pace with the city close at hand.</p><button type="button" data-area="Lozenets">Explore homes <span aria-hidden="true">↗</span></button></div></article>
+        <article class="area-card area-oborishte"><span class="area-number">02 / 03</span><div class="area-art" aria-hidden="true"><span class="area-shape"></span><span class="area-line"></span></div><div class="area-copy"><span>CULTURE / CHARACTER</span><h3>Oborishte</h3><p>Stately streets, small galleries, and familiar cafés.</p><button type="button" data-area="Oborishte">Explore homes <span aria-hidden="true">↗</span></button></div></article>
+        <article class="area-card area-boyana"><span class="area-number">03 / 03</span><div class="area-art" aria-hidden="true"><span class="area-shape"></span><span class="area-line"></span></div><div class="area-copy"><span>GREEN / GROUNDED</span><h3>Boyana</h3><p>More breathing room at the foot of the mountain.</p><button type="button" data-area="Boyana">Explore homes <span aria-hidden="true">↗</span></button></div></article>
+      </div>
+    </section>
+
+    <section class="agency-section section-pad" id="agency" aria-labelledby="agency-title">
+      <div class="section-topline"><span>03 / OUR APPROACH</span><span>THOUGHTFUL BY DESIGN</span></div>
+      <div class="agency-grid"><div class="agency-intro"><p class="eyebrow dark-eyebrow">A CLEARER WAY FORWARD</p><h2 id="agency-title">People first.<br><em>Property second.</em></h2><p>Good advice makes space for better decisions. We bring together carefully framed homes, useful local insight, and a straightforward conversation at every step.</p><a class="text-button" href="#valuation">Explore valuation <span aria-hidden="true">↗</span></a></div><div class="agency-art" aria-hidden="true"><div class="art-arch"><div></div></div><span>GN / PERSPECTIVE</span></div></div>
+      <div class="approach-row"><article><span>01</span><h3>Listen closely</h3><p>Begin with the way you live, the places you love, and what you need next.</p></article><article><span>02</span><h3>See the whole picture</h3><p>Understand the home, its setting, and the details behind each decision.</p></article><article><span>03</span><h3>Move confidently</h3><p>Keep the process clear, from the first shortlist through the final questions.</p></article></div>
+      <div class="agents-block"><div><p class="eyebrow dark-eyebrow">THE PEOPLE BEHIND THE SEARCH</p><h3>Meet the advisors.</h3></div><div class="agent-grid"><article class="agent"><div class="agent-monogram" aria-hidden="true">MP</div><div><h4>Mira Petkova</h4><p>Residential advisor</p></div><span aria-hidden="true">↗</span></article><article class="agent"><div class="agent-monogram" aria-hidden="true">DI</div><div><h4>Daniel Iliev</h4><p>Neighbourhood specialist</p></div><span aria-hidden="true">↗</span></article></div></div>
+    </section>
+
+    <section class="valuation-section section-pad" id="valuation" aria-labelledby="valuation-title"><div class="section-topline"><span>04 / YOUR NEXT MOVE</span><span>START WITH A CLEARER NUMBER</span></div><div class="valuation-grid"><div class="valuation-copy"><p class="eyebrow">A USEFUL STARTING POINT</p><h2 id="valuation-title">What could your<br><em>space be worth?</em></h2><p>Explore an indicative range using a few broad details. This local calculator is an interface demonstration, not a market appraisal or an offer.</p><div class="valuation-note"><span>↗</span><p>For a real valuation, a property specialist would review the address, condition, market evidence, and your goals.</p></div></div><div class="valuation-tool"><div class="tool-top"><span>QUICK ESTIMATE / DEMO</span><span>01—03</span></div><label>AREA<select id="valuation-area"><option value="Lozenets">Lozenets</option><option value="Oborishte">Oborishte</option><option value="Centre">Centre</option><option value="Mladost">Mladost</option><option value="Boyana">Boyana</option></select></label><label>PROPERTY TYPE<select id="valuation-type"><option value="Apartment">Apartment</option><option value="House">House</option><option value="Loft">Loft</option></select></label><label class="size-label"><span>FLOOR AREA <strong id="size-output">100 m²</strong></span><input id="valuation-size" type="range" min="40" max="300" step="5" value="100" aria-label="Floor area in square metres"></label><div class="estimate-result"><span>ILLUSTRATIVE RANGE</span><strong id="estimate-range">€000,000 – €000,000</strong><small>Indicative interface example only. No information is sent or saved.</small></div></div></div></section>
+  </main>
+
+  <dialog class="property-dialog" id="property-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" type="button" aria-label="Close property details">×</button><div id="dialog-content"></div></dialog>
+
+  <footer class="site-footer"><div class="footer-main"><div><a class="footer-brand" href="#top">GOOD NEIGHBOUR <span>HOMES</span></a><p>Good places make room for a better life.</p></div><nav aria-label="Footer navigation"><a href="#listings">Properties</a><a href="#neighbourhoods">Neighbourhoods</a><a href="#agency">Our approach</a><a href="#valuation">Valuation</a></nav><a class="footer-return" href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> GOOD NEIGHBOUR HOMES</span><span>INDEPENDENT WEBSITE BUILD BY ADRIAN ENEV<a class="portfolio-case-link" href="/projects.html#good-neighbour">Read the Good Neighbour Homes case study</a><a class="photography-credit-link" href="/image-credits.html#good-neighbour">Photography credits</a></span><a href="/projects.html">VIEW ALL CASE STUDIES</a></div></footer>
+</body>
+</html>

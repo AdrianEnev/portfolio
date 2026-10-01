@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" role="img" aria-labelledby="sh-title sh-desc">
+  <title id="sh-title">Small Hours Theatre — programme-led playbill illustration</title>
+  <desc id="sh-desc">A code-drawn theatre brand and interface illustration, with a bold cream, red and black masthead, a three-production date strip, a burgundy poster and selected-production notes. This is not a production screenshot.</desc>
+  <rect width="560" height="290" fill="#f0ecdf"/>
+  <g fill="#18181b" font-family="Arial,sans-serif">
+    <text x="28" y="24" font-size="7.2" font-weight="700" letter-spacing="1.2">THEATRE / SOFIA</text>
+    <text x="532" y="24" font-size="7.2" letter-spacing="1.1" text-anchor="end">OCTOBER 2026</text>
+  </g>
+  <path d="M28 36H532" stroke="#18181b" stroke-width="1.2"/>
+  <text x="25" y="91" fill="#18181b" font-family="Impact,'Arial Narrow',Arial,sans-serif" font-size="61" font-weight="700" letter-spacing="1.2">SMALL <tspan fill="#df4937">HOURS</tspan></text>
+  <path d="M28 104H532" stroke="#18181b" stroke-width="2"/>
+  <rect x="28" y="111" width="165" height="33" fill="#18181b"/>
+  <g font-family="Arial,sans-serif">
+    <g fill="#f0ecdf">
+      <text x="37" y="131" font-size="17" font-weight="700" letter-spacing="-.6">04</text>
+      <text x="66" y="125" font-size="9" font-weight="700">The Quiet City</text><text x="66" y="137" font-size="5.8" letter-spacing=".7">OCT / 19:30</text>
+    </g>
+    <g fill="#18181b">
+      <text x="207" y="131" font-size="17" font-weight="700" letter-spacing="-.6">11</text>
+      <text x="236" y="125" font-size="9" font-weight="700">After the Rain</text><text x="236" y="137" font-size="5.8" letter-spacing=".7">OCT / 19:30</text>
+      <text x="377" y="131" font-size="17" font-weight="700" letter-spacing="-.6">18</text>
+      <text x="406" y="125" font-size="9" font-weight="700">Night Letters</text><text x="406" y="137" font-size="5.8" letter-spacing=".7">OCT / 20:00</text>
+    </g>
+    <path d="M362 116v23" stroke="#aaa69a"/>
+  </g>
+  <rect x="28" y="159" width="278" height="110" fill="#852e28"/>
+  <path d="M251 159v110m-8-110v110m16-110v110m16-110v110m-8-110v110" stroke="#f0ecdf" stroke-width="1" opacity=".2"/>
+  <g fill="#f0ecdf" font-family="Impact,'Arial Narrow',Arial,sans-serif" font-weight="700" letter-spacing="1">
+    <text x="40" y="197" font-size="34">THE QUIET</text><text x="40" y="235" font-size="43">CITY</text>
+  </g>
+  <path d="M42 247H229" stroke="#f0ecdf" stroke-width=".8" opacity=".6"/>
+  <text x="42" y="260" fill="#f0ecdf" font-family="Arial,sans-serif" font-size="6.2" letter-spacing=".7">04 OCTOBER / 19:30 / CHAMBER DRAMA</text>
+  <g fill="#18181b" font-family="Arial,sans-serif">
+    <text x="326" y="170" font-size="6.5" letter-spacing="1.1" fill="#852e28">SELECTED PRODUCTION / 01</text>
+    <text x="326" y="194" font-size="20" font-weight="700" letter-spacing="-.6">The Quiet City</text>
+    <text x="326" y="212" font-size="7.6">Two strangers. One final tram.</text>
+    <text x="326" y="225" font-size="7.6">A conversation until morning.</text>
+    <path d="M326 235H532" stroke="#aaa69a"/>
+    <text x="326" y="248" font-size="6.6" letter-spacing=".2">90 MIN / BULGARIAN / ENGLISH SURTITLES</text>
+    <text x="326" y="267" font-size="7.5" font-weight="700">EXPLORE THE SEATING PREVIEW ↗</text>
+  </g>
+  <path d="M28 282H532" stroke="#18181b" stroke-width=".8"/>
+</svg>

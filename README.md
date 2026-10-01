@@ -1,4 +1,15 @@
-# Personal Portfolio
+# Personal Portfolios
+
+This repository contains both versions of Adrian Enev's portfolio:
+
+| Version | Location | Local preview |
+| --- | --- | --- |
+| Original React portfolio | Repository root (`src/`, `public/`, `assets/`) | `npm install`, then `npm run dev` |
+| Reimagined static portfolio | [`portfolio-reimagined/`](portfolio-reimagined/README.md) | `python3 -m http.server 4173 --directory portfolio-reimagined/dist` |
+
+The reimagined portfolio includes its complete authored HTML, CSS, JavaScript, images, individual business websites, supporting scripts and review notes. Its `dist/` directory is source and requires no build step. Open [http://localhost:4173](http://localhost:4173) after starting its preview server.
+
+The setup and configuration below describe the original React portfolio. See the [reimagined portfolio README](portfolio-reimagined/README.md) for that version's documentation.
 
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fadrianenev.com&label=adrianenev.com&style=for-the-badge)](https://adrianenev.com)
 

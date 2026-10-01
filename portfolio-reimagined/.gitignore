@@ -1,0 +1,13 @@
+# Local deployment state and development files
+.netlify/
+node_modules/
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+
+# dist/ is authored source for this standalone static site and must be tracked.
+!dist/
+!dist/**
