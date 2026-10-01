@@ -1,156 +1,34 @@
-# Personal Portfolios
+# Adrian Enev's Portfolios
 
-This repository contains both versions of Adrian Enev's portfolio:
+This repository contains both portfolio projects:
 
-| Version | Location | Local preview |
+| Project | Source | Stack |
 | --- | --- | --- |
-| Original React portfolio | Repository root (`src/`, `public/`, `assets/`) | `npm install`, then `npm run dev` |
-| Reimagined static portfolio | [`portfolio-reimagined/`](portfolio-reimagined/README.md) | `python3 -m http.server 4173 --directory portfolio-reimagined/dist` |
+| `portfolio` | [`portfolio/`](portfolio/README.md) | Static HTML, CSS and JavaScript |
+| `portfolio-old` | [`portfolio-old/`](portfolio-old/README.md) | React, TypeScript and Vite |
 
-The reimagined portfolio includes its complete authored HTML, CSS, JavaScript, images, individual business websites, supporting scripts and review notes. Its `dist/` directory is source and requires no build step. Open [http://localhost:4173](http://localhost:4173) after starting its preview server.
+## Preview the current portfolio
 
-The setup and configuration below describe the original React portfolio. See the [reimagined portfolio README](portfolio-reimagined/README.md) for that version's documentation.
+From the repository root:
 
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fadrianenev.com&label=adrianenev.com&style=for-the-badge)](https://adrianenev.com)
-
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases my projects, skills, and achievements in a clean, interactive interface.
-
-## 🚀 Features
-
-- **Modern UI/UX** with smooth animations using Framer Motion
-- **Fully Responsive** design that works on all devices
-- **Dark/Light Mode** (if implemented)
-- **Interactive Components** including animated text and scroll-triggered elements
-- **Project Showcase** with detailed case studies
-- **Contact Form** powered by Netlify Functions + Amazon SES (SMTP via Nodemailer)
-- **Multilingual Support** (if implemented)
-
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React 19
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animation**: Framer Motion, Rough Notation
-- **Routing**: Wouter
-- **Icons**: Lucide Icons, Font Awesome
-- **Form Handling**: Netlify Functions + Amazon SES
-- **Deployment**: Netlify
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or later)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AdrianEnev/portfolio.git
-   cd portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
-
-### Building for Production
-
-```bash
-npm run build
-# or
-yarn build
+```sh
+python3 -m http.server 4173 --directory portfolio/dist
 ```
 
-## 📁 Project Structure
+Open [http://localhost:4173](http://localhost:4173). The current portfolio's `dist/` folder contains its authored source, images and ten individual business websites. No installation or build step is required.
 
-```
-src/
-├── assets/           # Static assets (images, icons, etc.)
-├── components/       # Reusable UI components
-│   ├── About/        # About page components
-│   ├── Achievements/ # Achievement components
-│   ├── Bars/         # Header and Sidebar components
-│   ├── Contact/      # Contact page components
-│   ├── Home/         # Home page components
-│   └── Projects/     # Project showcase components
-├── routes/           # Page components
-├── types/            # TypeScript type definitions
-└── use/              # Custom React hooks
+## Preview the old portfolio
 
-netlify/
-└── functions/        # Serverless functions (send-email)
+```sh
+cd portfolio-old
+npm ci
+npm run dev
 ```
 
-## 🔧 Configuration
+To build the old portfolio, run `npm run build` from `portfolio-old/`.
 
-Environment variables are configured in your Netlify Site settings (do not expose these in the public Vite env):
+## Deployment paths
 
-```env
-# Email provider
-EMAIL_PROVIDER=ses
+For the current static portfolio, serve `portfolio/dist` as the web root. For the old React portfolio, use `portfolio-old` as the build base, `npm run build` as the build command, `dist` as the publish directory and `netlify/functions` as the functions directory relative to that base.
 
-# SES SMTP
-SES_SMTP_HOST=email-smtp.us-east-1.amazonaws.com
-SES_SMTP_PORT=587
-SES_SMTP_USER=your_ses_smtp_username
-SES_SMTP_PASS=your_ses_smtp_password
-
-# Routing
-EMAIL_FROM=portfolio@adrianenev.com
-EMAIL_FROM_NAME=adrianenev.com
-EMAIL_TO=you@yourdomain.com
-
-# CORS / Origin
-APP_BASE_URL=https://adrianenev.com
-```
-
-Notes:
-- Make sure your SES domain and From address are verified, and your account is out of sandbox or the To address is verified.
-- Do NOT prefix these with `VITE_`—they must remain server-only.
-
-## 🧪 Local development for functions
-
-To test the Netlify Function locally with the frontend, use Netlify CLI (optional):
-
-```bash
-npm i -g netlify-cli
-netlify dev
-```
-
-This runs the Vite dev server and proxies `/.netlify/functions/*` to local functions.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Framer Motion](https://www.framer.com/motion/) for animations
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [React Icons](https://react-icons.github.io/react-icons/) for icons
-- [Netlify](https://www.netlify.com/) for deployment
-
-## 📬 Contact
-
-- **Name**: Adrian Enev
-- **Email**: [enevadria@gmail.com](mailto:enevadria@gmail.com)
-- **Website**: [adrianenev.com](https://adrianenev.com)
-- **GitHub**: [github.com/AdrianEnev](https://github.com/AdrianEnev)
-
----
-
-Made with ❤️ by Adrian Enev
+Each project includes its own README, assets and configuration. The current project's older review documents use its previous local folder name, `portfolio-reimagined`.

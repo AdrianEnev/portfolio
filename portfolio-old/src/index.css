@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Outfit:wght@300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-sora: "Sora", sans-serif;
+    --font-outfit: "Outfit", sans-serif;
+}
+
+:root {
+    /* light Mode: "Daylight" Aesthetic (Sharp, Clean, Solid) */
+    --color-midnight: #FFFFFF;
+    /* Pure White */
+    --color-deep-indigo: #F1F5F9;
+    /* Very light subtle gray for containers */
+    --color-electric: #4F46E5;
+    /* Sharper Indigo */
+    --color-cyan-glow: #0EA5E9;
+    /* Sky Blue */
+    --color-surface: #FFFFFF;
+    /* White */
+    --color-surface-light: #F8FAFC;
+    /* Slate 50 */
+    --color-text-main: #0F172A;
+    /* Slate 900 - nearly black */
+    --color-text-dim: #475569;
+    /* Slate 600 - distinct grey */
+}
+
+.dark {
+    /* Dark Mode (Original "Shocking" Design) */
+    --color-midnight: #020617;
+    --color-deep-indigo: #1e1b4b;
+    --color-electric: #6366f1;
+    --color-cyan-glow: #06b6d4;
+    --color-surface: #0f172a;
+    --color-surface-light: #1e293b;
+    --color-text-main: #f8fafc;
+    --color-text-dim: #94a3b8;
+
+    --gradient-mesh-1: hsla(253, 16%, 7%, 1);
+    --gradient-mesh-2: hsla(225, 39%, 30%, 1);
+    --gradient-mesh-3: hsla(339, 49%, 30%, 1);
+}
+
+@theme {
+    --breakpoint-3xs: 25rem;
+    --breakpoint-2xs: 27.5rem;
+    --breakpoint-xs: 30rem;
+    --breakpoint-semilg: 61.875rem;
+    --breakpoint-3xl: 112rem;
+    --breakpoint-4xl: 126rem;
+    --breakpoint-5xl: 140rem;
+}
+
+html,
+body {
+    @apply bg-[var(--color-midnight)] text-[var(--color-text-main)] select-none font-outfit overflow-x-hidden;
+    min-height: 100%;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    overflow-y: auto;
+}
+
+#root {
+    min-height: 100%;
+}
+
+/* Background elements */
+.mesh-gradient {
+    background-color: var(--color-midnight);
+    /* No gradients in light mode - just clean white */
+}
+
+.dark .mesh-gradient {
+    /* Only apply mesh in dark mode */
+    background-image:
+        radial-gradient(at 0% 0%, var(--gradient-mesh-1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, var(--gradient-mesh-2) 0, transparent 50%),
+        radial-gradient(at 100% 0%, var(--gradient-mesh-3) 0, transparent 50%);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Glassmorphism */
+.glass {
+    @apply bg-[var(--color-surface)]/10 backdrop-blur-xl border border-[var(--color-text-main)]/10 shadow-2xl;
+}
+
+/* Distinct Light Mode Card Style (Not Glass) */
+:root:not(.dark) .glass {
+    @apply bg-white border border-slate-200 shadow-xl backdrop-blur-none;
+}
+
+/* Navigation Links */
+.nav-link {
+    @apply relative text-[var(--color-text-dim)] font-medium text-base md:text-lg hover:text-[var(--color-text-main)] transition-colors duration-300;
+}
+
+:root:not(.dark) .nav-link {
+    @apply text-slate-600 hover:text-slate-900 font-semibold;
+}
+
+.nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[var(--color-electric)] to-[var(--color-cyan-glow)] rounded-full transition-all duration-300;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    @apply text-white;
+}
+
+:root:not(.dark) .nav-link.active {
+    @apply text-[var(--color-electric)];
+}
+
+/* Modern Button System */
+.btn {
+    @apply inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300 select-none cursor-pointer active:scale-95;
+}
+
+.btn-lg {
+    @apply px-6 py-3 text-base md:text-lg;
+}
+
+.btn-primary {
+    @apply bg-gradient-to-r from-[var(--color-electric)] to-[var(--color-cyan-glow)] text-white hover:brightness-110 border border-transparent;
+    box-shadow: 0 0 20px var(--color-electric);
+}
+
+:root:not(.dark) .btn-primary {
+    /* Shadow adjustment for light mode */
+    box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.6);
+}
+
+:root:not(.dark) .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+
+.btn-secondary {
+    @apply bg-white/5 text-[var(--color-text-main)] backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20;
+}
+
+/* High contrast secondary button for light mode */
+:root:not(.dark) .btn-secondary {
+    @apply bg-slate-100 text-slate-900 border-slate-200 hover:bg-slate-200 hover:border-slate-300;
+}
+
+/* Utility Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Typography highlights */
+.text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-text-main)] via-[var(--color-cyan-glow)] to-[var(--color-electric)];
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-[var(--color-midnight)];
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-[var(--color-surface-light)] rounded-full;
+}
+
+:root:not(.dark) ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-[var(--color-electric)];
+}
+
+/* Helper for highlight text */
+.highlight-text-blue {
+    @apply text-blue-400;
+}
+
+.highlight-text-pink {
+    @apply text-pink-400;
+}
+
+.highlight-text-indigo {
+    @apply text-indigo-400;
+}
+
+.highlight-text-emerald {
+    @apply text-emerald-400;
+}
+
+.highlight-text-amber {
+    @apply text-amber-400;
+}
+
+.highlight-text-violet {
+    @apply text-violet-400;
+}
+
+.highlight-text-rose {
+    @apply text-rose-400;
+}
+
+.highlight-text-teal {
+    @apply text-teal-400;
+}
+
+.highlight-text-gray {
+    @apply text-gray-400;
+}
+
+:root:not(.dark) .highlight-text-blue {
+    @apply text-blue-600;
+}
+
+:root:not(.dark) .highlight-text-pink {
+    @apply text-pink-600;
+}
+
+:root:not(.dark) .highlight-text-indigo {
+    @apply text-indigo-600;
+}
+
+:root:not(.dark) .highlight-text-emerald {
+    @apply text-emerald-600;
+}
+
+:root:not(.dark) .highlight-text-amber {
+    @apply text-amber-600;
+}
+
+:root:not(.dark) .highlight-text-violet {
+    @apply text-violet-600;
+}
+
+:root:not(.dark) .highlight-text-rose {
+    @apply text-rose-600;
+}
+
+:root:not(.dark) .highlight-text-teal {
+    @apply text-teal-600;
+}
+
+:root:not(.dark) .highlight-text-gray {
+    @apply text-gray-600;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-text-dim);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-electric);
+}
